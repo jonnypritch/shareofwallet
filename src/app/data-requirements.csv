@@ -1,0 +1,211 @@
+Page,Card Name,Data Field,Data Type,Description,Example Value,Calculation Method,Notes
+Homepage,Share of Wallet Analysis - Main Dashboard,customer_name,String,Customer company name,Bob Builders Ltd,From customer master data,
+Homepage,Share of Wallet Analysis - Main Dashboard,customer_trade,String,Primary trade/industry of customer,General Builder,From customer classification or CRM,May be multiple trades
+Homepage,Share of Wallet Analysis - Main Dashboard,category_name,String,Product category name,Timber & Sheet Materials,From product hierarchy,
+Homepage,Share of Wallet Analysis - Main Dashboard,category_wallet_percent,Decimal,Percentage of customer's category spend with us,65,Calculate: (Customer spend with us in category / Estimated total category spend) * 100,
+Homepage,Share of Wallet Analysis - Main Dashboard,category_status,String,Category performance status,strong|risk|elsewhere,Calculate based on spend trends and benchmarks,"strong: >50% share, risk: declining spend, elsewhere: <30% share"
+Homepage,Share of Wallet Analysis - Floating Card 1,category_opportunity_amount,Currency,Monetary opportunity in a specific category,£4K,Calculate: (Estimated total spend - Current spend) in category,
+Homepage,Share of Wallet Analysis - Floating Card 1,category_opportunity_name,String,Category with the opportunity,Aggregates & Cement,Identify category with largest gap,
+Homepage,Share of Wallet Analysis - Floating Card 2,buying_elsewhere_category,String,Category customer is buying elsewhere,Plumbing,Identify from missing categories in orders vs industry benchmarks,
+Homepage,Share of Wallet Analysis - Floating Card 2,buying_elsewhere_likelihood,Integer,Likelihood percentage that customer is buying elsewhere,73,Calculate using: trade type + project patterns + historical purchases,0-100 scale
+Homepage,Share of Wallet Analysis - Floating Card 3,order_reduction_category,String,Category with reduced order size,Timber,Compare current vs previous period orders,
+Homepage,Share of Wallet Analysis - Floating Card 3,order_reduction_percent,Integer,Percentage reduction in order size,40,Calculate: ((Previous period - Current period) / Previous period) * 100,
+Homepage,Share of Wallet Analysis - Floating Card 3,comparison_period,String,Time period for comparison,vs. last month,Define standard comparison periods,Could be vs last month/quarter/year
+Homepage,Share of Wallet Analysis - Floating Card 4,recommendation_suggestion,String,Recommended action/product to offer,Offer Insulation range,AI/rules-based recommendation engine,Based on project type and trade patterns
+Homepage,Share of Wallet Analysis - Floating Card 4,recommendation_reason,String,Reason for recommendation,Based on project type and trade patterns,System-generated explanation,
+
+Features Page,Share of Wallet Analytics - Summary Stats,avg_wallet_share,Integer,Average wallet share across all customers,45,Calculate: Average of all customer wallet shares,As percentage
+Features Page,Share of Wallet Analytics - Summary Stats,total_opportunity,Currency,Total revenue opportunity across all customers,£58.7K,Sum of all individual customer opportunities,
+Features Page,Share of Wallet Analytics - Summary Stats,growth_trend,Integer,Overall growth trend percentage,+34,Calculate: Period-over-period wallet share growth,As percentage with +/- sign
+Features Page,Share of Wallet Analytics - Customer List,customer_name,String,Customer company name,Bob Builders Ltd,From customer master data,
+Features Page,Share of Wallet Analytics - Customer List,customer_wallet_share,Integer,Customer's overall wallet share percentage,34,Calculate: Total spend with us / Estimated total spend,0-100
+Features Page,Share of Wallet Analytics - Customer List,customer_wallet_trend,String,Trend in wallet share,+5%,Calculate: Period-over-period change in wallet share,Include +/- sign
+Features Page,Share of Wallet Analytics - Customer List,customer_opportunity,Currency,Total opportunity value for customer,£12.4K,Calculate: Estimated total spend - Current spend,
+Features Page,Share of Wallet Analytics - Customer List,customer_opportunity_status,String,Priority status of opportunity,high|medium|low,"Based on opportunity value: high: >£10K, medium: £5-10K, low: <£5K",
+Features Page,Share of Wallet Analytics - Floating Callout,top_customers_count,Integer,Number of top customers being analyzed,5,Configurable parameter,
+Features Page,Share of Wallet Analytics - Floating Callout,top_customers_opportunity,Currency,Total opportunity across top customers,£47000,Sum of opportunities for top N customers,
+
+Features Page,Customer Priority - List,customer_name,String,Customer company name,Premier Plumbers Ltd,From customer master data,
+Features Page,Customer Priority - List,priority_score,Integer,AI-generated priority score,94,Calculate using ML model based on multiple factors,0-100 scale
+Features Page,Customer Priority - List,growth_potential,String,Growth potential rating,High|Medium|Low,Derived from spend trends and market data,
+Features Page,Customer Priority - List,profitability_rating,String,Customer profitability rating,High|Medium|Low,Calculate from margin analysis,
+Features Page,Customer Priority - List,customer_opportunity,Currency,Opportunity value for this customer,£7.2K,Estimated additional revenue potential,
+Features Page,Customer Priority - List,purchase_propensity,Integer,Likelihood to purchase additional products,89,ML-based score considering historical patterns,0-100 scale
+Features Page,Customer Priority - List,team_rank,Integer,Ranking position in team's customer list,2nd of 12,Sort by priority score,Display as ordinal
+
+Features Page,Next Best Offers - Recommendation List,recommended_product,String,Specific product recommendation,Electrical Cable - Twin & Earth,From product catalog based on ML model,
+Features Page,Next Best Offers - Recommendation List,target_customer,String,Customer for this recommendation,Bob Builders Ltd,From customer master data,
+Features Page,Next Best Offers - Recommendation List,customer_trade,String,Customer's trade type,General Builder,From customer classification,
+Features Page,Next Best Offers - Recommendation List,recommendation_confidence,Integer,Confidence score for recommendation,92,ML model confidence score,0-100 scale
+Features Page,Next Best Offers - Recommendation List,recommendation_reason,String,Explanation for why recommended,Starting new residential project,From project intelligence + pattern analysis,
+Features Page,Next Best Offers - Recommendation List,estimated_order_value,Currency,Estimated value of recommended purchase,£850,Based on typical order sizes for product,
+Features Page,Next Best Offers - Recommendation List,confidence_status,String,Visual status of confidence level,high|medium|low,"high: >80%, medium: 60-80%, low: <60%",
+
+Features Page,Content Generation - Email Preview,recipient_customer,String,Customer receiving the email,Bob Builders Ltd,From customer master data,
+Features Page,Content Generation - Email Preview,email_subject,String,Generated email subject line,Complete Your Residential Project with Our Electrical Range,AI-generated based on project context,
+Features Page,Content Generation - Email Preview,project_type,String,Type of project customer is working on,New residential build,From project intelligence data,
+Features Page,Content Generation - Email Preview,project_location,String,Location of customer's project,[Location],From project or delivery data,
+Features Page,Content Generation - Email Preview,recommended_products,Array,List of recommended products with prices,"Twin & Earth Cable, Consumer Units, Sockets & Switches",From recommendation engine,
+Features Page,Content Generation - Email Preview,discount_offer,String,Promotional discount being offered,Save 15%,From marketing campaign rules,
+Features Page,Content Generation - Email Preview,content_tone,String,Tone of the generated content,Professional|Friendly|Urgent,User-selectable parameter,
+Features Page,Content Generation - Email Preview,project_stage,String,Stage of the customer's project,First Fix|Second Fix|Completion,From project tracking or order patterns,
+Features Page,Content Generation - Email Preview,content_status,String,Status of generated content,Ready to Send,System-generated status,
+
+Features Page,Team Performance - Rep Profile,rep_name,String,Sales representative name,Sarah Mitchell,From employee master data,
+Features Page,Team Performance - Rep Profile,rep_role,String,Job role/title,Sales Representative,From HR system,
+Features Page,Team Performance - Rep Profile,performance_score,Integer,Overall performance score,87,Calculate: Weighted average of all metrics,0-100 scale
+Features Page,Team Performance - Rep Profile,team_rank,String,Ranking within team,2nd of 12,Sort by performance score,Display as ordinal with team size
+Features Page,Team Performance - Metrics,metric_name,String,Name of performance metric,Wallet Share Growth,Pre-defined metric names,
+Features Page,Team Performance - Metrics,metric_value,String,Actual achieved value,+18%,From sales data calculations,Include units/symbols
+Features Page,Team Performance - Metrics,metric_target,String,Target value for metric,+15%,From goal-setting system,Include units/symbols
+Features Page,Team Performance - Metrics,metric_status,String,Status vs target,exceeding|meeting|below,Compare actual vs target,
+Features Page,Team Performance - Metrics,metric_progress_percent,Integer,Visual progress percentage,120,Calculate: (Actual / Target) * 100,For progress bar display
+Features Page,Team Performance - Learning,module_title,String,Learning module name,Category Cross-Selling,From LMS/training system,
+Features Page,Team Performance - Learning,module_progress,Integer,Completion percentage,100,Track completion of module content,0-100
+Features Page,Team Performance - Learning,module_status,String,Status of module,complete|in-progress|locked,Based on progress and prerequisites,
+Features Page,Team Performance - Goals,goal_description,String,Weekly goal description,Send 10 personalized offers,From goal-setting system,
+Features Page,Team Performance - Goals,goal_completed,Boolean,Whether goal is completed,true|false,Track completion status,
+Features Page,Team Performance - Goals,goal_period,String,Time period for goal,This week,Standard periods: week/month/quarter,
+
+Components,Wallet Share Calculator,customer_name,String,Customer being analyzed,Total Builders Ltd,From customer master data,
+Components,Wallet Share Calculator,category_name,String,Product category name,Electrical,From product hierarchy,
+Components,Wallet Share Calculator,current_wallet_percent,Integer,Current wallet share in category,68,Calculate: (Current spend / Estimated total) * 100,
+Components,Wallet Share Calculator,potential_wallet_percent,Integer,Potential wallet share achievable,92,Based on benchmarks and capacity analysis,
+Components,Wallet Share Calculator,category_opportunity,Currency,Opportunity value in category,£1k,Calculate: Estimated total * (Potential % - Current %),
+Components,Wallet Share Calculator,total_opportunity_all_categories,Currency,Sum of opportunities across all categories,£14k,Sum all category opportunities,
+
+Components,Opportunity Alert,alert_type,String,Type of alert,Opportunity Alert|Warning Alert,System classification,
+Components,Opportunity Alert,alert_customer,String,Customer name in alert,ABC Builders,From customer master data,
+Components,Opportunity Alert,alert_category,String,Category the alert relates to,Cement,From product hierarchy,
+Components,Opportunity Alert,alert_message,String,Description of the alert situation,Customer bought category from competitor,Rule-based message generation,
+Components,Opportunity Alert,alert_evidence,String,Supporting evidence for alert,Category not in last 3 orders,From order history analysis,
+Components,Opportunity Alert,alert_opportunity_value,Currency,Opportunity value identified,£12.4K,Estimated potential recovery value,
+Components,Opportunity Alert,alert_timestamp,DateTime,When alert was generated,Just now,System timestamp,Format as relative time
+Components,Opportunity Alert,notification_channel,String,Channel for notification,Mobile Push|Desktop Alert|Email,Multi-channel notification system,
+Components,Opportunity Alert,project_intelligence,String,Project-based insight,New site started,From project tracking data,
+
+Components,Dashboard Summary Metrics,avg_wallet_share_all,Integer,Average wallet share across portfolio,45,Average of all customer wallet shares,Percentage
+Components,Dashboard Summary Metrics,total_opportunity_all,Currency,Total opportunity across all customers,£58.7K,Sum of all customer opportunities,
+Components,Dashboard Summary Metrics,growth_potential_percent,Integer,Overall growth potential,+34,Calculate: Potential increase in revenue,Percentage with sign
+Components,Dashboard Summary Metrics,opportunity_customer_count,Integer,Number of customers with opportunities,23,Count customers with opportunity > threshold,
+
+Components,Dashboard Customer Rows,customer_name,String,Customer name,Bob Builders Ltd,From customer master data,
+Components,Dashboard Customer Rows,current_wallet_share,Integer,Current wallet share percentage,34,Current spend / Estimated total spend,0-100
+Components,Dashboard Customer Rows,potential_wallet_share,Integer,Potential achievable wallet share,68,Based on benchmarks and patterns,0-100
+Components,Dashboard Customer Rows,opportunity_status,String,Opportunity priority,high|medium|low,Based on opportunity value thresholds,
+Components,Dashboard Customer Rows,opportunity_value,Currency,Opportunity value,£12.4K,Potential - Current spend,
+
+Components,Next Best Offer Card,recommended_product,String,Specific product,Electrical Cable,From recommendation engine,
+Components,Next Best Offer Card,confidence_match,Integer,Match confidence percentage,78,ML model confidence,0-100
+Components,Next Best Offer Card,match_reason,String,Why this product matches,Based on project type,AI-generated explanation,
+
+Stats Section,Company Stats,stat_metric_name,String,Metric being displayed,Revenue opportunities identified,Pre-defined KPIs,
+Stats Section,Company Stats,stat_value,String,Value of the metric,£14M or 12-17% or 6+ or 12hrs,Various calculations and formats,Include appropriate units
+Stats Section,Company Stats,stat_label,String,Description of metric,Average wallet share increase,Human-readable description,
+
+General,All Cards,last_updated_timestamp,DateTime,When data was last refreshed,2024-01-15 14:30:00,System timestamp,For data freshness indicators
+General,All Cards,data_quality_score,Integer,Confidence in data quality,95,Data validation score,0-100
+General,All Cards,customer_id,String,Unique customer identifier,CUST-12345,Primary key from customer master,
+General,All Cards,calculation_period_start,Date,Start of calculation period,2024-01-01,For period-based calculations,
+General,All Cards,calculation_period_end,Date,End of calculation period,2024-12-31,For period-based calculations,
+General,All Cards,currency_code,String,Currency for monetary values,GBP,ISO currency code,Default GBP for UK market
+
+Data Sources,Customer Master,customer_id,String,Unique identifier,CUST-12345,CRM/ERP primary key,
+Data Sources,Customer Master,customer_name,String,Company name,Bob Builders Ltd,CRM/ERP,
+Data Sources,Customer Master,customer_trade_primary,String,Primary trade classification,General Builder,CRM classification,
+Data Sources,Customer Master,customer_trade_secondary,Array,Additional trade types,"[Electrician, Plumber]",CRM classification,May have multiple
+Data Sources,Customer Master,customer_size_band,String,Size classification,Small|Medium|Large,Based on annual spend,
+Data Sources,Customer Master,customer_lifetime_value,Currency,Historical total spend,£145000,Sum of all historical orders,
+Data Sources,Customer Master,customer_active_since,Date,First order date,2019-03-15,From order history,
+
+Data Sources,Transaction Data,transaction_id,String,Unique transaction ID,TXN-98765,From ERP/order system,
+Data Sources,Transaction Data,customer_id,String,Customer identifier,CUST-12345,Foreign key to customer master,
+Data Sources,Transaction Data,transaction_date,Date,Date of transaction,2024-01-15,From order system,
+Data Sources,Transaction Data,product_id,String,Product identifier,PROD-5432,From product catalog,
+Data Sources,Transaction Data,product_category,String,Product category,Timber & Sheet Materials,From product hierarchy,
+Data Sources,Transaction Data,product_subcategory,String,Product subcategory,Softwood Timber,From product hierarchy,Level 2 classification
+Data Sources,Transaction Data,quantity,Decimal,Quantity ordered,25.5,From order line,
+Data Sources,Transaction Data,unit_price,Currency,Price per unit,£45.00,From order line,
+Data Sources,Transaction Data,line_total,Currency,Total line value,£1147.50,Quantity * Unit price,
+Data Sources,Transaction Data,margin_percent,Decimal,Profit margin on sale,22.5,Calculate from cost and price,
+Data Sources,Transaction Data,delivery_postcode,String,Delivery location,SW1A 1AA,From delivery data,For project location
+
+Data Sources,Product Catalog,product_id,String,Unique product ID,PROD-5432,Product master key,
+Data Sources,Product Catalog,product_name,String,Product description,Twin & Earth Cable 100m,From product master,
+Data Sources,Product Catalog,category_level1,String,Top-level category,Electrical,From product hierarchy,
+Data Sources,Product Catalog,category_level2,String,Sub-category,Cable & Cable Management,From product hierarchy,
+Data Sources,Product Catalog,category_level3,String,Detailed category,Twin & Earth Cable,From product hierarchy,
+Data Sources,Product Catalog,typical_order_value,Currency,Average order value,£850,Calculate from historical orders,
+Data Sources,Product Catalog,related_trades,Array,Trades that use this product,"[Electrician, General Builder]",From industry knowledge or patterns,
+
+Data Sources,Industry Benchmarks,trade_type,String,Trade classification,General Builder,Industry standard classification,
+Data Sources,Industry Benchmarks,category_name,String,Product category,Timber & Sheet Materials,Aligned to product hierarchy,
+Data Sources,Industry Benchmarks,typical_category_percent,Decimal,Typical % of total spend in category,25,Industry research or aggregate data,What this trade typically spends
+Data Sources,Industry Benchmarks,project_type,String,Type of project,New residential build,From project classification,
+Data Sources,Industry Benchmarks,expected_categories,Array,Categories expected for project type,"[Timber, Bricks, Cement, Electrical]",Industry knowledge base,
+
+Data Sources,Project Intelligence,project_id,String,Unique project identifier,PROJ-7890,From CRM or inferred from patterns,
+Data Sources,Project Intelligence,customer_id,String,Associated customer,CUST-12345,Link to customer,
+Data Sources,Project Intelligence,project_type,String,Type of project,New residential build,Classify from order patterns,
+Data Sources,Project Intelligence,project_stage,String,Current stage,First Fix|Second Fix|Completion,Infer from product types ordered,
+Data Sources,Project Intelligence,project_start_date,Date,Estimated start,2024-02-01,From order patterns or CRM,
+Data Sources,Project Intelligence,project_location,String,Project location,Manchester,From delivery postcode,
+Data Sources,Project Intelligence,project_value_estimate,Currency,Estimated total project value,£85000,Infer from order sizes and type,
+Data Sources,Project Intelligence,trades_involved,Array,Trades working on project,"[Builder, Electrician, Plumber]",Infer from product categories ordered,
+
+Data Sources,CRM Integration,opportunity_id,String,Sales opportunity ID,OPP-4567,From CRM system,
+Data Sources,CRM Integration,account_owner,String,Sales rep assigned,Sarah Mitchell,From CRM,
+Data Sources,CRM Integration,customer_segment,String,Customer segmentation,Key Account|Standard|Small,From CRM classification,
+Data Sources,CRM Integration,last_contact_date,Date,Last sales interaction,2024-01-10,From CRM activity log,
+Data Sources,CRM Integration,notes,String,Sales notes,Customer mentioned new project starting,From CRM notes field,Free text
+
+Calculations,Wallet Share,formula,String,Calculation method,(Customer Spend with Us / Total Estimated Customer Spend in Category) * 100,,
+Calculations,Wallet Share,total_spend_estimation,String,How to estimate total spend,Use: Industry benchmarks by trade + Project intelligence + Order frequency patterns,,
+Calculations,Wallet Share,data_confidence,String,Factors affecting confidence,Higher confidence when: Multiple data sources + Recent transactions + Known project details,,
+
+Calculations,Opportunity Value,formula,String,Calculation method,Estimated Total Spend - Current Spend with Us,,
+Calculations,Opportunity Value,risk_adjustment,String,Risk factors,Adjust for: Customer loyalty + Competitor entrenchment + Price sensitivity,,
+Calculations,Opportunity Value,prioritization,String,How to prioritize,Score based on: Value size + Win probability + Customer profitability + Strategic importance,,
+
+Calculations,Buying Elsewhere Likelihood,factors,String,Input factors,Missing categories from expected basket + Order frequency decline + Project intelligence + Trade patterns,,
+Calculations,Buying Elsewhere Likelihood,ml_model,String,Machine learning approach,Train model on: Historical category adoption + Lost customer patterns + Successful category expansions,,
+Calculations,Buying Elsewhere Likelihood,score_calibration,String,Score meaning,0-30%: Low likelihood | 30-70%: Medium likelihood | 70-100%: High likelihood,,
+
+Calculations,Priority Score,components,String,Scoring components,Growth Potential (30%) + Profitability (25%) + Purchase Propensity (25%) + Relationship Strength (20%),,
+Calculations,Priority Score,growth_potential_calc,String,Growth potential factor,Based on: Wallet share gap + Order trend + Market size in customer's area,,
+Calculations,Priority Score,profitability_calc,String,Profitability factor,Based on: Average margin + Payment terms + Cost to serve,,
+Calculations,Priority Score,propensity_calc,String,Purchase propensity factor,ML model predicting likelihood of additional purchases in next 90 days,,
+
+Calculations,Recommendation Confidence,factors,String,Confidence factors,Historical purchase patterns + Trade type match + Project stage alignment + Similar customer behavior + Seasonal factors,,
+Calculations,Recommendation Confidence,ml_approach,String,Machine learning method,Collaborative filtering + Product affinity analysis + Sequential pattern mining,,
+Calculations,Recommendation Confidence,validation,String,How to validate,Track: Recommendation acceptance rate + Revenue generated + Customer feedback,,
+
+Implementation,Data Refresh Frequency,customer_wallet_share,String,Update frequency,Daily,Overnight batch process,
+Implementation,Data Refresh Frequency,opportunity_alerts,String,Update frequency,Real-time,Trigger-based when new orders detected,
+Implementation,Data Refresh Frequency,recommendations,String,Update frequency,Daily,Overnight batch with real-time overrides,
+Implementation,Data Refresh Frequency,industry_benchmarks,String,Update frequency,Monthly,Updated from industry data sources,
+Implementation,Data Refresh Frequency,priority_scores,String,Update frequency,Daily,Recalculate based on latest transaction data,
+
+Implementation,Data Storage,aggregated_metrics,String,Storage approach,Pre-calculated and stored in data warehouse,For performance,
+Implementation,Data Storage,raw_transactions,String,Storage approach,Retain 36 months in operational database,For detailed analysis,
+Implementation,Data Storage,ml_model_scores,String,Storage approach,Cache scores for 24 hours,Refresh as needed,
+Implementation,Data Storage,customer_snapshots,String,Storage approach,Store daily snapshots for trending,Enable historical comparison,
+
+Implementation,Data Quality,missing_data_handling,String,Approach,Use industry averages when customer-specific data unavailable,Flag low-confidence scores,
+Implementation,Data Quality,outlier_detection,String,Approach,Flag transactions >3 standard deviations from customer norm,Review before using in calculations,
+Implementation,Data Quality,validation_rules,String,Examples,Wallet share must be 0-100% | Dates must be valid | Customer trade must match list | Category must exist in hierarchy,,
+Implementation,Data Quality,data_lineage,String,Tracking requirement,Track source system and transformation steps for each metric,For audit and debugging,
+
+Scalability,Performance,customer_scale,String,Design for,Support 10000+ active customers per distributor instance,,
+Scalability,Performance,transaction_volume,String,Design for,Process 1M+ transactions per month,,
+Scalability,Performance,concurrent_users,String,Design for,Support 50+ concurrent users per instance,,
+Scalability,Performance,response_time,String,Target,Dashboard load <2 seconds | Recommendations generate <5 seconds,,
+
+Scalability,Multi-branch,branch_id,String,Branch identifier,BRANCH-001,For multi-location distributors,
+Scalability,Multi-branch,aggregate_level,String,Reporting levels,Branch-level + Regional + Company-wide views,,
+Scalability,Multi-branch,customer_assignment,String,Approach,Customer may be shared across branches or exclusive to one,,
+
+Privacy,Data Protection,pii_handling,String,Approach,Customer names and contact details encrypted at rest,GDPR compliant,
+Privacy,Data Protection,data_retention,String,Policy,Transaction data retained 7 years | Analytical aggregates retained indefinitely,,
+Privacy,Data Protection,access_control,String,Requirement,Role-based access | Sales reps see only their customers | Managers see team | Directors see all,,
+Privacy,Data Protection,audit_trail,String,Requirement,Log all data access and modifications with user ID and timestamp,,
