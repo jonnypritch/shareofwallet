@@ -1,4 +1,4 @@
-import founderImage from '../assets/8c7a44181cf12450c3d1a82927bc83a6afa8ce97.png';
+import founderImage from '../../assets/8c7a44181cf12450c3d1a82927bc83a6afa8ce97.png';
 import { GreenCheckIcon } from '../components/icons/GreenCheckIcon';
 import { Mail, Linkedin } from 'lucide-react';
 
