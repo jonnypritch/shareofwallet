@@ -6,7 +6,6 @@ import gardnerLogo from '../../assets/logo-gardner-scardifield.png';
 import southCoastLogo from '../../assets/logo-south-coast.png';
 import wolseleyLogo from '../../assets/logo-wolseley.png';
 import cemexLogo from '../../assets/logo-cemex.png';
-import techNationLogo from '../../assets/logo-technation.png';
 
 const logos = [
   { src: gardnerLogo, alt: 'Gardner & Scardifield', dark: false },
@@ -16,7 +15,6 @@ const logos = [
   { src: greenBrosLogo, alt: 'Green Bros', dark: true },
   { src: wolseleyLogo, alt: 'Wolseley', dark: false },
   { src: cemexLogo, alt: 'CEMEX', dark: false },
-  { src: techNationLogo, alt: 'Tech Nation', dark: true },
 ];
 
 export function CustomerLogosSection() {
@@ -30,11 +28,11 @@ export function CustomerLogosSection() {
           Trusted by leading trade & wholesale businesses
         </h2>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-6 items-center">
+        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-6 items-center">
           {logos.map((logo, idx) => (
             <div
               key={idx}
-              className="flex items-center justify-center h-[56px] grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition-all duration-300"
+              className="flex items-center justify-center h-[56px]"
             >
               <div
                 className="flex items-center justify-center w-full h-full rounded-lg px-3 py-2"
