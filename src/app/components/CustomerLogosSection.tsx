@@ -8,13 +8,13 @@ import wolseleyLogo from '../../assets/logo-wolseley.png';
 import cemexLogo from '../../assets/logo-cemex.png';
 
 const logos = [
-  { src: gardnerLogo, alt: 'Gardner & Scardifield', dark: false },
-  { src: southCoastLogo, alt: 'South Coast Building Supplies', dark: false },
-  { src: bristanLogo, alt: 'Bristan Group', dark: false },
-  { src: hansgroheLogo, alt: 'hansgrohe', dark: true },
-  { src: greenBrosLogo, alt: 'Green Bros', dark: true },
-  { src: wolseleyLogo, alt: 'Wolseley', dark: false },
-  { src: cemexLogo, alt: 'CEMEX', dark: false },
+  { src: gardnerLogo, alt: 'Gardner & Scardifield' },
+  { src: southCoastLogo, alt: 'South Coast Building Supplies' },
+  { src: bristanLogo, alt: 'Bristan Group' },
+  { src: hansgroheLogo, alt: 'hansgrohe' },
+  { src: greenBrosLogo, alt: 'Green Bros' },
+  { src: wolseleyLogo, alt: 'Wolseley' },
+  { src: cemexLogo, alt: 'CEMEX' },
 ];
 
 export function CustomerLogosSection() {
@@ -28,22 +28,18 @@ export function CustomerLogosSection() {
           Trusted by leading trade & wholesale businesses
         </h2>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-6 items-center">
+        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-4 items-center">
           {logos.map((logo, idx) => (
             <div
               key={idx}
-              className="flex items-center justify-center h-[56px]"
+              className="flex items-center justify-center rounded-xl px-4 py-3"
+              style={{ backgroundColor: '#ececf0', height: '64px' }}
             >
-              <div
-                className="flex items-center justify-center w-full h-full rounded-lg px-3 py-2"
-                style={{ backgroundColor: logo.dark ? '#1d1d31' : 'transparent' }}
-              >
-                <img
-                  src={logo.src}
-                  alt={logo.alt}
-                  style={{ maxHeight: '36px', maxWidth: '100%', objectFit: 'contain' }}
-                />
-              </div>
+              <img
+                src={logo.src}
+                alt={logo.alt}
+                style={{ maxHeight: '32px', maxWidth: '100%', objectFit: 'contain' }}
+              />
             </div>
           ))}
         </div>
