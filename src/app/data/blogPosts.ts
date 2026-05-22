@@ -9,7 +9,55 @@ export interface BlogPost {
     name: string;
     role: string;
   };
-  tags: string[];
+  tags: string[  ,{
+    slug: 'why-sales-platforms-fail-sme-wholesalers',
+    title: "Why sales engagement platforms fail SMEs — and what to do instead",
+    excerpt: "Around 22% of SMEs cite integration difficulties as their main barrier to adopting sales technology. But the real problem isn't the integration. It's the assumption that you need to replace everything first.",
+    category: 'sales-strategy' as const,
+    readTime: 5,
+    publishedAt: '2025-05-21',
+    author: { name: 'Jonathan Pritchard', role: 'Founder, Palm AI' },
+    tags: ['sales engagement', 'SME', 'wholesale technology', 'data fragmentation', 'agentic AI', 'share of wallet'],
+    content: `
+<p style="font-size:18px;font-weight:500;color:#1e293b;line-height:1.6;margin-bottom:24px;">A sales director at a Midlands electrical wholesaler told me recently that they\'d looked at three different sales engagement platforms in the past two years. Evaluated them properly. Built business cases. Got close to signing.</p>
+<p>They didn\'t buy any of them.</p>
+<p>Not because the platforms weren\'t good. But because every single one required the same thing: start again. New CRM. Data migration. Staff training. A six-month implementation project before a single rep saw a single insight.</p>
+<p>"We just couldn\'t justify stopping everything to set it up," he said. "So we kept the spreadsheets."</p>
+<p>This is not an unusual story. It is, in fact, the dominant story in sales technology for SMEs — and it matters if you\'re thinking about how to grow your share of wallet.</p>
+<h2>The real reason sales platforms don\'t get adopted</h2>
+<p>There\'s a widely-cited statistic in sales technology research: around 22% of SMEs cite CRM integration difficulties as their primary barrier to adopting sales engagement platforms. The real number is almost certainly higher — because many businesses don\'t even get far enough to identify integration as the problem. They see the requirement to overhaul their existing setup and stop there.</p>
+<p>The assumption baked into most sales engagement platforms is that you\'ll replace your current workflow. Out with the spreadsheets, in with the platform. Out with the ad-hoc processes, in with the new system. It sounds logical. In practice, it creates an implementation project that most sales-led businesses — particularly in trade and wholesale — simply don\'t have the resource to run.</p>
+<p>The result is what researchers call tool fatigue and operational inertia: sales teams managing a patchwork of email, spreadsheets, a basic CRM, and whatever else has accumulated over the years, with a new platform added on top rather than integrated underneath. More complexity, not less. More to manage, not fewer decisions.</p>
+<p>And so the spreadsheets stay. The data sits fragmented. The opportunities stay invisible.</p>
+<h2>The wrong question</h2>
+<p>Most sales technology conversations start with: "What system do you use?" The implication is that your current system is the problem, and the solution is a better one.</p>
+<p>But for most SMEs in trade and wholesale, the system isn\'t the problem. The data is already there — in transaction histories, order records, CRM notes, spreadsheets exported from an ERP system nobody wants to replace. The problem isn\'t that the data doesn\'t exist. It\'s that nobody is doing anything useful with it.</p>
+<p>The right question isn\'t "what system do you use?" It\'s "what do you already have, and what can we learn from it?"</p>
+<p>That\'s a fundamentally different starting point — and it changes everything about what implementation looks like.</p>
+<h2>Meeting you where you are</h2>
+<p>The approach we take at Palm AI starts with what you have. Not what you should have. Not what you\'ll have after six months of migration. What exists right now, today, in whatever format it\'s in.</p>
+<p>That might be a spreadsheet of your top 200 accounts with last order dates and revenue figures. It might be a CSV export from your ERP with transaction history going back three years. It might be a CRM with inconsistent data entry and a lot of blank fields.</p>
+<p>All of it is useful. All of it contains signal.</p>
+<p>Upload a spreadsheet and we can tell you what\'s in it, what matters, and what it\'s telling you about your customers — without asking you to change the format, clean the data first, or migrate anything anywhere. The intelligence comes to your data. Your data doesn\'t have to come to the intelligence.</p>
+<p>This isn\'t a workaround. It\'s a deliberate design choice. Because the companies that get the most value from data aren\'t always the ones with the most sophisticated systems. They\'re the ones who act on what they already know.</p>
+<h2>Agentic — which means the computer does the work</h2>
+<p>There\'s another dimension to this worth being direct about: the time cost of insight.</p>
+<p>Even when data exists and is accessible, someone has to analyse it. Someone has to look at the transaction history, spot the patterns, identify the accounts that are drifting, flag the cross-sell opportunities, and turn all of that into a list of calls for Monday morning. In most businesses, that someone is a sales manager spending half their weekend in Excel.</p>
+<p>Agentic AI changes this. Not by replacing the judgement of the sales manager — but by doing the mechanical work that currently sits between the data and the decision.</p>
+<p>You point it at your data. It reads it, reasons about it, and surfaces what matters. Which accounts haven\'t ordered a key category in 60 days. Which customers have a buying pattern that suggests they\'re testing a competitor. Which new accounts have gone quiet. It doesn\'t need you to have built a perfect data model first. It works with what\'s there.</p>
+<p>The result is that you can pick up wherever you are in your current workflow, add intelligence, and carry on. You don\'t need to rebuild from scratch. You don\'t need a new CRM. You don\'t need an implementation project.</p>
+<p>You need your data — in whatever state it\'s in — and a clear question.</p>
+<h2>What this means for share of wallet</h2>
+<p>For wholesalers and distributors specifically, this matters because the opportunity is almost always in existing accounts. Not new logos. Not new markets. The customers who already trust you, already have a trade account, already order regularly — but whose full spending potential you\'ve never actually measured.</p>
+<p>Gardner & Scardifield, one of the UK\'s leading specialist distributors, identified over £1.2 million in untapped opportunity within their existing account base. Not by replacing their systems. By applying intelligence to the data they already had.</p>
+<p>That\'s the pattern we see repeatedly. The data already knew. Nobody had asked it the right question.</p>
+<h2>The practical implication</h2>
+<p>If you\'ve looked at sales engagement platforms before and walked away because the implementation felt too heavy — that\'s a reasonable response to the platforms you were looking at. Most of them are built for scale-up tech companies with dedicated RevOps teams, not for a 40-person wholesale business running Sage and a shared inbox.</p>
+<p>The question worth asking now is different: not "can we afford to implement this?" but "what are we already sitting on, and what would it tell us if someone actually looked at it?"</p>
+<p>The spreadsheets aren\'t the problem. The inertia is. And inertia, it turns out, is exactly what agentic AI is designed to overcome.</p>
+    `
+  }
+];
   content?: string;
 }
 
@@ -101,6 +149,54 @@ export const blogPosts: BlogPost[] = [
 <p>You don't need a perfect model to start. You need a rough answer to one question for each of your top 50 accounts:</p>
 <p><em>What percentage of this customer's total relevant spend comes to us?</em></p>
 <p>If you can answer that — even roughly — you have a prioritised list of where your growth is hiding. And that list is worth more than any new customer campaign you'll run this year.</p>
+    `
+  }
+  ,{
+    slug: 'why-sales-platforms-fail-sme-wholesalers',
+    title: "Why sales engagement platforms fail SMEs — and what to do instead",
+    excerpt: "Around 22% of SMEs cite integration difficulties as their main barrier to adopting sales technology. But the real problem isn't the integration. It's the assumption that you need to replace everything first.",
+    category: 'sales-strategy' as const,
+    readTime: 5,
+    publishedAt: '2025-05-21',
+    author: { name: 'Jonathan Pritchard', role: 'Founder, Palm AI' },
+    tags: ['sales engagement', 'SME', 'wholesale technology', 'data fragmentation', 'agentic AI', 'share of wallet'],
+    content: `
+<p style="font-size:18px;font-weight:500;color:#1e293b;line-height:1.6;margin-bottom:24px;">A sales director at a Midlands electrical wholesaler told me recently that they\'d looked at three different sales engagement platforms in the past two years. Evaluated them properly. Built business cases. Got close to signing.</p>
+<p>They didn\'t buy any of them.</p>
+<p>Not because the platforms weren\'t good. But because every single one required the same thing: start again. New CRM. Data migration. Staff training. A six-month implementation project before a single rep saw a single insight.</p>
+<p>"We just couldn\'t justify stopping everything to set it up," he said. "So we kept the spreadsheets."</p>
+<p>This is not an unusual story. It is, in fact, the dominant story in sales technology for SMEs — and it matters if you\'re thinking about how to grow your share of wallet.</p>
+<h2>The real reason sales platforms don\'t get adopted</h2>
+<p>There\'s a widely-cited statistic in sales technology research: around 22% of SMEs cite CRM integration difficulties as their primary barrier to adopting sales engagement platforms. The real number is almost certainly higher — because many businesses don\'t even get far enough to identify integration as the problem. They see the requirement to overhaul their existing setup and stop there.</p>
+<p>The assumption baked into most sales engagement platforms is that you\'ll replace your current workflow. Out with the spreadsheets, in with the platform. Out with the ad-hoc processes, in with the new system. It sounds logical. In practice, it creates an implementation project that most sales-led businesses — particularly in trade and wholesale — simply don\'t have the resource to run.</p>
+<p>The result is what researchers call tool fatigue and operational inertia: sales teams managing a patchwork of email, spreadsheets, a basic CRM, and whatever else has accumulated over the years, with a new platform added on top rather than integrated underneath. More complexity, not less. More to manage, not fewer decisions.</p>
+<p>And so the spreadsheets stay. The data sits fragmented. The opportunities stay invisible.</p>
+<h2>The wrong question</h2>
+<p>Most sales technology conversations start with: "What system do you use?" The implication is that your current system is the problem, and the solution is a better one.</p>
+<p>But for most SMEs in trade and wholesale, the system isn\'t the problem. The data is already there — in transaction histories, order records, CRM notes, spreadsheets exported from an ERP system nobody wants to replace. The problem isn\'t that the data doesn\'t exist. It\'s that nobody is doing anything useful with it.</p>
+<p>The right question isn\'t "what system do you use?" It\'s "what do you already have, and what can we learn from it?"</p>
+<p>That\'s a fundamentally different starting point — and it changes everything about what implementation looks like.</p>
+<h2>Meeting you where you are</h2>
+<p>The approach we take at Palm AI starts with what you have. Not what you should have. Not what you\'ll have after six months of migration. What exists right now, today, in whatever format it\'s in.</p>
+<p>That might be a spreadsheet of your top 200 accounts with last order dates and revenue figures. It might be a CSV export from your ERP with transaction history going back three years. It might be a CRM with inconsistent data entry and a lot of blank fields.</p>
+<p>All of it is useful. All of it contains signal.</p>
+<p>Upload a spreadsheet and we can tell you what\'s in it, what matters, and what it\'s telling you about your customers — without asking you to change the format, clean the data first, or migrate anything anywhere. The intelligence comes to your data. Your data doesn\'t have to come to the intelligence.</p>
+<p>This isn\'t a workaround. It\'s a deliberate design choice. Because the companies that get the most value from data aren\'t always the ones with the most sophisticated systems. They\'re the ones who act on what they already know.</p>
+<h2>Agentic — which means the computer does the work</h2>
+<p>There\'s another dimension to this worth being direct about: the time cost of insight.</p>
+<p>Even when data exists and is accessible, someone has to analyse it. Someone has to look at the transaction history, spot the patterns, identify the accounts that are drifting, flag the cross-sell opportunities, and turn all of that into a list of calls for Monday morning. In most businesses, that someone is a sales manager spending half their weekend in Excel.</p>
+<p>Agentic AI changes this. Not by replacing the judgement of the sales manager — but by doing the mechanical work that currently sits between the data and the decision.</p>
+<p>You point it at your data. It reads it, reasons about it, and surfaces what matters. Which accounts haven\'t ordered a key category in 60 days. Which customers have a buying pattern that suggests they\'re testing a competitor. Which new accounts have gone quiet. It doesn\'t need you to have built a perfect data model first. It works with what\'s there.</p>
+<p>The result is that you can pick up wherever you are in your current workflow, add intelligence, and carry on. You don\'t need to rebuild from scratch. You don\'t need a new CRM. You don\'t need an implementation project.</p>
+<p>You need your data — in whatever state it\'s in — and a clear question.</p>
+<h2>What this means for share of wallet</h2>
+<p>For wholesalers and distributors specifically, this matters because the opportunity is almost always in existing accounts. Not new logos. Not new markets. The customers who already trust you, already have a trade account, already order regularly — but whose full spending potential you\'ve never actually measured.</p>
+<p>Gardner & Scardifield, one of the UK\'s leading specialist distributors, identified over £1.2 million in untapped opportunity within their existing account base. Not by replacing their systems. By applying intelligence to the data they already had.</p>
+<p>That\'s the pattern we see repeatedly. The data already knew. Nobody had asked it the right question.</p>
+<h2>The practical implication</h2>
+<p>If you\'ve looked at sales engagement platforms before and walked away because the implementation felt too heavy — that\'s a reasonable response to the platforms you were looking at. Most of them are built for scale-up tech companies with dedicated RevOps teams, not for a 40-person wholesale business running Sage and a shared inbox.</p>
+<p>The question worth asking now is different: not "can we afford to implement this?" but "what are we already sitting on, and what would it tell us if someone actually looked at it?"</p>
+<p>The spreadsheets aren\'t the problem. The inertia is. And inertia, it turns out, is exactly what agentic AI is designed to overcome.</p>
     `
   }
 ];
