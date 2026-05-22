@@ -95,9 +95,56 @@ export function BlogPostPage({ slug, onNavigate }: BlogPostPageProps) {
 
       {/* Article body placeholder */}
       <div className="max-w-[800px] mx-auto px-8 pb-16">
+        <style>{`
+          .article-body h2 {
+            font-size: 24px;
+            font-weight: 700;
+            color: #1e293b;
+            margin-top: 40px;
+            margin-bottom: 16px;
+            line-height: 1.3;
+          }
+          .article-body h3 {
+            font-size: 20px;
+            font-weight: 600;
+            color: #1e293b;
+            margin-top: 32px;
+            margin-bottom: 12px;
+          }
+          .article-body p {
+            font-size: 17px;
+            color: #374151;
+            line-height: 1.8;
+            margin-bottom: 20px;
+          }
+          .article-body strong {
+            color: #1e293b;
+            font-weight: 600;
+          }
+          .article-body em {
+            font-style: italic;
+          }
+          .article-body blockquote {
+            margin: 32px 0;
+          }
+          .article-body ul {
+            margin: 16px 0 20px 24px;
+            list-style: disc;
+          }
+          .article-body ul li {
+            font-size: 17px;
+            color: #374151;
+            line-height: 1.8;
+            margin-bottom: 8px;
+          }
+          .article-body ol {
+            margin: 16px 0 20px 24px;
+            list-style: decimal;
+          }
+        `}</style>
         <div className="prose-content space-y-6" style={{ fontSize: '17px', color: '#374151', lineHeight: '1.8' }}>
           {post.content ? (
-            <div dangerouslySetInnerHTML={{ __html: post.content }} />
+            <div className="article-body" dangerouslySetInnerHTML={{ __html: post.content }} />
           ) : (
             <div className="bg-gradient-to-br from-[#f0f4ff] to-[#f9fafb] rounded-2xl p-12 text-center border border-blue-100">
               <div style={{ fontSize: '40px', marginBottom: '16px' }}>📝</div>

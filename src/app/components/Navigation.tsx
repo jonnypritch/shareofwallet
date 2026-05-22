@@ -131,7 +131,7 @@ export function Navigation({ currentPage, onNavigate }: NavigationProps) {
             </button>
 
             <button
-              onClick={() => onNavigate('blog')}
+              onClick={() => onNavigate('contact')}
               style={{
                 fontSize: '16px',
                 fontWeight: currentPage === 'contact' ? '600' : '400',

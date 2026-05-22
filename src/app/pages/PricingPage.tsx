@@ -164,13 +164,13 @@ export function PricingPage() {
                 </div>
                 <div className="flex items-baseline gap-2">
                   <span style={{ fontSize: '56px', fontWeight: '700', color: '#1e3a8a' }}>
-                    £{billingPeriod === 'annual' ? '1799' : '1999'}
+                    £{billingPeriod === 'annual' ? '1250' : '1450'}
                   </span>
                   <span style={{ fontSize: '20px', color: '#6b7280' }}>/month</span>
                 </div>
                 {billingPeriod === 'annual' && (
                   <div style={{ fontSize: '14px', color: '#6b7280', marginTop: '8px' }}>
-                    or £1749 monthly by Direct Debit
+                    or £1150 per month by Direct Debit
                   </div>
                 )}
               </div>
@@ -235,13 +235,13 @@ export function PricingPage() {
                 </div>
                 <div className="flex items-baseline gap-2">
                   <span style={{ fontSize: '56px', fontWeight: '700', color: '#ffffff' }}>
-                    £{billingPeriod === 'annual' ? '2399' : '2949'}
+                    £{billingPeriod === 'annual' ? '1950' : '2150'}
                   </span>
                   <span style={{ fontSize: '20px', color: 'rgba(255, 255, 255, 0.8)' }}>/month</span>
                 </div>
                 {billingPeriod === 'annual' && (
                   <div style={{ fontSize: '14px', color: 'rgba(255, 255, 255, 0.7)', marginTop: '8px' }}>
-                    or £2950 monthly by Direct Debit
+                    or £1750 per month by Direct Debit
                   </div>
                 )}
               </div>
