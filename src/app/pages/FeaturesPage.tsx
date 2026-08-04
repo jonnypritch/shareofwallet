@@ -54,7 +54,7 @@ export function FeaturesPage() {
               {tabs.map((tab) => (
                 <button
                   key={tab.id}
-                  onClick={() => setActiveTab(tab.id)}
+                  onClick={() => { setActiveTab(tab.id); const el = document.getElementById('section-' + tab.id); if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' }); }}
                   className="rounded-lg transition-all"
                   style={{
                     fontSize: '16px',
@@ -74,7 +74,7 @@ export function FeaturesPage() {
       </div>
 
       {/* Feature Section 1 - Share of Wallet Analytics */}
-      <div className="py-24">
+      <div id="section-analytics" className="py-24">
         <div className="max-w-[1440px] mx-auto px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             {/* Left Content */}
@@ -141,7 +141,7 @@ export function FeaturesPage() {
       </div>
 
       {/* Feature Section 2 - Customer Prioritization */}
-      <div className="py-24 bg-[#f9fafb]">
+      <div id="section-recommendations" className="py-24 bg-[#f9fafb]">
         <div className="max-w-[1440px] mx-auto px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             {/* Left Visual */}
@@ -208,7 +208,7 @@ export function FeaturesPage() {
       </div>
 
       {/* Feature Section 3 - Next Best Offers */}
-      <div className="py-24">
+      <div id="section-content" className="py-24">
         <div className="max-w-[1440px] mx-auto px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             {/* Left Content */}
@@ -288,7 +288,7 @@ export function FeaturesPage() {
       </div>
 
       {/* Feature Section 4 - Content Generation */}
-      <div className="py-24 bg-[#f9fafb]">
+      <div id="section-team" className="py-24 bg-[#f9fafb]">
         <div className="max-w-[1440px] mx-auto px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             {/* Left Visual */}
