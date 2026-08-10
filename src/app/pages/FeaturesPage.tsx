@@ -218,7 +218,7 @@ export function FeaturesPage() {
                 As an order gets built in your ERP, Palm AI flags what's missing and what's worth upgrading — right there on the same screen your team already uses.
               </p>
               <p style={{ fontSize: '13px', color: '#9ca3af', fontStyle: 'italic' }}>
-                Available now for MACE Systems — other ERPs coming soon.
+                Available now for MACE Systems
               </p>
             </div>
           </div>
@@ -231,12 +231,12 @@ export function FeaturesPage() {
                 When a customer messages in, the offer is already drafted
               </h3>
               <p className="mb-6" style={{ fontSize: '16px', color: '#374151', lineHeight: '1.6' }}>
-                A customer orders over WhatsApp — Palm AI drafts the reply with the right upsells and fixings already added. Your team approves or declines before anything sends.
+                A customer orders over WhatsApp — Palm AI drafts the reply with the right upsells and opportunities already added. Your team approves or declines before anything sends.
               </p>
               <FeatureList
                 items={[
                   'Drafted, never sent without approval',
-                  'Upsells and fixings suggested automatically',
+                  'Upsells and opportunities suggested automatically',
                   'Approved orders flow straight to the order screen',
                 ]}
               />
