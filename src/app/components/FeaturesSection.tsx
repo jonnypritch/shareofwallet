@@ -11,24 +11,24 @@ export function FeaturesSection() {
         <div className="max-w-[1200px] mx-auto">
           {/* Section Header */}
           <div className="text-center mb-16">
-            <h2 
+            <h2
               className="mb-4"
-              style={{ 
-                fontSize: '40px', 
-                fontWeight: '700', 
+              style={{
+                fontSize: '40px',
+                fontWeight: '700',
                 color: '#1e3a8a'
               }}
             >
               Stop guessing where to grow. Start knowing.
             </h2>
-            <p 
+            <p
               className="max-w-[700px] mx-auto"
-              style={{ 
-                fontSize: '18px', 
+              style={{
+                fontSize: '18px',
                 color: '#4b5563'
               }}
             >
-              Turn your CRM and transaction data into actionable revenue opportunities
+              It's not another report to read. It's your data, analysed and acted on — automatically.
             </p>
           </div>
 
@@ -67,7 +67,7 @@ export function FeaturesSection() {
               icon={<Lightbulb className="w-12 h-12 text-[#3b82f6]" strokeWidth={2} />}
               statBadge={{ text: 'Real-time alerts', color: 'amber' }}
               headline="Turn Farmers into Hunters"
-              description="Transform order-takers into opportunity-makers with automated next-best offers, project intelligence, and real-time customer alerts."
+              description="Give your counter staff the confidence to open the conversation. Transform order-takers into opportunity-makers with automated next-best offers, project intelligence, and real-time customer alerts."
               mockup={<OpportunityAlertMockup />}
               bulletPoints={[
                 'Automated opportunity detection',
@@ -76,6 +76,41 @@ export function FeaturesSection() {
                 'Project-stage intelligence'
               ]}
             />
+          </div>
+
+          {/* Automation closing line */}
+          <p
+            className="text-center mt-16 max-w-[640px] mx-auto"
+            style={{
+              fontSize: '18px',
+              fontWeight: '600',
+              color: '#1e3a8a',
+              lineHeight: '1.5'
+            }}
+          >
+            No dashboards to check, no reports to pull. Palm AI assists you on
+            what to do next — and the likely impact.
+          </p>
+
+          {/* Bespoke reporting teaser */}
+          <div className="flex items-center justify-center gap-3 mt-6">
+            <span
+              className="rounded-full px-3 py-1"
+              style={{
+                fontSize: '11px',
+                fontWeight: '700',
+                backgroundColor: '#f3f4f6',
+                color: '#6b7280',
+                textTransform: 'uppercase',
+                letterSpacing: '0.5px'
+              }}
+            >
+              Coming Soon
+            </span>
+            <p style={{ fontSize: '14px', color: '#6b7280' }}>
+              Want something bespoke? Custom reports built around exactly the
+              numbers you care about.
+            </p>
           </div>
         </div>
       </div>

@@ -1,5 +1,6 @@
-import { Building2, Menu, X, ChevronDown } from 'lucide-react';
+import { Menu, X, ChevronDown } from 'lucide-react';
 import { useState } from 'react';
+import palmAiLogo from '../../assets/palm-ai-logo-colour.png';
 
 interface NavigationProps {
   currentPage: string;
@@ -14,6 +15,7 @@ export function Navigation({ currentPage, onNavigate }: NavigationProps) {
     { id: 'solutions-builders', label: "Builders' Merchants" },
     { id: 'solutions-electrical', label: 'Electrical Wholesale' },
     { id: 'solutions-plumbers', label: "Plumbers' Merchants" },
+    { id: 'solutions-tool-hire', label: 'Tool Hire' },
     { id: 'solutions-suppliers', label: 'Suppliers' },
     { id: 'solutions-brands', label: 'Brands' },
   ];
@@ -25,16 +27,11 @@ export function Navigation({ currentPage, onNavigate }: NavigationProps) {
       <div className="max-w-[1440px] mx-auto px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <div 
-            className="flex items-center gap-2 cursor-pointer"
+          <div
+            className="flex items-center cursor-pointer"
             onClick={() => onNavigate('home')}
           >
-            <div className="bg-[#1e3a8a] rounded-lg p-2">
-              <Building2 className="w-6 h-6 text-white" />
-            </div>
-            <span style={{ fontSize: '20px', fontWeight: '700', color: '#1e3a8a' }}>
-              ShareOfWallet
-            </span>
+            <img src={palmAiLogo} alt="Palm AI" className="h-8 w-auto" />
           </div>
 
           {/* Desktop Navigation */}
@@ -64,7 +61,7 @@ export function Navigation({ currentPage, onNavigate }: NavigationProps) {
             </button>
 
             {/* Solutions Dropdown */}
-            <div 
+            <div
               className="relative"
               onMouseEnter={() => setSolutionsDropdownOpen(true)}
               onMouseLeave={() => setSolutionsDropdownOpen(false)}
@@ -119,6 +116,18 @@ export function Navigation({ currentPage, onNavigate }: NavigationProps) {
             </button>
 
             <button
+              onClick={() => onNavigate('blog')}
+              style={{
+                fontSize: '16px',
+                fontWeight: currentPage === 'blog' ? '600' : '400',
+                color: currentPage === 'blog' ? '#1e3a8a' : '#374151',
+              }}
+              className="hover:text-[#1e3a8a] transition-colors"
+            >
+              Blog
+            </button>
+
+            <button
               onClick={() => onNavigate('about')}
               style={{
                 fontSize: '16px',
@@ -142,19 +151,6 @@ export function Navigation({ currentPage, onNavigate }: NavigationProps) {
               Contact
             </button>
           </div>
-
-
-            <button
-              onClick={() => onNavigate('blog')}
-              style={{
-                fontSize: '16px',
-                fontWeight: currentPage === 'blog' || currentPage === 'blog-post' ? '600' : '400',
-                color: currentPage === 'blog' || currentPage === 'blog-post' ? '#1e3a8a' : '#374151',
-              }}
-              className="hover:text-[#1e3a8a] transition-colors"
-            >
-              Blog
-            </button>
 
           {/* Desktop CTAs */}
           <div className="hidden md:flex items-center gap-4">
@@ -265,6 +261,21 @@ export function Navigation({ currentPage, onNavigate }: NavigationProps) {
                 className="text-left py-2"
               >
                 Pricing
+              </button>
+
+              <button
+                onClick={() => {
+                  onNavigate('blog');
+                  setMobileMenuOpen(false);
+                }}
+                style={{
+                  fontSize: '16px',
+                  fontWeight: currentPage === 'blog' ? '600' : '400',
+                  color: currentPage === 'blog' ? '#1e3a8a' : '#374151',
+                }}
+                className="text-left py-2"
+              >
+                Blog
               </button>
 
               <button
