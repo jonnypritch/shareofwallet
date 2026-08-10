@@ -32,7 +32,7 @@ const STEPS = [
   },
   {
     id: "decision",
-    label: "Decision, made for you",
+    label: "Decision, made with you",
     caption:
       "Stock, cash, payment behaviour and your open quotes — combined into one recommendation, with the reasoning shown.",
   },
@@ -178,7 +178,7 @@ function ReorderChart() {
     [145, 90], [190, 55], [230, 30], [260, 18],
   ];
   const w = 280;
-  const h = 80;
+  const h = 100;
   const path = points.map(([x, y]) => `${x},${h - y}`).join(" ");
   const thresholdY = h - 24;
 
@@ -193,7 +193,7 @@ function ReorderChart() {
         </span>
       </div>
       <div className="bg-slate-50 rounded-lg p-2.5">
-        <svg viewBox={`0 0 ${w} ${h}`} className="w-full h-[64px]">
+        <svg viewBox={`0 0 ${w} ${h}`} className="w-full h-[80px]">
           <line
             x1={0}
             y1={thresholdY}

@@ -1,11 +1,47 @@
-import { Check, ArrowRight, Database, Target, Sparkles, Mail, Users } from 'lucide-react';
+import { Check, ArrowRight, Target, Sparkles, Mail, Users, MapPin, MessageCircle, ShoppingCart } from 'lucide-react';
 import { ShareOfWalletAnalyticsMockup } from '../components/mockups/ShareOfWalletAnalyticsMockup';
 import { CustomerPriorityMockup } from '../components/CustomerPriorityMockup';
 import { NextBestOffersMockup } from '../components/mockups/NextBestOffersMockup';
+import { POSOrderMockup } from '../components/POSOrderMockup';
+import { WhatsAppOfferMockup } from '../components/WhatsAppOfferMockup';
+import { ProspectsMockup } from '../components/ProspectsMockup';
 import { ContentGenerationMockup } from '../components/mockups/ContentGenerationMockup';
 import { TeamPerformanceMockup } from '../components/mockups/TeamPerformanceMockup';
 import { CoinTowersIcon } from '../components/icons/CoinTowersIcon';
 import { useState } from 'react';
+
+function FeatureList({ items }: { items: string[] }) {
+  return (
+    <div className="space-y-3">
+      {items.map((feature, idx) => (
+        <div key={idx} className="flex items-center gap-3">
+          <div className="bg-[#10b981] rounded-full p-1">
+            <Check className="w-4 h-4 text-white" />
+          </div>
+          <span style={{ fontSize: '16px', color: '#374151' }}>{feature}</span>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+function Eyebrow({ icon, children }: { icon: React.ReactNode; children: React.ReactNode }) {
+  return (
+    <div
+      className="mb-4 flex items-center"
+      style={{
+        fontSize: '12px',
+        fontWeight: '600',
+        color: '#3b82f6',
+        letterSpacing: '1.5px',
+        textTransform: 'uppercase'
+      }}
+    >
+      {icon}
+      <span className="ml-2">{children}</span>
+    </div>
+  );
+}
 
 export function FeaturesPage() {
   const [activeTab, setActiveTab] = useState('analytics');
@@ -13,6 +49,7 @@ export function FeaturesPage() {
   const tabs = [
     { id: 'analytics', label: 'Analytics' },
     { id: 'recommendations', label: 'Recommendations' },
+    { id: 'prospects', label: 'Prospects' },
     { id: 'content', label: 'Content' },
     { id: 'team', label: 'Team Tools' },
   ];
@@ -77,62 +114,28 @@ export function FeaturesPage() {
       <div id="section-analytics" className="py-24">
         <div className="max-w-[1440px] mx-auto px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            {/* Left Content */}
             <div>
-              <div
-                className="mb-4"
-                style={{
-                  fontSize: '12px',
-                  fontWeight: '600',
-                  color: '#3b82f6',
-                  letterSpacing: '1.5px',
-                  textTransform: 'uppercase'
-                }}
-              >
-                <CoinTowersIcon className="inline w-4 h-4 mr-2" />
-                INTELLIGENT ANALYTICS
-              </div>
+              <Eyebrow icon={<CoinTowersIcon className="inline w-4 h-4" />}>
+                Intelligent Analytics
+              </Eyebrow>
               <h2
                 className="mb-6"
-                style={{
-                  fontSize: '36px',
-                  fontWeight: '700',
-                  color: '#1e293b',
-                  lineHeight: '1.2'
-                }}
+                style={{ fontSize: '36px', fontWeight: '700', color: '#1e293b', lineHeight: '1.2' }}
               >
                 See exactly what customers buy elsewhere
               </h2>
-              <p
-                className="mb-8"
-                style={{
-                  fontSize: '18px',
-                  color: '#374151',
-                  lineHeight: '1.6'
-                }}
-              >
+              <p className="mb-8" style={{ fontSize: '18px', color: '#374151', lineHeight: '1.6' }}>
                 Our Analysis engine identifies transaction patterns, CRM data, and industry benchmarks to calculate share of wallet by customer, category, and sub-category. Know precisely where you're winning and where you're losing.
               </p>
-
-              {/* Feature List */}
-              <div className="space-y-3">
-                {[
+              <FeatureList
+                items={[
                   'Real-time wallet share calculations',
                   'Category and sub-category breakdowns',
                   'Competitive gap analysis',
                   'Historical trend tracking'
-                ].map((feature, idx) => (
-                  <div key={idx} className="flex items-center gap-3">
-                    <div className="bg-[#10b981] rounded-full p-1">
-                      <Check className="w-4 h-4 text-white" />
-                    </div>
-                    <span style={{ fontSize: '16px', color: '#374151' }}>{feature}</span>
-                  </div>
-                ))}
-              </div>
+                ]}
+              />
             </div>
-
-            {/* Right Visual */}
             <div className="flex justify-center">
               <ShareOfWalletAnalyticsMockup />
             </div>
@@ -140,306 +143,180 @@ export function FeaturesPage() {
         </div>
       </div>
 
-      {/* Feature Section 2 - Customer Prioritization */}
+      {/* Feature Section 2 - Recommendations (expanded) */}
       <div id="section-recommendations" className="py-24 bg-[#f9fafb]">
         <div className="max-w-[1440px] mx-auto px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            {/* Left Visual */}
+          <div className="max-w-[800px] mx-auto text-center mb-20">
+            <Eyebrow icon={<Sparkles className="inline w-4 h-4" />}>
+              <span className="mx-auto">Recommendations</span>
+            </Eyebrow>
+            <h2 className="mb-6" style={{ fontSize: '36px', fontWeight: '700', color: '#1e293b', lineHeight: '1.2' }}>
+              The right offer, wherever your team is working
+            </h2>
+            <p style={{ fontSize: '18px', color: '#374151', lineHeight: '1.6' }}>
+              Recommendations aren't a report to go and check — they show up on the system, at the till, and in the conversations your team is already having.
+            </p>
+          </div>
+
+          {/* Row 1 - On system: customer prioritisation */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-24">
             <div className="flex justify-center lg:order-1">
               <CustomerPriorityMockup />
             </div>
-
-            {/* Right Content */}
             <div className="lg:order-2">
-              <div
-                className="mb-4"
-                style={{
-                  fontSize: '12px',
-                  fontWeight: '600',
-                  color: '#3b82f6',
-                  letterSpacing: '1.5px',
-                  textTransform: 'uppercase'
-                }}
-              >
-                <Target className="inline w-4 h-4 mr-2" />
-                SMART TARGETING
-              </div>
-              <h2
-                className="mb-6"
-                style={{
-                  fontSize: '36px',
-                  fontWeight: '700',
-                  color: '#1e293b',
-                  lineHeight: '1.2'
-                }}
-              >
+              <Eyebrow icon={<Target className="inline w-4 h-4" />}>Smart Targeting</Eyebrow>
+              <h3 className="mb-5" style={{ fontSize: '26px', fontWeight: '700', color: '#1e293b', lineHeight: '1.25' }}>
                 Focus on customers with the greatest growth potential
-              </h2>
-              <p
-                className="mb-8"
-                style={{
-                  fontSize: '18px',
-                  color: '#374151',
-                  lineHeight: '1.6'
-                }}
-              >
-                Individual Customer scoring identifies which customers offer the highest potential for wallet share growth based on buying patterns, profitability, and purchase propensity. Stop wasting time on low-value accounts.
+              </h3>
+              <p className="mb-6" style={{ fontSize: '16px', color: '#374151', lineHeight: '1.6' }}>
+                Individual customer scoring identifies which customers offer the highest potential for wallet share growth based on buying patterns, profitability, and purchase propensity.
               </p>
-
-              {/* Feature List */}
-              <div className="space-y-3">
-                {[
+              <FeatureList
+                items={[
                   'AI-powered priority scoring',
                   'Growth potential calculations',
                   'Profitability analysis',
-                  'Smart filters and segmentation'
-                ].map((feature, idx) => (
-                  <div key={idx} className="flex items-center gap-3">
-                    <div className="bg-[#10b981] rounded-full p-1">
-                      <Check className="w-4 h-4 text-white" />
-                    </div>
-                    <span style={{ fontSize: '16px', color: '#374151' }}>{feature}</span>
-                  </div>
-                ))}
-              </div>
+                ]}
+              />
+            </div>
+          </div>
+
+          {/* Row 2 - Automated offers */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-24">
+            <div>
+              <Eyebrow icon={<Sparkles className="inline w-4 h-4" />}>Automated Recommendations</Eyebrow>
+              <h3 className="mb-5" style={{ fontSize: '26px', fontWeight: '700', color: '#1e293b', lineHeight: '1.25' }}>
+                Give your team the perfect offer at the perfect time
+              </h3>
+              <p className="mb-6" style={{ fontSize: '16px', color: '#374151', lineHeight: '1.6' }}>
+                Project-aware recommendations suggest the right products based on customer buying patterns, trade type, and project stage — reviewed and sent with one click.
+              </p>
+              <FeatureList
+                items={[
+                  'Project-based product recommendations',
+                  'Confidence scoring for each offer',
+                  'One-click offer deployment',
+                ]}
+              />
+            </div>
+            <div className="flex justify-center">
+              <NextBestOffersMockup />
+            </div>
+          </div>
+
+          {/* Row 3 - ERP / POS */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-24">
+            <div className="flex justify-center lg:order-1">
+              <POSOrderMockup />
+            </div>
+            <div className="lg:order-2">
+              <Eyebrow icon={<ShoppingCart className="inline w-4 h-4" />}>At the point of sale</Eyebrow>
+              <h3 className="mb-5" style={{ fontSize: '26px', fontWeight: '700', color: '#1e293b', lineHeight: '1.25' }}>
+                Recommendations on the order screen, not a separate tab
+              </h3>
+              <p className="mb-6" style={{ fontSize: '16px', color: '#374151', lineHeight: '1.6' }}>
+                As an order gets built in your ERP, Palm AI flags what's missing and what's worth upgrading — right there on the same screen your team already uses.
+              </p>
+              <p style={{ fontSize: '13px', color: '#9ca3af', fontStyle: 'italic' }}>
+                Available now for MACE Systems — other ERPs coming soon.
+              </p>
+            </div>
+          </div>
+
+          {/* Row 4 - WhatsApp */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div>
+              <Eyebrow icon={<MessageCircle className="inline w-4 h-4" />}>Automated, via chat</Eyebrow>
+              <h3 className="mb-5" style={{ fontSize: '26px', fontWeight: '700', color: '#1e293b', lineHeight: '1.25' }}>
+                When a customer messages in, the offer is already drafted
+              </h3>
+              <p className="mb-6" style={{ fontSize: '16px', color: '#374151', lineHeight: '1.6' }}>
+                A customer orders over WhatsApp — Palm AI drafts the reply with the right upsells and fixings already added. Your team approves or declines before anything sends.
+              </p>
+              <FeatureList
+                items={[
+                  'Drafted, never sent without approval',
+                  'Upsells and fixings suggested automatically',
+                  'Approved orders flow straight to the order screen',
+                ]}
+              />
+            </div>
+            <div className="flex justify-center">
+              <WhatsAppOfferMockup />
             </div>
           </div>
         </div>
       </div>
 
-      {/* Feature Section 3 - Next Best Offers */}
-      <div id="section-content" className="py-24">
+      {/* Feature Section 3 - Prospects */}
+      <div id="section-prospects" className="py-24">
         <div className="max-w-[1440px] mx-auto px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            {/* Left Content */}
-            <div>
-              <div
-                className="mb-4"
-                style={{
-                  fontSize: '12px',
-                  fontWeight: '600',
-                  color: '#3b82f6',
-                  letterSpacing: '1.5px',
-                  textTransform: 'uppercase'
-                }}
-              >
-                <Sparkles className="inline w-4 h-4 mr-2" />
-                AUTOMATED RECOMMENDATIONS
-              </div>
-              <h2
-                className="mb-6"
-                style={{
-                  fontSize: '36px',
-                  fontWeight: '700',
-                  color: '#1e293b',
-                  lineHeight: '1.2'
-                }}
-              >
-                Give your team the perfect offer at the perfect time
-              </h2>
-              <p
-                className="mb-8"
-                style={{
-                  fontSize: '18px',
-                  color: '#374151',
-                  lineHeight: '1.6'
-                }}
-              >
-                Project-aware recommendations suggest the right products based on customer buying patterns, trade type, and project stage. Your team always know what to offer next. Automate this via Chat Channels to never miss an opporunity
-              </p>
-
-              {/* Feature List */}
-              <div className="space-y-3 mb-8">
-                {[
-                  'Project-based product recommendations',
-                  'Confidence scoring for each offer',
-                  'Trade-specific suggestions',
-                  'One-click offer deployment'
-                ].map((feature, idx) => (
-                  <div key={idx} className="flex items-center gap-3">
-                    <div className="bg-[#10b981] rounded-full p-1">
-                      <Check className="w-4 h-4 text-white" />
-                    </div>
-                    <span style={{ fontSize: '16px', color: '#374151' }}>{feature}</span>
-                  </div>
-                ))}
-              </div>
-
-              <a
-                href="#"
-                className="inline-flex items-center gap-2 hover:gap-3 transition-all"
-                style={{
-                  fontSize: '16px',
-                  fontWeight: '600',
-                  color: '#3b82f6'
-                }}
-              >
-            
-                <ArrowRight className="w-4 h-4" />
-              </a>
-            </div>
-
-            {/* Right Visual */}
-            <div className="flex justify-center">
-              <NextBestOffersMockup />
-            </div>
+          <div className="max-w-[800px] mx-auto text-center mb-16">
+            <Eyebrow icon={<MapPin className="inline w-4 h-4" />}>
+              <span className="mx-auto">Prospects</span>
+            </Eyebrow>
+            <h2 className="mb-6" style={{ fontSize: '36px', fontWeight: '700', color: '#1e293b', lineHeight: '1.2' }}>
+              Your next customers are already out there. We find them.
+            </h2>
+            <p style={{ fontSize: '18px', color: '#374151', lineHeight: '1.6' }}>
+              Every tradesperson, contractor and construction company in your catchment area — estimated spend, recent projects, and a pipeline to track them through to a live account.
+            </p>
+          </div>
+          <div className="flex justify-center">
+            <ProspectsMockup />
           </div>
         </div>
       </div>
 
       {/* Feature Section 4 - Content Generation */}
-      <div id="section-team" className="py-24 bg-[#f9fafb]">
+      <div id="section-content" className="py-24 bg-[#f9fafb]">
         <div className="max-w-[1440px] mx-auto px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            {/* Left Visual */}
             <div className="flex justify-center lg:order-1">
               <ContentGenerationMockup />
             </div>
-
-            {/* Right Content */}
             <div className="lg:order-2">
-              <div
-                className="mb-4"
-                style={{
-                  fontSize: '12px',
-                  fontWeight: '600',
-                  color: '#3b82f6',
-                  letterSpacing: '1.5px',
-                  textTransform: 'uppercase'
-                }}
-              >
-                <Mail className="inline w-4 h-4 mr-2" />
-                MARKETING AUTOMATION
-              </div>
-              <h2
-                className="mb-6"
-                style={{
-                  fontSize: '36px',
-                  fontWeight: '700',
-                  color: '#1e293b',
-                  lineHeight: '1.2'
-                }}
-              >
+              <Eyebrow icon={<Mail className="inline w-4 h-4" />}>Marketing Automation</Eyebrow>
+              <h2 className="mb-6" style={{ fontSize: '36px', fontWeight: '700', color: '#1e293b', lineHeight: '1.2' }}>
                 Create personalised content in seconds
               </h2>
-              <p
-                className="mb-8"
-                style={{
-                  fontSize: '18px',
-                  color: '#374151',
-                  lineHeight: '1.6'
-                }}
-              >
-                Generate emails, and social posts targeted by project stage and customer needs. Create personalised marketing content that customers love because it's helpful. 
+              <p className="mb-8" style={{ fontSize: '18px', color: '#374151', lineHeight: '1.6' }}>
+                Generate emails, and social posts targeted by project stage and customer needs. Create personalised marketing content that customers love because it's helpful.
               </p>
-
-              {/* Feature List */}
-              <div className="space-y-3 mb-8">
-                {[
+              <FeatureList
+                items={[
                   'Personalised email generation',
                   'Deploy to Chatbots or WhatsApp',
                   'Social media Content & Video',
                   'Project stage-aware messaging'
-                ].map((feature, idx) => (
-                  <div key={idx} className="flex items-center gap-3">
-                    <div className="bg-[#10b981] rounded-full p-1">
-                      <Check className="w-4 h-4 text-white" />
-                    </div>
-                    <span style={{ fontSize: '16px', color: '#374151' }}>{feature}</span>
-                  </div>
-                ))}
-              </div>
-
-              <a
-                href="#"
-                className="inline-flex items-center gap-2 hover:gap-3 transition-all"
-                style={{
-                  fontSize: '16px',
-                  fontWeight: '600',
-                  color: '#3b82f6'
-                }}
-              >
-               
-                <ArrowRight className="w-4 h-4" />
-              </a>
+                ]}
+              />
             </div>
           </div>
         </div>
       </div>
 
       {/* Feature Section 5 - Team Performance */}
-      <div className="py-24">
+      <div id="section-team" className="py-24">
         <div className="max-w-[1440px] mx-auto px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            {/* Left Content */}
             <div>
-              <div
-                className="mb-4"
-                style={{
-                  fontSize: '12px',
-                  fontWeight: '600',
-                  color: '#3b82f6',
-                  letterSpacing: '1.5px',
-                  textTransform: 'uppercase'
-                }}
-              >
-                <Users className="inline w-4 h-4 mr-2" />
-                SALES ENABLEMENT
-              </div>
-              <h2
-                className="mb-6"
-                style={{
-                  fontSize: '36px',
-                  fontWeight: '700',
-                  color: '#1e293b',
-                  lineHeight: '1.2'
-                }}
-              >
+              <Eyebrow icon={<Users className="inline w-4 h-4" />}>Sales Enablement</Eyebrow>
+              <h2 className="mb-6" style={{ fontSize: '36px', fontWeight: '700', color: '#1e293b', lineHeight: '1.2' }}>
                 Turn every rep into a top performer
               </h2>
-              <p
-                className="mb-8"
-                style={{
-                  fontSize: '18px',
-                  color: '#374151',
-                  lineHeight: '1.6'
-                }}
-              >
+              <p className="mb-8" style={{ fontSize: '18px', color: '#374151', lineHeight: '1.6' }}>
                 Personal dashboards show each rep their performance, learning modules, and development plans. Gamified learning makes training engaging and drives adoption.
               </p>
-
-              {/* Feature List */}
-              <div className="space-y-3 mb-8">
-                {[
+              <FeatureList
+                items={[
                   'Individual performance dashboards',
                   'Gamified learning modules',
                   'Personal development plans',
                   'Team leaderboards and goals'
-                ].map((feature, idx) => (
-                  <div key={idx} className="flex items-center gap-3">
-                    <div className="bg-[#10b981] rounded-full p-1">
-                      <Check className="w-4 h-4 text-white" />
-                    </div>
-                    <span style={{ fontSize: '16px', color: '#374151' }}>{feature}</span>
-                  </div>
-                ))}
-              </div>
-
-              <a
-                href="#"
-                className="inline-flex items-center gap-2 hover:gap-3 transition-all"
-                style={{
-                  fontSize: '16px',
-                  fontWeight: '600',
-                  color: '#3b82f6'
-                }}
-              >
-              
-                <ArrowRight className="w-4 h-4" />
-              </a>
+                ]}
+              />
             </div>
-
-            {/* Right Visual */}
             <div className="flex justify-center">
               <TeamPerformanceMockup />
             </div>
@@ -450,27 +327,12 @@ export function FeaturesPage() {
       {/* Integration Section */}
       <div className="py-24 bg-gray-100">
         <div className="max-w-[1440px] mx-auto px-8 text-center">
-          <h2
-            className="mb-6"
-            style={{
-              fontSize: '36px',
-              fontWeight: '700',
-              color: '#1e293b'
-            }}
-          >
+          <h2 className="mb-6" style={{ fontSize: '36px', fontWeight: '700', color: '#1e293b' }}>
             Works with your existing tools
           </h2>
-          <p
-            className="mb-12"
-            style={{
-              fontSize: '18px',
-              color: '#6b7280'
-            }}
-          >
+          <p className="mb-12" style={{ fontSize: '18px', color: '#6b7280' }}>
             Integrates with your CRM, ERP, and business tools
           </p>
-
-          {/* Integration Logos */}
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 max-w-[900px] mx-auto">
             {integrationLogos.map((logo, idx) => (
               <div
@@ -490,34 +352,19 @@ export function FeaturesPage() {
       {/* Final CTA Section */}
       <div className="py-20 bg-gradient-to-br from-[#1e3a8a] to-[#3b82f6]">
         <div className="max-w-[1440px] mx-auto px-8 text-center">
-          <h2
-            className="mb-6"
-            style={{
-              fontSize: '36px',
-              fontWeight: '700',
-              color: '#ffffff'
-            }}
-          >
+          <h2 className="mb-6" style={{ fontSize: '36px', fontWeight: '700', color: '#ffffff' }}>
             Ready to see your features in action?
           </h2>
           <div className="flex flex-wrap items-center justify-center gap-4 mt-8">
             <button
               className="bg-white text-[#1e3a8a] rounded-lg hover:shadow-xl transition-all"
-              style={{
-                fontSize: '16px',
-                fontWeight: '600',
-                padding: '14px 32px'
-              }}
+              style={{ fontSize: '16px', fontWeight: '600', padding: '14px 32px' }}
             >
               Interactive Demo
             </button>
             <button
               className="bg-transparent border-2 border-white text-white rounded-lg hover:bg-white hover:text-[#1e3a8a] transition-all"
-              style={{
-                fontSize: '16px',
-                fontWeight: '600',
-                padding: '14px 32px'
-              }}
+              style={{ fontSize: '16px', fontWeight: '600', padding: '14px 32px' }}
             >
               Book Personal Walkthrough
             </button>
