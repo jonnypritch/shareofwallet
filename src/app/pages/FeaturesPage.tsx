@@ -9,6 +9,7 @@ import { InventoryCashflowMockup } from '../components/InventoryCashflowMockup';
 import { ContentGenerationMockup } from '../components/mockups/ContentGenerationMockup';
 import { TeamPerformanceMockup } from '../components/mockups/TeamPerformanceMockup';
 import { CoinTowersIcon } from '../components/icons/CoinTowersIcon';
+import { FinalCTASection } from '../components/FinalCTASection';
 import { useState } from 'react';
 
 function FeatureList({ items }: { items: string[] }) {
@@ -54,10 +55,6 @@ export function FeaturesPage() {
     { id: 'content', label: 'Content' },
     { id: 'inventory', label: 'Inventory & Cashflow' },
     { id: 'team', label: 'Team Tools' },
-  ];
-
-  const integrationLogos = [
-    'Salesforce', 'SAP', 'Microsoft Dynamics', 'HubSpot', 'Sage', 'QuickBooks'
   ];
 
   return (
@@ -346,53 +343,36 @@ export function FeaturesPage() {
         </div>
       </div>
 
-      {/* Integration Section */}
+      {/* Custom Reporting Section */}
       <div className="py-24 bg-gray-100">
-        <div className="max-w-[1440px] mx-auto px-8 text-center">
+        <div className="max-w-[800px] mx-auto px-8 text-center">
+          <span
+            className="inline-block mb-5 rounded-full"
+            style={{
+              fontSize: '11px',
+              fontWeight: '700',
+              backgroundColor: '#f3f4f6',
+              color: '#6b7280',
+              textTransform: 'uppercase',
+              letterSpacing: '0.5px',
+              padding: '5px 14px',
+            }}
+          >
+            Coming Soon
+          </span>
           <h2 className="mb-6" style={{ fontSize: '36px', fontWeight: '700', color: '#1e293b' }}>
-            Works with your existing tools
+            Custom Reporting
           </h2>
-          <p className="mb-12" style={{ fontSize: '18px', color: '#6b7280' }}>
-            Integrates with your CRM, ERP, and business tools
+          <p style={{ fontSize: '18px', color: '#4b5563', lineHeight: '1.6' }}>
+            Use AI to build bespoke reports. Now your data's out of its silos,
+            you can ask for what you need in plain English — or use
+            enterprise tools to reconfigure what you already have, saving you
+            time and making you money.
           </p>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 max-w-[900px] mx-auto">
-            {integrationLogos.map((logo, idx) => (
-              <div
-                key={idx}
-                className="bg-white rounded-lg p-6 flex items-center justify-center hover:shadow-lg transition-shadow"
-                style={{ minHeight: '100px' }}
-              >
-                <span style={{ fontSize: '14px', fontWeight: '600', color: '#6b7280' }}>
-                  {logo}
-                </span>
-              </div>
-            ))}
-          </div>
         </div>
       </div>
 
-      {/* Final CTA Section */}
-      <div className="py-20 bg-gradient-to-br from-[#1e3a8a] to-[#3b82f6]">
-        <div className="max-w-[1440px] mx-auto px-8 text-center">
-          <h2 className="mb-6" style={{ fontSize: '36px', fontWeight: '700', color: '#ffffff' }}>
-            Ready to see your features in action?
-          </h2>
-          <div className="flex flex-wrap items-center justify-center gap-4 mt-8">
-            <button
-              className="bg-white text-[#1e3a8a] rounded-lg hover:shadow-xl transition-all"
-              style={{ fontSize: '16px', fontWeight: '600', padding: '14px 32px' }}
-            >
-              Interactive Demo
-            </button>
-            <button
-              className="bg-transparent border-2 border-white text-white rounded-lg hover:bg-white hover:text-[#1e3a8a] transition-all"
-              style={{ fontSize: '16px', fontWeight: '600', padding: '14px 32px' }}
-            >
-              Book Personal Walkthrough
-            </button>
-          </div>
-        </div>
-      </div>
+      <FinalCTASection />
     </div>
   );
 }
