@@ -14,7 +14,7 @@ const CAPABILITIES = [
 export function PricingPage() {
   return (
     <div className="min-h-screen bg-white">
-      {/* Hero */}
+      {/* Hero — CTA above the fold */}
       <div className="bg-gradient-to-b from-blue-50 to-white py-20">
         <div className="max-w-[1440px] mx-auto px-8">
           <div className="max-w-[760px] mx-auto text-center">
@@ -25,35 +25,17 @@ export function PricingPage() {
               Everything you need to grow — priced around your business
             </h1>
             <p
-              className="max-w-[600px] mx-auto"
+              className="max-w-[600px] mx-auto mb-10"
               style={{ fontSize: '18px', color: '#4b5563', lineHeight: '1.6' }}
             >
               No fixed tiers, no published price list. What you pay is
               agreed around your branches, your data, and what you need live
               first.
             </p>
-          </div>
-        </div>
-      </div>
 
-      {/* Capability recap */}
-      <div className="py-20 bg-white">
-        <div className="max-w-[800px] mx-auto px-8">
-          <div className="space-y-4 mb-14">
-            {CAPABILITIES.map((item) => (
-              <div key={item} className="flex items-start gap-3">
-                <div className="bg-[#10b981] rounded-full p-1 mt-0.5 flex-shrink-0">
-                  <Check className="w-3.5 h-3.5 text-white" />
-                </div>
-                <span style={{ fontSize: '16px', color: '#374151', lineHeight: '1.5' }}>{item}</span>
-              </div>
-            ))}
-          </div>
-
-          <div className="text-center">
             <h2
               className="mb-6"
-              style={{ fontSize: '26px', fontWeight: '700', color: '#1e293b' }}
+              style={{ fontSize: '22px', fontWeight: '700', color: '#1e293b' }}
             >
               Contact us today for the best deal
             </h2>
@@ -65,6 +47,22 @@ export function PricingPage() {
               Talk to us
               <ArrowRight className="w-5 h-5" />
             </a>
+          </div>
+        </div>
+      </div>
+
+      {/* Capability recap — two columns */}
+      <div className="py-20 bg-white">
+        <div className="max-w-[1000px] mx-auto px-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-5">
+            {CAPABILITIES.map((item) => (
+              <div key={item} className="flex items-start gap-3">
+                <div className="bg-[#10b981] rounded-full p-1 mt-0.5 flex-shrink-0">
+                  <Check className="w-3.5 h-3.5 text-white" />
+                </div>
+                <span style={{ fontSize: '16px', color: '#374151', lineHeight: '1.5' }}>{item}</span>
+              </div>
+            ))}
           </div>
         </div>
       </div>
