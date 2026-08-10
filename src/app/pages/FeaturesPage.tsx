@@ -1,10 +1,11 @@
-import { Check, ArrowRight, Target, Sparkles, Mail, Users, MapPin, MessageCircle, ShoppingCart } from 'lucide-react';
+import { Check, ArrowRight, Target, Sparkles, Mail, Users, MapPin, MessageCircle, ShoppingCart, Wallet } from 'lucide-react';
 import { ShareOfWalletAnalyticsMockup } from '../components/mockups/ShareOfWalletAnalyticsMockup';
 import { CustomerPriorityMockup } from '../components/CustomerPriorityMockup';
 import { NextBestOffersMockup } from '../components/mockups/NextBestOffersMockup';
 import { POSOrderMockup } from '../components/POSOrderMockup';
 import { WhatsAppOfferMockup } from '../components/WhatsAppOfferMockup';
 import { ProspectsMockup } from '../components/ProspectsMockup';
+import { InventoryCashflowMockup } from '../components/InventoryCashflowMockup';
 import { ContentGenerationMockup } from '../components/mockups/ContentGenerationMockup';
 import { TeamPerformanceMockup } from '../components/mockups/TeamPerformanceMockup';
 import { CoinTowersIcon } from '../components/icons/CoinTowersIcon';
@@ -51,6 +52,7 @@ export function FeaturesPage() {
     { id: 'recommendations', label: 'Recommendations' },
     { id: 'prospects', label: 'Prospects' },
     { id: 'content', label: 'Content' },
+    { id: 'inventory', label: 'Inventory & Cashflow' },
     { id: 'team', label: 'Team Tools' },
   ];
 
@@ -296,8 +298,28 @@ export function FeaturesPage() {
         </div>
       </div>
 
-      {/* Feature Section 5 - Team Performance */}
-      <div id="section-team" className="py-24">
+      {/* Feature Section 5 - Inventory & Cashflow */}
+      <div id="section-inventory" className="py-24">
+        <div className="max-w-[1440px] mx-auto px-8">
+          <div className="max-w-[800px] mx-auto text-center mb-16">
+            <Eyebrow icon={<Wallet className="inline w-4 h-4" />}>
+              <span className="mx-auto">Inventory &amp; Cashflow</span>
+            </Eyebrow>
+            <h2 className="mb-6" style={{ fontSize: '36px', fontWeight: '700', color: '#1e293b', lineHeight: '1.2' }}>
+              The right stock, in the right place. And the cashflow to prove it.
+            </h2>
+            <p style={{ fontSize: '18px', color: '#374151', lineHeight: '1.6' }}>
+              Intelligent inventory management and cashflow forecasting based on real payment behaviour — not just stock counts. See the reasoning behind every reorder decision.
+            </p>
+          </div>
+          <div className="flex justify-center">
+            <InventoryCashflowMockup />
+          </div>
+        </div>
+      </div>
+
+      {/* Feature Section 6 - Team Performance */}
+      <div id="section-team" className="py-24 bg-[#f9fafb]">
         <div className="max-w-[1440px] mx-auto px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
