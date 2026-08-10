@@ -29,17 +29,19 @@ export function FinalCTASection() {
 
         {/* CTA Button */}
         <div className="flex items-center justify-center">
-          <button
+          <a
+            href="/contact"
             className="bg-[#1e3a8a] text-white rounded-lg hover:bg-[#1e40af] transition-all duration-300 shadow-lg hover:shadow-xl flex items-center gap-2 group"
             style={{
               fontSize: '18px',
               fontWeight: '600',
-              padding: '16px 40px'
+              padding: '16px 40px',
+              textDecoration: 'none',
             }}
           >
             Book a Demo
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-          </button>
+          </a>
         </div>
       </div>
     </section>

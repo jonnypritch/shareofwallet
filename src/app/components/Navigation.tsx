@@ -161,6 +161,7 @@ export function Navigation({ currentPage, onNavigate }: NavigationProps) {
               Login
             </button>
             <button
+              onClick={() => onNavigate('contact')}
               className="bg-[#1e3a8a] text-white rounded-lg hover:bg-[#1e40af] transition-colors shadow-md hover:shadow-lg"
               style={{ fontSize: '16px', padding: '10px 24px' }}
             >
@@ -316,6 +317,10 @@ export function Navigation({ currentPage, onNavigate }: NavigationProps) {
                   Login
                 </button>
                 <button
+                  onClick={() => {
+                    onNavigate('contact');
+                    setMobileMenuOpen(false);
+                  }}
                   className="bg-[#1e3a8a] text-white rounded-lg shadow-md text-center"
                   style={{ fontSize: '16px', padding: '12px 24px' }}
                 >
