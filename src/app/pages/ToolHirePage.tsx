@@ -224,7 +224,12 @@ export function ToolHirePage() {
 
           <div className="relative flex items-center justify-center min-h-[600px]">
             <div className="z-10">
-              <CategoryDashboardMockup customers={toolHireCustomers} floatingCards={toolHireFloatingCards} />
+              <CategoryDashboardMockup
+                customers={toolHireCustomers}
+                floatingCards={toolHireFloatingCards}
+                elsewhereVerb="hiring"
+                volumeLabel="Hire volume"
+              />
             </div>
 
             <div

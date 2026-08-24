@@ -33,11 +33,18 @@ interface FloatingCard {
 interface CategoryDashboardMockupProps {
   customers?: Customer[];
   floatingCards?: FloatingCard;
+  // For hire-based businesses (e.g. Tool Hire) rather than purchase-based
+  // ones — swaps "buying" for "hiring" and "Order size" for "Hire volume"
+  // in the two alert cards, since customers hire equipment, they don't buy it.
+  elsewhereVerb?: string;
+  volumeLabel?: string;
 }
 
 export function CategoryDashboardMockup({ 
   customers: customersData,
-  floatingCards
+  floatingCards,
+  elsewhereVerb = 'buying',
+  volumeLabel = 'Order size'
 }: CategoryDashboardMockupProps = {}) {
   const defaultCustomers = [
     { 
@@ -253,7 +260,7 @@ export function CategoryDashboardMockup({
           </span>
         </div>
         <div style={{ fontSize: '13px', fontWeight: '600', color: '#1e3a8a', marginBottom: '6px' }}>
-          Customer buying {cards.buyingElsewhereAlert.category} elsewhere
+          Customer {elsewhereVerb} {cards.buyingElsewhereAlert.category} elsewhere
         </div>
         <div className="flex items-center gap-2">
           <div className="flex-1 bg-[#f9fafb] rounded-full h-1.5">
@@ -282,7 +289,7 @@ export function CategoryDashboardMockup({
           </span>
         </div>
         <div style={{ fontSize: '13px', fontWeight: '600', color: '#1e3a8a', marginBottom: '4px' }}>
-          Order size reduced in {cards.orderReduction.category}
+          {volumeLabel} reduced in {cards.orderReduction.category}
         </div>
         <div className="flex items-center gap-2">
           <div 
