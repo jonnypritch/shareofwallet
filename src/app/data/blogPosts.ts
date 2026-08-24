@@ -20,7 +20,7 @@ export const blogPosts: BlogPost[] = [
     excerpt: "Most trade merchants don't lose customers in one go. They lose them category by category, quietly, over months. Here's how to spot it before it's too late.",
     category: 'customer-analysis',
     readTime: 3,
-    publishedAt: '2025-05-19',
+    publishedAt: '2026-08-19',
     author: { name: 'Jonathan Pritchard', role: 'Founder, Palm AI' },
     tags: ['customer churn', 'wholesale', 'builders merchants', 'sales gap', 'category analysis'],
     content: `
@@ -53,7 +53,7 @@ export const blogPosts: BlogPost[] = [
     excerpt: "Basket analysis sounds technical. It isn't. It's simply understanding what your customers buy together — and spotting what's missing. Here's how it works in practice.",
     category: 'basket-analysis',
     readTime: 2,
-    publishedAt: '2025-05-14',
+    publishedAt: '2026-08-14',
     author: { name: 'Jonathan Pritchard', role: 'Founder, Palm AI' },
     tags: ['basket analysis', 'cross-sell', 'wholesale', 'trade merchants', 'product affinity'],
     content: `
@@ -80,7 +80,7 @@ export const blogPosts: BlogPost[] = [
     excerpt: "Share of wallet isn't a finance term. For wholesalers and distributors, it's the single most important number you're probably not tracking. Here's why it matters.",
     category: 'share-of-wallet',
     readTime: 3,
-    publishedAt: '2025-05-07',
+    publishedAt: '2026-08-07',
     author: { name: 'Jonathan Pritchard', role: 'Founder, Palm AI' },
     tags: ['share of wallet', 'sales gap analysis', 'wholesale distributors', 'revenue growth', 'account penetration'],
     content: `
@@ -109,7 +109,7 @@ export const blogPosts: BlogPost[] = [
     excerpt: "Around 22% of SMEs cite integration difficulties as their main barrier to adopting sales technology. But the real problem isn't the integration. It's the assumption that you need to replace everything first.",
     category: 'sales-strategy',
     readTime: 5,
-    publishedAt: '2025-05-21',
+    publishedAt: '2026-08-21',
     author: { name: 'Jonathan Pritchard', role: 'Founder, Palm AI' },
     tags: ['sales engagement', 'SME', 'wholesale technology', 'data fragmentation', 'agentic AI', 'share of wallet'],
     content: `
@@ -151,6 +151,58 @@ export const blogPosts: BlogPost[] = [
 <p>The spreadsheets aren't the problem. The inertia is. And inertia, it turns out, is exactly what agentic AI is designed to overcome.</p>
     `
   }
+  {
+    slug: 'tool-hire-single-category-accounts',
+    title: "Your tool hire accounts are hiring one thing from you and everything else from someone else",
+    excerpt: "A contractor who hires compaction equipment from you every month but sources generators, welfare units and access towers elsewhere isn't a full account — they're a fraction of one. Here's how depots are closing that gap.",
+    category: 'sales-strategy',
+    readTime: 4,
+    publishedAt: '2026-08-24',
+    author: { name: 'Jonathan Pritchard', role: 'Founder, Palm AI' },
+    tags: ['tool hire', 'plant hire', 'share of wallet', 'prospects', 'inventory'],
+    content: `
+<p style="font-size:18px;font-weight:500;color:#1e293b;line-height:1.6;margin-bottom:24px;">A groundworks contractor had been hiring compaction equipment from the same depot for four years. Reliable account, paid on time, ordered every month. What the depot didn't know was that the same contractor was hiring generators from a competitor three miles away, and welfare units from a national chain — because nobody had ever asked, and nothing in the depot's systems would have flagged it.</p>
+<p>That's not a failing account. It's a single-category account that looks healthy on paper and is leaking revenue everywhere else.</p>
+<h2>The account that looks fine but isn't</h2>
+<p>Most depots track utilisation and revenue per customer. Almost none track <a href="/features#section-analytics">share of wallet</a> — how much of what a contractor <em>could</em> be hiring from you, actually is. A contractor doing groundworks, access, and welfare on the same site is a three-category opportunity. If you're only seeing one of those categories, the other two are going somewhere else, and you won't see it in your own numbers because it never touches your books.</p>
+<h2>Recommendations that show up where your team already is</h2>
+<p>Knowing the gap exists is one thing. Acting on it without adding another screen for your desk staff to check is another. This is where most tools fail — they produce a report nobody opens. Palm AI's <a href="/features#section-recommendations">recommendations</a> work differently: the same insight that flags a missing category also surfaces it directly on the order screen when a hire is being booked, and — because a lot of tool hire business now happens by text rather than a phone call — through <a href="/features#section-recommendations">automated SMS</a> too. A contractor texts in for a breaker and a generator; the reply that goes back already has the welfare unit suggested, drafted and waiting for your team to approve before it sends.</p>
+<h2>Finding the next Apex Groundworks before they call you</h2>
+<p>Existing accounts are half the story. The other half is every contractor in your catchment area who isn't hiring from you at all yet. Palm AI's <a href="/features#section-prospects">Prospects</a> tool builds that list automatically — every groundworker, roofer, and landscaper within reach, estimated spend, recent project activity, and a pipeline to track them from first contact through to a live account. No more relying on word of mouth to find the next customer.</p>
+<h2>Getting found, and getting believed</h2>
+<p>None of that matters if a contractor searching for equipment hire near them never finds your depot in the first place. <a href="/features#section-content">Content generation</a> handles the unglamorous but essential work — SEO pages for the equipment categories you carry, trade-specific copy, and updates that keep your site relevant to search — built from your actual validated stock data, not generic filler.</p>
+<h2>The fleet and the cashflow behind it</h2>
+<p>Underneath all of this sits the harder question: is the right kit in the right depot, and what's it doing to your cashflow while it sits there or moves between sites? Palm AI's <a href="/features#section-inventory">inventory and cashflow</a> tools connect stock decisions to real payment behaviour — not just utilisation, but what a reorder or a redistribution actually does to what's coming in and going out.</p>
+<h2>The point of all of it</h2>
+<p>None of these are separate tools bolted together. They're one picture of the same account — what a contractor already hires, what they don't, who else is out there, whether they can find you, and whether your fleet and cashflow can support saying yes when they call. <a href="/solutions/tool-hire">See how it fits your depot</a>, or go straight to <a href="/contact">book a demo</a> — we'll use your own data.</p>
+    `
+  },
+  {
+    slug: 'foodservice-wholesale-split-ordering',
+    title: "Why foodservice wholesalers lose kitchens to split ordering — and never see it happen",
+    excerpt: "A restaurant that orders your dairy and dry goods every week but sources fresh produce and fish elsewhere isn't a lost account. It's an account you never fully had. Here's how wholesalers are closing that gap.",
+    category: 'sales-strategy',
+    readTime: 4,
+    publishedAt: '2026-08-24',
+    author: { name: 'Jonathan Pritchard', role: 'Founder, Palm AI' },
+    tags: ['foodservice', 'wholesale', 'share of wallet', 'prospects', 'inventory'],
+    content: `
+<p style="font-size:18px;font-weight:500;color:#1e293b;line-height:1.6;margin-bottom:24px;">A restaurant kitchen had ordered dairy and everyday essentials from the same wholesaler for three years. Every week, like clockwork. What the wholesaler didn't know was that the same kitchen was sourcing its fresh produce from a market supplier and its fish from a specialist — because nobody had ever asked what else the kitchen needed, and there was no way to see it from delivery data alone.</p>
+<p>That's not a lost account. It's an account that was never fully won in the first place.</p>
+<h2>The kitchens that look loyal but aren't</h2>
+<p>Delivery frequency and order value tell you a customer is happy. They don't tell you <a href="/features#section-analytics">how much of their total spend</a> is actually coming to you versus everywhere else. A restaurant, care home, or café is buying across a dozen categories — bakery, dairy, meat and poultry, fish and seafood, drinks and confectionery, catering supplies. If you're only seeing three or four of those on your invoices, the rest are going to someone else, and it won't show up anywhere in your own numbers.</p>
+<h2>Recommendations on the order, not in a report</h2>
+<p>Spotting the gap only matters if someone acts on it without extra admin. Palm AI's <a href="/features#section-recommendations">recommendations</a> surface the missing category right where an order is already being placed — and increasingly, kitchens order by text rather than a call. A chef messages in for their usual dairy and dry goods run; the reply already has the fresh produce or fish they've been sourcing elsewhere added, drafted and waiting for your team to approve via <a href="/features#section-recommendations">SMS</a> before anything goes out.</p>
+<h2>Finding the next Old Mill Bistro</h2>
+<p>Existing kitchens are only part of the opportunity. Every restaurant, care home, and café in your delivery area that isn't ordering from you yet is the other part. <a href="/features#section-prospects">Prospects</a> builds that list automatically — estimated spend by kitchen type, recent openings, and a pipeline to track them from first contact to a live delivery account.</p>
+<h2>Being found by kitchens searching right now</h2>
+<p>A caterer searching for a new supplier needs to actually find you first. <a href="/features#section-content">Content generation</a> turns your validated product range into SEO pages and trade-specific copy — built from your real stock and categories, not generic text that could belong to any wholesaler.</p>
+<h2>Stock, delivery, and the cashflow underneath</h2>
+<p>Foodservice runs on tight margins and tighter timing — the right stock has to be in the right depot for next-day delivery, and every reorder decision has a real cashflow consequence. Palm AI's <a href="/features#section-inventory">inventory and cashflow</a> tools connect the two, based on actual payment behaviour rather than stock counts alone.</p>
+<h2>One picture, not six tools</h2>
+<p>Share of wallet, recommendations, prospects, content, inventory and cashflow aren't separate systems here — they're one view of the same kitchen account. What they already buy, what they don't, who else is out there, whether they can find you, and whether your depot can back up saying yes. <a href="/solutions/foodservice-wholesale">See how it fits your wholesale business</a>, or go straight to <a href="/contact">book a demo</a> using your own data.</p>
+    `
+  },
 ];
 
 export const categoryLabels: Record<BlogPost['category'], string> = {
