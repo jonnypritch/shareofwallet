@@ -3,7 +3,7 @@ import { ShareOfWalletAnalyticsMockup } from '../components/mockups/ShareOfWalle
 import { CustomerPriorityMockup } from '../components/CustomerPriorityMockup';
 import { NextBestOffersMockup } from '../components/mockups/NextBestOffersMockup';
 import { POSOrderMockup } from '../components/POSOrderMockup';
-import { WhatsAppOfferMockup } from '../components/WhatsAppOfferMockup';
+import { SMSOfferMockup } from '../components/SMSOfferMockup';
 import { ProspectsMockup } from '../components/ProspectsMockup';
 import { InventoryCashflowMockup } from '../components/InventoryCashflowMockup';
 import { ContentGenerationMockup } from '../components/mockups/ContentGenerationMockup';
@@ -222,15 +222,15 @@ export function FeaturesPage() {
             </div>
           </div>
 
-          {/* Row 4 - WhatsApp */}
+          {/* Row 4 - SMS */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
-              <Eyebrow icon={<MessageCircle className="inline w-4 h-4" />}>Automated, via chat</Eyebrow>
+              <Eyebrow icon={<MessageCircle className="inline w-4 h-4" />}>Automated, via SMS</Eyebrow>
               <h3 className="mb-5" style={{ fontSize: '26px', fontWeight: '700', color: '#1e293b', lineHeight: '1.25' }}>
-                When a customer messages in, the offer is already drafted
+                When a customer texts in, the offer is already drafted
               </h3>
               <p className="mb-6" style={{ fontSize: '16px', color: '#374151', lineHeight: '1.6' }}>
-                A customer orders over WhatsApp — Palm AI drafts the reply with the right upsells and opportunities already added. Your team approves or declines before anything sends.
+                A customer orders by text — Palm AI drafts the reply with the right upsells and opportunities already added. Your team approves or declines before anything sends.
               </p>
               <FeatureList
                 items={[
@@ -241,7 +241,7 @@ export function FeaturesPage() {
               />
             </div>
             <div className="flex justify-center">
-              <WhatsAppOfferMockup />
+              <SMSOfferMockup />
             </div>
           </div>
         </div>

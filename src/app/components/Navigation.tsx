@@ -155,12 +155,6 @@ export function Navigation({ currentPage, onNavigate }: NavigationProps) {
           {/* Desktop CTAs */}
           <div className="hidden md:flex items-center gap-4">
             <button
-              style={{ fontSize: '16px', color: '#374151' }}
-              className="hover:text-[#1e3a8a] transition-colors"
-            >
-              Login
-            </button>
-            <button
               onClick={() => onNavigate('contact')}
               className="bg-[#1e3a8a] text-white rounded-lg hover:bg-[#1e40af] transition-colors shadow-md hover:shadow-lg"
               style={{ fontSize: '16px', padding: '10px 24px' }}
@@ -310,12 +304,6 @@ export function Navigation({ currentPage, onNavigate }: NavigationProps) {
               </button>
 
               <div className="flex flex-col gap-2 pt-2 border-t border-gray-200">
-                <button
-                  style={{ fontSize: '16px', color: '#374151' }}
-                  className="text-left py-2"
-                >
-                  Login
-                </button>
                 <button
                   onClick={() => {
                     onNavigate('contact');

@@ -1,10 +1,10 @@
 import { Check, X, ArrowRight } from 'lucide-react';
 
-export function WhatsAppOfferMockup() {
+export function SMSOfferMockup() {
   return (
     <div className="w-full bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
-      {/* WhatsApp-style header */}
-      <div className="bg-[#075e54] px-4 py-3 flex items-center gap-2.5">
+      {/* SMS-style header */}
+      <div className="bg-[#1e3a8a] px-4 py-3 flex items-center gap-2.5">
         <div
           className="w-8 h-8 rounded-full flex items-center justify-center"
           style={{ backgroundColor: 'rgba(255,255,255,0.15)' }}
@@ -13,7 +13,7 @@ export function WhatsAppOfferMockup() {
         </div>
         <div>
           <div style={{ fontSize: '13px', fontWeight: '600', color: '#ffffff' }}>Apex Electrical Services</div>
-          <div style={{ fontSize: '10px', color: 'rgba(255,255,255,0.7)' }}>via WhatsApp</div>
+          <div style={{ fontSize: '10px', color: 'rgba(255,255,255,0.7)' }}>via SMS</div>
         </div>
       </div>
 
