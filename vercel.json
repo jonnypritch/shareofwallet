@@ -2,6 +2,27 @@
   "buildCommand": "vite build",
   "outputDirectory": "dist",
   "framework": "vite",
+  "redirects": [
+    { "source": "/products", "destination": "/features", "permanent": true },
+    { "source": "/products/", "destination": "/features", "permanent": true },
+    { "source": "/no-code-ai-for-business", "destination": "/features", "permanent": true },
+    { "source": "/no-code-ai-for-business/", "destination": "/features", "permanent": true },
+    { "source": "/10x-faster-demand-planning-software", "destination": "/features", "permanent": true },
+    { "source": "/10x-faster-demand-planning-software/", "destination": "/features", "permanent": true },
+    { "source": "/services", "destination": "/pricing", "permanent": true },
+    { "source": "/services/", "destination": "/pricing", "permanent": true },
+    { "source": "/about", "destination": "/about", "permanent": true },
+    { "source": "/about/", "destination": "/about", "permanent": true },
+    { "source": "/contact", "destination": "/contact", "permanent": true },
+    { "source": "/contact/", "destination": "/contact", "permanent": true },
+    { "source": "/privacy", "destination": "/privacy", "permanent": true },
+    { "source": "/privacy/", "destination": "/privacy", "permanent": true },
+    { "source": "/insights", "destination": "/blog", "permanent": true },
+    { "source": "/insights/", "destination": "/blog", "permanent": true },
+    { "source": "/insights/:slug*", "destination": "/blog", "permanent": true },
+    { "source": "/ai-for-business/:slug*", "destination": "/blog", "permanent": true },
+    { "source": "/private/:slug*", "destination": "/blog", "permanent": true }
+  ],
   "rewrites": [
     { "source": "/(.*)", "destination": "/index.html" }
   ],
