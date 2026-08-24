@@ -150,7 +150,7 @@ export const blogPosts: BlogPost[] = [
 <p>The question worth asking now is different: not "can we afford to implement this?" but "what are we already sitting on, and what would it tell us if someone actually looked at it?"</p>
 <p>The spreadsheets aren't the problem. The inertia is. And inertia, it turns out, is exactly what agentic AI is designed to overcome.</p>
     `
-  }
+  },
   {
     slug: 'tool-hire-single-category-accounts',
     title: "Your tool hire accounts are hiring one thing from you and everything else from someone else",
