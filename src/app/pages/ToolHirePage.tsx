@@ -1,6 +1,54 @@
 import { ShoppingCart, TrendingDown, Clock, Building2, Wrench, HardHat, Zap } from 'lucide-react';
 import { CategoryDashboardMockup } from '../components/CategoryDashboardMockup';
 
+const toolHireCustomers = [
+  {
+    name: 'Apex Groundworks Ltd',
+    trade: 'Groundworker',
+    categories: [
+      { name: 'Compaction Equipment', percent: 62, status: 'strong' as const },
+      { name: 'Generators & Power', percent: 18, status: 'risk' as const },
+      { name: 'Site Welfare Units', percent: 12, status: 'elsewhere' as const },
+    ]
+  },
+  {
+    name: 'Ridgeline Roofing Co',
+    trade: 'Roofer',
+    categories: [
+      { name: 'Access Towers', percent: 71, status: 'strong' as const },
+      { name: 'Power Tools & Fixings', percent: 22, status: 'elsewhere' as const },
+      { name: 'PPE & Safety Equipment', percent: 15, status: 'risk' as const },
+    ]
+  },
+  {
+    name: 'Turner Landscaping',
+    trade: 'Landscaper',
+    categories: [
+      { name: 'Landscaping Equipment', percent: 48, status: 'risk' as const },
+      { name: 'Excavation & Groundworks', percent: 33, status: 'strong' as const },
+      { name: 'Generators & Power', percent: 19, status: 'elsewhere' as const },
+    ]
+  },
+];
+
+const toolHireFloatingCards = {
+  categoryOpportunity: {
+    amount: '£3K',
+    category: 'Generators & Power'
+  },
+  buyingElsewhereAlert: {
+    category: 'Access Towers',
+    likelihood: 68
+  },
+  orderReduction: {
+    category: 'Power Tools',
+    percent: 25
+  },
+  recommendation: {
+    suggestion: 'Offer welfare unit upgrade'
+  }
+};
+
 export function ToolHirePage() {
   const categories = [
     { name: 'Powered Access', share: 58, status: 'strong', icon: '🏗️' },
@@ -176,7 +224,7 @@ export function ToolHirePage() {
 
           <div className="relative flex items-center justify-center min-h-[600px]">
             <div className="z-10">
-              <CategoryDashboardMockup />
+              <CategoryDashboardMockup customers={toolHireCustomers} floatingCards={toolHireFloatingCards} />
             </div>
 
             <div

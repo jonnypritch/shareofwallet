@@ -1,20 +1,69 @@
 import { ShoppingCart, TrendingDown, Clock, Building2, Utensils, ChefHat, Zap } from 'lucide-react';
 import { CategoryDashboardMockup } from '../components/CategoryDashboardMockup';
 
+const foodserviceCustomers = [
+  {
+    name: 'The Old Mill Bistro',
+    trade: 'Restaurant',
+    categories: [
+      { name: 'Produce & Accompaniments', percent: 68, status: 'strong' as const },
+      { name: 'Meat & Poultry', percent: 21, status: 'risk' as const },
+      { name: 'Drinks, Snacks & Confectionery', percent: 14, status: 'elsewhere' as const },
+    ]
+  },
+  {
+    name: 'Riverside Care Home',
+    trade: 'Care Home',
+    categories: [
+      { name: 'Everyday Essentials', percent: 74, status: 'strong' as const },
+      { name: 'Meal Solutions', percent: 19, status: 'elsewhere' as const },
+      { name: 'Catering Supplies', percent: 26, status: 'risk' as const },
+    ]
+  },
+  {
+    name: 'Corner Café',
+    trade: 'Café',
+    categories: [
+      { name: 'Bakery', percent: 55, status: 'strong' as const },
+      { name: 'Dairy', percent: 24, status: 'risk' as const },
+      { name: 'Drinks, Snacks & Confectionery', percent: 17, status: 'elsewhere' as const },
+    ]
+  },
+];
+
+const foodserviceFloatingCards = {
+  categoryOpportunity: {
+    amount: '£3K',
+    category: 'Meat & Poultry'
+  },
+  buyingElsewhereAlert: {
+    category: 'Fish & Seafood',
+    likelihood: 71
+  },
+  orderReduction: {
+    category: 'Bakery',
+    percent: 35
+  },
+  recommendation: {
+    suggestion: 'Offer seasonal menu bundle'
+  }
+};
+
 export function FoodserviceWholesalePage() {
+  // Category taxonomy based on a real foodservice wholesaler's product
+  // range (Elite Fine Foods), rather than an invented list.
   const categories = [
-    { name: 'Fresh Produce', share: 41, status: 'growing', icon: '🥬' },
-    { name: 'Chilled & Dairy', share: 58, status: 'strong', icon: '🧀' },
-    { name: 'Frozen Foods', share: 33, status: 'growing', icon: '🧊' },
-    { name: 'Ambient & Dry Goods', share: 62, status: 'strong', icon: '🥫' },
-    { name: 'Meat & Poultry', share: 19, status: 'opportunity', icon: '🍗' },
-    { name: 'Fish & Seafood', share: 14, status: 'opportunity', icon: '🐟' },
-    { name: 'Beverages & Drinks', share: 47, status: 'growing', icon: '🥤' },
     { name: 'Bakery', share: 28, status: 'opportunity', icon: '🍞' },
-    { name: 'Disposables & Packaging', share: 36, status: 'growing', icon: '📦' },
-    { name: 'Cleaning & Hygiene', share: 22, status: 'opportunity', icon: '🧼' },
-    { name: 'Catering Equipment', share: 17, status: 'opportunity', icon: '🍳' },
-    { name: 'World Foods', share: 25, status: 'opportunity', icon: '🌍' },
+    { name: 'Catering Supplies', share: 36, status: 'growing', icon: '🍽️' },
+    { name: 'Dairy', share: 58, status: 'strong', icon: '🧀' },
+    { name: 'Delicatessen', share: 24, status: 'opportunity', icon: '🧈' },
+    { name: 'Desserts', share: 31, status: 'growing', icon: '🍰' },
+    { name: 'Drinks, Snacks & Confectionery', share: 47, status: 'growing', icon: '🥤' },
+    { name: 'Everyday Essentials', share: 62, status: 'strong', icon: '🥫' },
+    { name: 'Fish & Seafood', share: 14, status: 'opportunity', icon: '🐟' },
+    { name: 'Meal Solutions', share: 33, status: 'growing', icon: '🍱' },
+    { name: 'Meat & Poultry', share: 19, status: 'opportunity', icon: '🍗' },
+    { name: 'Produce & Accompaniments', share: 41, status: 'growing', icon: '🥬' },
   ];
 
   const getStatusColor = (status: string) => {
@@ -176,7 +225,7 @@ export function FoodserviceWholesalePage() {
 
           <div className="relative flex items-center justify-center min-h-[600px]">
             <div className="z-10">
-              <CategoryDashboardMockup />
+              <CategoryDashboardMockup customers={foodserviceCustomers} floatingCards={foodserviceFloatingCards} />
             </div>
 
             <div

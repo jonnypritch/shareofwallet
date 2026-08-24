@@ -109,9 +109,19 @@ export function CategoryDashboardMockup({
   };
 
   const getTradeColor = (trade: string) => {
-    if (trade.includes('Electrician')) return '#3b82f6';
-    if (trade.includes('Plumber')) return '#8b5cf6';
-    return '#6b7280';
+    const colorMap: [string, string][] = [
+      ['Electrician', '#3b82f6'],
+      ['Plumber', '#8b5cf6'],
+      ['Groundworker', '#f59e0b'],
+      ['Roofer', '#ef4444'],
+      ['Landscaper', '#10b981'],
+      ['General Builder', '#1e3a8a'],
+      ['Restaurant', '#ec4899'],
+      ['Care Home', '#14b8a6'],
+      ['Café', '#f97316'],
+    ];
+    const match = colorMap.find(([key]) => trade.includes(key));
+    return match ? match[1] : '#6b7280';
   };
 
   return (
