@@ -8,16 +8,13 @@ import logoCemex from '../../assets/logo-cemex.png';
 interface Customer {
   name: string;
   logo?: string;
-  // hansgrohe's mark is a white knockout — it needs its own coloured tile
-  // rather than sitting on the shared white card background.
-  ownBackground?: boolean;
 }
 
 const customers: Customer[] = [
   { name: 'Gardner & Scardifield', logo: logoGardnerScardifield },
   { name: 'South Coast Building Supplies', logo: logoSouthCoast },
   { name: 'Bristan Group', logo: logoBristan },
-  { name: 'hansgrohe', logo: logoHansgrohe, ownBackground: true },
+  { name: 'hansgrohe', logo: logoHansgrohe },
   { name: 'Green Bros', logo: logoGreenBros },
   { name: 'CEMEX', logo: logoCemex },
 ];
@@ -45,15 +42,12 @@ export function CustomerLogosSection() {
               key={customer.name}
               className="flex items-center justify-center h-[60px] grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition-all duration-300"
             >
-              <div
-                className="rounded-lg border border-gray-200 shadow-sm w-[140px] h-[60px] flex items-center justify-center overflow-hidden"
-                style={{ backgroundColor: customer.ownBackground ? 'transparent' : '#ffffff' }}
-              >
+              <div className="bg-white rounded-lg border border-gray-200 shadow-sm w-[140px] h-[60px] flex items-center justify-center overflow-hidden p-2">
                 {customer.logo ? (
                   <img
                     src={customer.logo}
                     alt={customer.name}
-                    className={customer.ownBackground ? 'w-full h-full object-cover' : 'max-w-[110px] max-h-[36px] object-contain'}
+                    className="max-w-full max-h-full object-contain"
                   />
                 ) : (
                   <span

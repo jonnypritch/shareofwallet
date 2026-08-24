@@ -7,6 +7,8 @@ import { FeaturesPage } from './pages/FeaturesPage';
 import { SolutionsPage } from './pages/SolutionsPage';
 import { ElectricalWholesalePage } from './pages/ElectricalWholesalePage';
 import { PlumbersMerchantPage } from './pages/PlumbersMerchantPage';
+import { ToolHirePage } from './pages/ToolHirePage';
+import { FoodserviceWholesalePage } from './pages/FoodserviceWholesalePage';
 import { PricingPage } from './pages/PricingPage';
 import { AboutPage } from './pages/AboutPage';
 import { ContactPage } from './pages/ContactPage';
@@ -52,6 +54,8 @@ const PAGE_TO_PATH: Record<string, string> = {
   'solutions-builders': '/solutions/builders-merchants',
   'solutions-electrical': '/solutions/electrical-wholesale',
   'solutions-plumbers': '/solutions/plumbers-merchants',
+  'solutions-tool-hire': '/solutions/tool-hire',
+  'solutions-foodservice': '/solutions/foodservice-wholesale',
   'solutions-suppliers': '/solutions/suppliers',
   'solutions-brands': '/solutions/brands',
   pricing: '/pricing',
@@ -71,6 +75,8 @@ const PAGE_TITLES: Record<string, string> = {
   'solutions-builders': "Builders' Merchants — Palm AI",
   'solutions-electrical': 'Electrical Wholesalers — Palm AI',
   'solutions-plumbers': "Plumbers' Merchants — Palm AI",
+  'solutions-tool-hire': 'Tool Hire — Palm AI',
+  'solutions-foodservice': 'Foodservice Wholesale — Palm AI',
   'solutions-suppliers': 'Suppliers — Palm AI',
   'solutions-brands': 'Brands — Palm AI',
   pricing: 'Pricing — Palm AI',
@@ -118,6 +124,8 @@ function AppShell() {
         <Route path="/solutions/builders-merchants" element={<SolutionsPage />} />
         <Route path="/solutions/electrical-wholesale" element={<ElectricalWholesalePage />} />
         <Route path="/solutions/plumbers-merchants" element={<PlumbersMerchantPage />} />
+        <Route path="/solutions/tool-hire" element={<ToolHirePage />} />
+        <Route path="/solutions/foodservice-wholesale" element={<FoodserviceWholesalePage />} />
         <Route path="/solutions/suppliers" element={<SuppliersPage />} />
         <Route path="/solutions/brands" element={<BrandsPage />} />
         <Route path="/pricing" element={<PricingPage />} />

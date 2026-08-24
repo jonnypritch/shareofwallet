@@ -16,6 +16,7 @@ export function Navigation({ currentPage, onNavigate }: NavigationProps) {
     { id: 'solutions-electrical', label: 'Electrical Wholesale' },
     { id: 'solutions-plumbers', label: "Plumbers' Merchants" },
     { id: 'solutions-tool-hire', label: 'Tool Hire' },
+    { id: 'solutions-foodservice', label: 'Foodservice Wholesale' },
     { id: 'solutions-suppliers', label: 'Suppliers' },
     { id: 'solutions-brands', label: 'Brands' },
   ];
@@ -79,26 +80,30 @@ export function Navigation({ currentPage, onNavigate }: NavigationProps) {
                 <ChevronDown className="w-4 h-4" />
               </button>
 
-              {/* Dropdown Menu */}
+              {/* Dropdown Menu — pt-2 (not mt-2) keeps this wrapper's hover
+                  zone flush against the button, no dead gap for the mouse
+                  to slip through and trigger onMouseLeave early. */}
               {solutionsDropdownOpen && (
-                <div className="absolute top-full left-0 mt-2 w-56 bg-white rounded-lg shadow-xl border border-gray-200 py-2">
-                  {solutionsPages.map((page) => (
-                    <button
-                      key={page.id}
-                      onClick={() => {
-                        onNavigate(page.id);
-                        setSolutionsDropdownOpen(false);
-                      }}
-                      className="w-full text-left px-4 py-2 hover:bg-blue-50 transition-colors"
-                      style={{
-                        fontSize: '15px',
-                        fontWeight: currentPage === page.id ? '600' : '400',
-                        color: currentPage === page.id ? '#1e3a8a' : '#374151',
-                      }}
-                    >
-                      {page.label}
-                    </button>
-                  ))}
+                <div className="absolute top-full left-0 pt-2 w-56">
+                  <div className="bg-white rounded-lg shadow-xl border border-gray-200 py-2">
+                    {solutionsPages.map((page) => (
+                      <button
+                        key={page.id}
+                        onClick={() => {
+                          onNavigate(page.id);
+                          setSolutionsDropdownOpen(false);
+                        }}
+                        className="w-full text-left px-4 py-2 hover:bg-blue-50 transition-colors"
+                        style={{
+                          fontSize: '15px',
+                          fontWeight: currentPage === page.id ? '600' : '400',
+                          color: currentPage === page.id ? '#1e3a8a' : '#374151',
+                        }}
+                      >
+                        {page.label}
+                      </button>
+                    ))}
+                  </div>
                 </div>
               )}
             </div>

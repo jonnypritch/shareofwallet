@@ -1,21 +1,20 @@
-import { ShoppingCart, TrendingDown, Clock, Building2, Wrench, HardHat, Zap } from 'lucide-react';
+import { ShoppingCart, TrendingDown, Clock, Building2, Utensils, ChefHat, Zap } from 'lucide-react';
 import { CategoryDashboardMockup } from '../components/CategoryDashboardMockup';
-import { ImageWithFallback } from '../components/figma/ImageWithFallback';
 
-export function SolutionsPage() {
+export function FoodserviceWholesalePage() {
   const categories = [
-    { name: 'Timber & Sheet Materials', share: 63, status: 'strong', icon: '🪵' },
-    { name: 'Bricks and Blocks', share: 12, status: 'opportunity', icon: '🧱' },
-    { name: 'Plumbing & Electrical Supplies', share: 8, status: 'opportunity', icon: '🚰 ⚡' },
-    { name: 'Hand & Power Tools', share: 34, status: 'growing', icon: '🔨' },
-    { name: 'Cement & Aggregates', share: 71, status: 'strong', icon: '🏗️' },
-    { name: 'Ironmongery', share: 45, status: 'growing', icon: '🔩' },
-    { name: 'Roofing Materials', share: 19, status: 'opportunity', icon: '🏠' },
-    { name: 'Landscaping & Paving', share: 15, status: 'opportunity', icon: '🌿' },
-    { name: 'PPE & Workwear', share: 22, status: 'opportunity', icon: '🦺' },
-    { name: 'Adhesives & Sealants', share: 38, status: 'growing', icon: '🔧' },
-    { name: 'Insulation', share: 41, status: 'growing', icon: '🧱' },
-    { name: 'Decorating Supplies', share: 27, status: 'opportunity', icon: '🎨' },
+    { name: 'Fresh Produce', share: 41, status: 'growing', icon: '🥬' },
+    { name: 'Chilled & Dairy', share: 58, status: 'strong', icon: '🧀' },
+    { name: 'Frozen Foods', share: 33, status: 'growing', icon: '🧊' },
+    { name: 'Ambient & Dry Goods', share: 62, status: 'strong', icon: '🥫' },
+    { name: 'Meat & Poultry', share: 19, status: 'opportunity', icon: '🍗' },
+    { name: 'Fish & Seafood', share: 14, status: 'opportunity', icon: '🐟' },
+    { name: 'Beverages & Drinks', share: 47, status: 'growing', icon: '🥤' },
+    { name: 'Bakery', share: 28, status: 'opportunity', icon: '🍞' },
+    { name: 'Disposables & Packaging', share: 36, status: 'growing', icon: '📦' },
+    { name: 'Cleaning & Hygiene', share: 22, status: 'opportunity', icon: '🧼' },
+    { name: 'Catering Equipment', share: 17, status: 'opportunity', icon: '🍳' },
+    { name: 'World Foods', share: 25, status: 'opportunity', icon: '🌍' },
   ];
 
   const getStatusColor = (status: string) => {
@@ -32,19 +31,8 @@ export function SolutionsPage() {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Hero Section with Background Image */}
-      <div className="relative min-h-[600px] flex items-center justify-center overflow-hidden">
-        {/* Background Image with Overlay */}
-        <div className="absolute inset-0">
-          <ImageWithFallback
-            src="https://images.unsplash.com/photo-1739204618173-3e89def7140f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxidWlsZGluZyUyMHN1cHBsaWVzJTIwbWVyY2hhbnQlMjB3YXJlaG91c2V8ZW58MXx8fHwxNzYwOTYxNjQ3fDA&ixlib=rb-4.1.0&q=80&w=1080"
-            alt="Building supplies warehouse"
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-br from-[#1e3a8a] to-[#3b82f6] opacity-90"></div>
-        </div>
-
-        {/* Content */}
+      {/* Hero Section */}
+      <div className="relative min-h-[600px] flex items-center justify-center overflow-hidden bg-gradient-to-br from-[#1e3a8a] to-[#3b82f6]">
         <div className="relative z-10 max-w-[1440px] mx-auto px-8 py-20 text-center">
           <div
             className="mb-4"
@@ -53,9 +41,9 @@ export function SolutionsPage() {
               color: 'rgba(255, 255, 255, 0.7)'
             }}
           >
-            Solutions {' > '} Builders' Merchants
+            Solutions {' > '} Foodservice Wholesale
           </div>
-          
+
           <h1
             className="max-w-[900px] mx-auto mb-6"
             style={{
@@ -65,9 +53,9 @@ export function SolutionsPage() {
               lineHeight: '1.1'
             }}
           >
-            Grow Your Builders' Merchant Business with Data-Driven Insights
+            Grow Your Foodservice Wholesale Business with Data-Driven Insights
           </h1>
-          
+
           <p
             className="max-w-[800px] mx-auto mb-10"
             style={{
@@ -76,7 +64,7 @@ export function SolutionsPage() {
               lineHeight: '1.4'
             }}
           >
-            Help builders, developers, and specialist trades grow their projects while you grow your wallet share
+            Help caterers, restaurants, and food businesses get everything their kitchen needs, while you grow your wallet share
           </p>
 
           <a
@@ -89,15 +77,15 @@ export function SolutionsPage() {
               textDecoration: 'none'
             }}
           >
-            See Merchant Solution
+            See Foodservice Solution
           </a>
 
-          {/* Industry Stat Badges */}
+          {/* Capability Badges */}
           <div className="flex flex-wrap items-center justify-center gap-4 mt-8">
             {[
-              'Average 23% wallet growth',
-              '12+ product categories tracked',
-              'Real-time project intelligence'
+              'Multi-depot delivery visibility',
+              'Menu-driven category insights',
+              'Trade-specific recommendations'
             ].map((stat, idx) => (
               <div
                 key={idx}
@@ -129,85 +117,43 @@ export function SolutionsPage() {
               color: '#1e293b'
             }}
           >
-            The Challenge Facing Builders' Merchants
+            The Challenge Facing Foodservice Wholesalers
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* Pain Point 1 */}
             <div className="text-center">
               <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-red-100 mb-6">
                 <ShoppingCart className="w-8 h-8 text-[#ef4444]" />
               </div>
-              <h3
-                className="mb-4"
-                style={{
-                  fontSize: '20px',
-                  fontWeight: '600',
-                  color: '#1e293b'
-                }}
-              >
-                Customers Split Their Spend
+              <h3 className="mb-4" style={{ fontSize: '20px', fontWeight: '600', color: '#1e293b' }}>
+                Customers Split Their Food Spend
               </h3>
-              <p
-                style={{
-                  fontSize: '16px',
-                  color: '#6b7280',
-                  lineHeight: '1.6'
-                }}
-              >
-                Your regular customers buy timber from you, but source cement, insulation, and metalwork elsewhere. You're missing 40-60% of their project needs.
+              <p style={{ fontSize: '16px', color: '#6b7280', lineHeight: '1.6' }}>
+                Your regular kitchens buy ambient and dry goods from you, but source fresh produce, meat, or fish elsewhere on the same delivery run.
               </p>
             </div>
 
-            {/* Pain Point 2 */}
             <div className="text-center">
               <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-amber-100 mb-6">
                 <TrendingDown className="w-8 h-8 text-[#f59e0b]" />
               </div>
-              <h3
-                className="mb-4"
-                style={{
-                  fontSize: '20px',
-                  fontWeight: '600',
-                  color: '#1e293b'
-                }}
-              >
+              <h3 className="mb-4" style={{ fontSize: '20px', fontWeight: '600', color: '#1e293b' }}>
                 Limited Account Visibility
               </h3>
-              <p
-                style={{
-                  fontSize: '16px',
-                  color: '#6b7280',
-                  lineHeight: '1.6'
-                }}
-              >
-                Your staff manage 100+ accounts but have no way to know which customers represent the biggest growth opportunities.
+              <p style={{ fontSize: '16px', color: '#6b7280', lineHeight: '1.6' }}>
+                Your reps manage a wide customer base but have no easy way to see which kitchens represent the biggest growth opportunities.
               </p>
             </div>
 
-            {/* Pain Point 3 */}
             <div className="text-center">
               <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-red-100 mb-6">
                 <Clock className="w-8 h-8 text-[#ef4444]" />
               </div>
-              <h3
-                className="mb-4"
-                style={{
-                  fontSize: '20px',
-                  fontWeight: '600',
-                  color: '#1e293b'
-                }}
-              >
+              <h3 className="mb-4" style={{ fontSize: '20px', fontWeight: '600', color: '#1e293b' }}>
                 Manual, Time-Consuming Analysis
               </h3>
-              <p
-                style={{
-                  fontSize: '16px',
-                  color: '#6b7280',
-                  lineHeight: '1.6'
-                }}
-              >
-                Pulling reports, analysing spreadsheets, and trying to spot patterns takes hours away from actual selling time.
+              <p style={{ fontSize: '16px', color: '#6b7280', lineHeight: '1.6' }}>
+                Pulling reports, checking order patterns, and trying to spot gaps takes hours away from actual selling time.
               </p>
             </div>
           </div>
@@ -225,17 +171,14 @@ export function SolutionsPage() {
               color: '#1e293b'
             }}
           >
-            How Share of Wallet Works for Builders' Merchants
+            How Share of Wallet Works for Foodservice Wholesale
           </h2>
 
           <div className="relative flex items-center justify-center min-h-[600px]">
-            {/* Central Dashboard */}
             <div className="z-10">
               <CategoryDashboardMockup />
             </div>
 
-            {/* Floating Callout Cards */}
-            {/* Top-left card */}
             <div
               className="absolute top-0 left-0 bg-white rounded-xl shadow-xl p-6 max-w-[280px]"
               style={{ backdropFilter: 'blur(10px)' }}
@@ -247,43 +190,40 @@ export function SolutionsPage() {
                 </span>
               </div>
               <p style={{ fontSize: '14px', color: '#6b7280', lineHeight: '1.5' }}>
-                See which building materials, tools, and supplies your customers buy from competitors
+                See which food, drink, and consumable categories your customers buy from competitors
               </p>
             </div>
 
-            {/* Top-right card */}
             <div
               className="absolute top-0 right-0 bg-white rounded-xl shadow-xl p-6 max-w-[280px]"
               style={{ backdropFilter: 'blur(10px)' }}
             >
               <div className="flex items-center gap-3 mb-3">
-                <HardHat className="w-6 h-6 text-[#10b981]" />
+                <ChefHat className="w-6 h-6 text-[#10b981]" />
                 <span style={{ fontSize: '16px', fontWeight: '600', color: '#1e3a8a' }}>
-                  Project Intelligence
+                  Menu Intelligence
                 </span>
               </div>
               <p style={{ fontSize: '14px', color: '#6b7280', lineHeight: '1.5' }}>
-                Know when builders start new projects and what they'll need throughout each stage
+                Know when a customer changes their menu or opens a new site, and what they'll need
               </p>
             </div>
 
-            {/* Bottom-left card */}
             <div
               className="absolute bottom-0 left-0 bg-white rounded-xl shadow-xl p-6 max-w-[280px]"
               style={{ backdropFilter: 'blur(10px)' }}
             >
               <div className="flex items-center gap-3 mb-3">
-                <Wrench className="w-6 h-6 text-[#f59e0b]" />
+                <Utensils className="w-6 h-6 text-[#f59e0b]" />
                 <span style={{ fontSize: '16px', fontWeight: '600', color: '#1e3a8a' }}>
                   Trade-Specific Recommendations
                 </span>
               </div>
               <p style={{ fontSize: '14px', color: '#6b7280', lineHeight: '1.5' }}>
-                Get next-best offers tailored to general builders, developers, carpenters, bricklayers, plumbers, plasterers and landscapers
+                Get next-best offers tailored to restaurants, cafes, care homes, schools and hotels
               </p>
             </div>
 
-            {/* Bottom-right card */}
             <div
               className="absolute bottom-0 right-0 bg-white rounded-xl shadow-xl p-6 max-w-[280px]"
               style={{ backdropFilter: 'blur(10px)' }}
@@ -291,11 +231,11 @@ export function SolutionsPage() {
               <div className="flex items-center gap-3 mb-3">
                 <Zap className="w-6 h-6 text-[#8b5cf6]" />
                 <span style={{ fontSize: '16px', fontWeight: '600', color: '#1e3a8a' }}>
-                  Branch Performance
+                  Depot Performance
                 </span>
               </div>
               <p style={{ fontSize: '14px', color: '#6b7280', lineHeight: '1.5' }}>
-                Compare wallet share across locations and identify best practices
+                Compare wallet share across depots and identify best practices
               </p>
             </div>
           </div>
@@ -313,7 +253,7 @@ export function SolutionsPage() {
               color: '#1e293b'
             }}
           >
-            Track Wallet Share Across All Building Supply Categories
+            Track Wallet Share Across All Food & Catering Categories
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -342,7 +282,7 @@ export function SolutionsPage() {
                     </div>
                   </div>
                 </div>
-                
+
                 <div className="flex items-center gap-3">
                   <div className="flex-1 bg-white rounded-full h-3 overflow-hidden">
                     <div
@@ -370,7 +310,7 @@ export function SolutionsPage() {
         </div>
       </div>
 
-      {/* Merchant-Specific Features */}
+      {/* Trade-Specific Features */}
       <div className="py-24 bg-white">
         <div className="max-w-[1440px] mx-auto px-8">
           <h2
@@ -381,25 +321,25 @@ export function SolutionsPage() {
               color: '#1e293b'
             }}
           >
-            Built Specifically for Builders' Merchants
+            Built Specifically for Foodservice Wholesale
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
               {
                 icon: Building2,
-                title: 'Multi-Branch Management',
-                description: 'Compare performance across locations'
+                title: 'Multi-Depot Management',
+                description: 'Compare performance across delivery depots'
               },
               {
-                icon: Wrench,
+                icon: Utensils,
                 title: 'Trade Account Insights',
-                description: 'Understand builder vs. groundworker vs. developer needs'
+                description: 'Understand restaurant vs. care home vs. education needs'
               },
               {
-                icon: HardHat,
-                title: 'Project Tracking',
-                description: 'From groundworks to completion'
+                icon: ChefHat,
+                title: 'Menu & Seasonal Tracking',
+                description: 'From menu changes to seasonal demand shifts'
               },
               {
                 icon: Zap,
@@ -413,23 +353,10 @@ export function SolutionsPage() {
                   <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-blue-100 mb-6">
                     <Icon className="w-8 h-8 text-[#3b82f6]" />
                   </div>
-                  <h3
-                    className="mb-3"
-                    style={{
-                      fontSize: '18px',
-                      fontWeight: '600',
-                      color: '#1e3a8a'
-                    }}
-                  >
+                  <h3 className="mb-3" style={{ fontSize: '18px', fontWeight: '600', color: '#1e3a8a' }}>
                     {feature.title}
                   </h3>
-                  <p
-                    style={{
-                      fontSize: '14px',
-                      color: '#6b7280',
-                      lineHeight: '1.5'
-                    }}
-                  >
+                  <p style={{ fontSize: '14px', color: '#6b7280', lineHeight: '1.5' }}>
                     {feature.description}
                   </p>
                 </div>
@@ -442,13 +369,7 @@ export function SolutionsPage() {
       {/* Integration */}
       <div className="py-16 bg-gray-100">
         <div className="max-w-[1440px] mx-auto px-8 text-center">
-          <p
-            style={{
-              fontSize: '18px',
-              fontWeight: '600',
-              color: '#1e3a8a'
-            }}
-          >
+          <p style={{ fontSize: '18px', fontWeight: '600', color: '#1e3a8a' }}>
             Can integrate with your current systems via API.
           </p>
         </div>
@@ -457,24 +378,11 @@ export function SolutionsPage() {
       {/* Final CTA */}
       <div className="py-24 bg-white">
         <div className="max-w-[1440px] mx-auto px-8 text-center">
-          <h2
-            className="mb-6"
-            style={{
-              fontSize: '36px',
-              fontWeight: '700',
-              color: '#1e293b'
-            }}
-          >
-            Ready to grow your builders' merchant business?
+          <h2 className="mb-6" style={{ fontSize: '36px', fontWeight: '700', color: '#1e293b' }}>
+            Ready to grow your foodservice wholesale business?
           </h2>
-          <p
-            className="mb-10"
-            style={{
-              fontSize: '18px',
-              color: '#6b7280'
-            }}
-          >
-            See how other merchants are using share of wallet to increase revenue from existing customers
+          <p className="mb-10" style={{ fontSize: '18px', color: '#6b7280' }}>
+            See how other foodservice wholesalers are using share of wallet to increase revenue from existing customers
           </p>
 
           <div className="flex flex-wrap items-center justify-center gap-4">
@@ -488,7 +396,7 @@ export function SolutionsPage() {
                 textDecoration: 'none'
               }}
             >
-              Book a Merchant Demo
+              Book a Foodservice Demo
             </a>
           </div>
         </div>

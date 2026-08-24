@@ -80,16 +80,18 @@ export function PlumbersMerchantPage() {
             Help plumbers and heating engineers complete their installations while you capture more of their heating and plumbing spend
           </p>
 
-          <button
-            className="bg-white text-[#1e3a8a] rounded-lg hover:shadow-xl transition-all mb-12"
+          <a
+            href="#how-it-works"
+            className="inline-block bg-white text-[#1e3a8a] rounded-lg hover:shadow-xl transition-all mb-12"
             style={{
               fontSize: '18px',
               fontWeight: '600',
-              padding: '16px 40px'
+              padding: '16px 40px',
+              textDecoration: 'none'
             }}
           >
             See Plumbing Solution
-          </button>
+          </a>
 
           {/* Industry Stat Badges */}
           <div className="flex flex-wrap items-center justify-center gap-4 mt-8">
@@ -214,7 +216,7 @@ export function PlumbersMerchantPage() {
       </div>
 
       {/* Solution Section with Mockup */}
-      <div className="py-24 bg-blue-50">
+      <div id="how-it-works" className="py-24 bg-blue-50">
         <div className="max-w-[1440px] mx-auto px-8">
           <h2
             className="text-center mb-16"
@@ -416,102 +418,6 @@ export function PlumbersMerchantPage() {
         </div>
       </div>
 
-      {/* Use Case Section */}
-      <div className="py-24 bg-[#1e3a8a]">
-        <div className="max-w-[1440px] mx-auto px-8">
-          <h2
-            className="text-center mb-16"
-            style={{
-              fontSize: '36px',
-              fontWeight: '700',
-              color: '#ffffff'
-            }}
-          >
-            Real Results from Plumbers' Merchants
-          </h2>
-
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            {/* Left: Testimonial */}
-            <div className="bg-white rounded-2xl p-8 shadow-2xl">
-              <div className="mb-6">
-                <div className="flex gap-1 mb-4">
-                  {[1, 2, 3, 4, 5].map((star) => (
-                    <span key={star} style={{ fontSize: '24px', color: '#f59e0b' }}>★</span>
-                  ))}
-                </div>
-                <p
-                  className="mb-6"
-                  style={{
-                    fontSize: '18px',
-                    color: '#374151',
-                    lineHeight: '1.6',
-                    fontStyle: 'italic'
-                  }}
-                >
-                  "We discovered our heating engineers were spending £1.5M annually on sanitaryware and brassware at bathroom showrooms. By targeting plumbers doing bathroom work, we've captured £420K of that spend in the first year."
-                </p>
-              </div>
-              
-              <div className="flex items-center gap-4 pt-6 border-t border-gray-200">
-                <div className="w-16 h-16 rounded-full bg-[#1e3a8a] flex items-center justify-center">
-                  <span style={{ fontSize: '24px', fontWeight: '700', color: '#ffffff' }}>MR</span>
-                </div>
-                <div>
-                  <div style={{ fontSize: '16px', fontWeight: '600', color: '#1e3a8a' }}>
-                    Michael Roberts
-                  </div>
-                  <div style={{ fontSize: '14px', color: '#6b7280' }}>
-                    Managing Director, HeatFlow Plumbing Supplies
-                  </div>
-                </div>
-              </div>
-
-              <div
-                className="mt-6 inline-block px-4 py-2 rounded-lg"
-                style={{
-                  fontSize: '18px',
-                  fontWeight: '700',
-                  backgroundColor: '#10b98120',
-                  color: '#10b981'
-                }}
-              >
-                £420K new revenue
-              </div>
-            </div>
-
-            {/* Right: Results Metrics */}
-            <div className="space-y-4">
-              <div className="bg-white rounded-xl p-6 shadow-xl">
-                <div style={{ fontSize: '48px', fontWeight: '700', color: '#10b981', marginBottom: '8px' }}>
-                  26%
-                </div>
-                <div style={{ fontSize: '18px', fontWeight: '600', color: '#1e3a8a' }}>
-                  Wallet share increase in first year
-                </div>
-              </div>
-
-              <div className="bg-white rounded-xl p-6 shadow-xl">
-                <div style={{ fontSize: '48px', fontWeight: '700', color: '#3b82f6', marginBottom: '8px' }}>
-                  £1.5M
-                </div>
-                <div style={{ fontSize: '18px', fontWeight: '600', color: '#1e3a8a' }}>
-                  In bathroom category opportunities
-                </div>
-              </div>
-
-              <div className="bg-white rounded-xl p-6 shadow-xl">
-                <div style={{ fontSize: '48px', fontWeight: '700', color: '#f59e0b', marginBottom: '8px' }}>
-                  5
-                </div>
-                <div style={{ fontSize: '18px', fontWeight: '600', color: '#1e3a8a' }}>
-                  New high-margin categories introduced
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
       {/* Merchant-Specific Features */}
       <div className="py-24 bg-white">
         <div className="max-w-[1440px] mx-auto px-8">
@@ -581,28 +487,17 @@ export function PlumbersMerchantPage() {
         </div>
       </div>
 
-      {/* Integration Callout */}
+      {/* Integration */}
       <div className="py-16 bg-gray-100">
         <div className="max-w-[1440px] mx-auto px-8 text-center">
-          <div className="flex flex-wrap items-center justify-center gap-8 mb-6">
-            {['Kerridge', 'Eclipse', 'Civica', 'SAP'].map((system, idx) => (
-              <div
-                key={idx}
-                className="bg-white rounded-lg px-8 py-4 shadow-md"
-              >
-                <span style={{ fontSize: '18px', fontWeight: '600', color: '#6b7280' }}>
-                  {system}
-                </span>
-              </div>
-            ))}
-          </div>
           <p
             style={{
-              fontSize: '16px',
-              color: '#6b7280'
+              fontSize: '18px',
+              fontWeight: '600',
+              color: '#1e3a8a'
             }}
           >
-            Seamlessly integrates with your existing plumbing merchant systems
+            Can integrate with your current systems via API.
           </p>
         </div>
       </div>
@@ -631,37 +526,19 @@ export function PlumbersMerchantPage() {
           </p>
 
           <div className="flex flex-wrap items-center justify-center gap-4">
-            <button
-              className="bg-[#1e3a8a] text-white rounded-lg hover:bg-[#1e40af] transition-all shadow-lg hover:shadow-xl"
+            <a
+              href="/contact"
+              className="inline-block bg-[#1e3a8a] text-white rounded-lg hover:bg-[#1e40af] transition-all shadow-lg hover:shadow-xl"
               style={{
                 fontSize: '16px',
                 fontWeight: '600',
-                padding: '14px 32px'
+                padding: '14px 32px',
+                textDecoration: 'none'
               }}
             >
               Book a Plumbing Demo
-            </button>
-            <button
-              className="bg-white border-2 border-[#1e3a8a] text-[#1e3a8a] rounded-lg hover:bg-blue-50 transition-all shadow-md hover:shadow-lg"
-              style={{
-                fontSize: '16px',
-                fontWeight: '600',
-                padding: '14px 32px'
-              }}
-            >
-              Download Plumbing Case Study
-            </button>
+            </a>
           </div>
-
-          <p
-            className="mt-8"
-            style={{
-              fontSize: '14px',
-              color: '#6b7280'
-            }}
-          >
-            Join <span style={{ fontWeight: '600', color: '#1e3a8a' }}>35+ plumbers' merchants</span> already using our platform
-          </p>
         </div>
       </div>
     </div>
