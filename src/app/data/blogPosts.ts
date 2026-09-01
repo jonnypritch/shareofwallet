@@ -203,6 +203,48 @@ export const blogPosts: BlogPost[] = [
 <p>Share of wallet, recommendations, prospects, content, inventory and cashflow aren't separate systems here — they're one view of the same kitchen account. What they already buy, what they don't, who else is out there, whether they can find you, and whether your depot can back up saying yes. <a href="/solutions/foodservice-wholesale">See how it fits your wholesale business</a>, or go straight to <a href="/contact">book a demo</a> using your own data.</p>
     `
   },
+  {
+    slug: 'trade-merchant-glossary-plain-english',
+    title: 'A plain-English glossary: 8 trade merchant terms explained simply',
+    excerpt: "No jargon, no long words. Just 8 terms you'll actually hear — explained the way you'd explain them to someone on their first day.",
+    category: 'sales-strategy',
+    readTime: 4,
+    publishedAt: '2026-09-01',
+    author: { name: 'Jonathan Pritchard', role: 'Founder, Palm AI' },
+    tags: ['glossary', 'basket analysis', 'share of wallet', 'margin', 'cross-sell'],
+    content: `
+<p style="font-size:18px;font-weight:500;color:#1e293b;line-height:1.6;margin-bottom:24px;">Some of these words get thrown around a lot in this industry — on this site included. So here are 8 of them, explained simply, with a real example for each. Bookmark this one — we'll link back to it whenever one of these words comes up.</p>
+
+<h2 id="share-of-wallet">Share of Wallet</h2>
+<p>How much of what a customer buys overall actually comes to you, versus a competitor. A plumber who spends £2,000 a month on materials but only £800 of that is with you — the rest, £1,200, is your "missing" share of wallet. It's not about winning new customers. It's about winning more of the ones you've already got. <a href="/blog/share-of-wallet-wholesale-distributors">Read the full guide</a>.</p>
+
+<h2 id="basket-analysis">Basket Analysis</h2>
+<p>Looking at what customers usually buy together, so you can spot when something's missing from one customer's order. If most plumbers who buy copper pipe also buy fittings and flux, but one customer never orders fittings from you — that's a gap worth asking about. <a href="/blog/what-is-basket-analysis-trade-merchants">Read the full guide</a>.</p>
+
+<h2 id="downtrading">Downtrading</h2>
+<p>When a customer doesn't leave you — they just quietly buy less. Not a cancelled account, not an angry phone call. Just a slightly smaller order this month, and a slightly smaller one the month after. It's easy to miss because nothing looks wrong. If you had to guess right now, would you know which of your regular customers ordered less this month than last?</p>
+
+<h2 id="buying-elsewhere">Buying Elsewhere</h2>
+<p>Exactly what it sounds like — a customer getting one or more categories from a different supplier, while still ordering other things from you. A builder who buys all their timber from you but gets cement somewhere else is buying elsewhere for cement. It usually doesn't show up as a problem, because on paper they're still a good, active customer.</p>
+
+<h2 id="cross-upselling">Cross-selling &amp; Upselling</h2>
+<p><strong>Cross-selling</strong> is suggesting something that goes with what a customer's already buying — fittings with the pipe, fixings with the cable. <strong>Upselling</strong> is suggesting a better version of the thing itself — a higher-spec socket instead of the basic one. Both are just about making sure a customer gets offered what actually fits the job, not whatever's easiest to grab.</p>
+
+<h2 id="margin-gross-profit">Margin vs. Gross Profit</h2>
+<p>Margin (or gross profit) is what's left from a sale after you've paid for the product itself — it's not the same as the total cash coming through the till.</p>
+<p>It matters, but treating every single sale as a margin fight causes two different problems. Undersell out of habit, and you're giving away profit you didn't need to. Hold too hard on price, and a customer might take that one item — and the rest of their basket — somewhere else instead.</p>
+<p>The better goal isn't the biggest margin on one sale. It's growing what a customer buys from you overall, so the whole basket adds up to more — not just one item priced higher.</p>
+
+<h2 id="customer-churn">Customer Churn</h2>
+<p>A customer who stops buying from you altogether. The dramatic version — a phone call, an angry email — is rare. Most churn looks like downtrading first: smaller orders, fewer categories, then nothing. By the time it's obviously churn, it's usually too late to do much about it.</p>
+
+<h2 id="erp">ERP</h2>
+<p>Short for Enterprise Resource Planning — the main system a merchant or wholesaler runs on day to day. Stock, orders, invoicing, accounts, all in one place. When we (or anyone) talks about "integrating with your ERP," this is the system they mean — whatever you're already using to run the business, not something separate you'd have to learn from scratch.</p>
+
+<h2>Want these spotted automatically?</h2>
+<p>Every one of these — downtrading, buying elsewhere, a basket gap, a cross-sell worth suggesting — is exactly what Palm AI's <a href="/features#section-recommendations">recommendations</a> are built to catch, without anyone having to go looking for it. <a href="/contact">See it with your own data</a>.</p>
+    `
+  },
 ];
 
 export const categoryLabels: Record<BlogPost['category'], string> = {

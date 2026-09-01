@@ -126,6 +126,13 @@
   </url>
 
   <url>
+    <loc>https://palmai.io/blog/trade-merchant-glossary-plain-english</loc>
+    <lastmod>2026-09-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
     <loc>https://palmai.io/privacy</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
