@@ -12,6 +12,18 @@
  * if your actual interface differs. It expects each post to export at least:
  *   { slug, title, excerpt, date, author }
  * "date" should be an ISO string (e.g. "2026-09-04") or parseable by `new Date()`.
+ *
+ * OPTIONAL: add a `linkedinBlurb` field to any post to control exactly what
+ * text appears in the RSS <description> (and therefore what Zapier posts to
+ * LinkedIn), instead of falling back to the excerpt. Write it in your own
+ * voice when you write the post — e.g.:
+ *
+ *   linkedinBlurb: "Here's our latest blog on basket analysis. Sounds
+ *     complicated, but really it isn't — and at order level it can add
+ *     40% more sales. Read more:",
+ *
+ * Posts without a linkedinBlurb just fall back to using the excerpt, so this
+ * is fully optional per post.
  */
 
 import fs from "node:fs";
@@ -58,6 +70,7 @@ function extractBlogPosts(tsSource) {
     const excerptMatch = block.match(fieldRegex("excerpt"));
     const dateMatch = block.match(fieldRegex("date"));
     const authorMatch = block.match(fieldRegex("author"));
+    const linkedinBlurbMatch = block.match(fieldRegex("linkedinBlurb"));
 
     if (slugMatch && titleMatch) {
       posts.push({
@@ -66,6 +79,7 @@ function extractBlogPosts(tsSource) {
         excerpt: excerptMatch ? excerptMatch[1] : "",
         date: dateMatch ? dateMatch[1] : new Date().toISOString(),
         author: authorMatch ? authorMatch[1] : "Jonathan Pritchard",
+        linkedinBlurb: linkedinBlurbMatch ? linkedinBlurbMatch[1] : "",
       });
     }
   }
@@ -88,13 +102,16 @@ function buildRss(posts) {
     .map((post) => {
       const url = `${SITE_URL}/blog/${post.slug}`;
       const pubDate = new Date(post.date).toUTCString();
+      // Prefer a hand-written LinkedIn caption over the raw excerpt, so the
+      // auto-posted text sounds like Jon rather than boilerplate summary copy.
+      const description = post.linkedinBlurb || post.excerpt;
       return `
     <item>
       <title>${escapeXml(post.title)}</title>
       <link>${url}</link>
       <guid isPermaLink="true">${url}</guid>
       <pubDate>${pubDate}</pubDate>
-      <description>${escapeXml(post.excerpt)}</description>
+      <description>${escapeXml(description)}</description>
       <author>${escapeXml(post.author)}</author>
     </item>`;
     })
