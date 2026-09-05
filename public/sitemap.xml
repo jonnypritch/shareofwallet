@@ -1,141 +1,86 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--
-  Manually maintained. If you add a new page or a new blog post to
-  blogPosts.ts, add its URL here too — this file doesn't update itself.
--->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
   <url>
     <loc>https://palmai.io/</loc>
-    <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
-
   <url>
     <loc>https://palmai.io/features</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.8</priority>
   </url>
-
   <url>
     <loc>https://palmai.io/pricing</loc>
-    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-
-  <url>
-    <loc>https://palmai.io/solutions/builders-merchants</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://palmai.io/solutions/electrical-wholesale</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://palmai.io/solutions/plumbers-merchants</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://palmai.io/solutions/tool-hire</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://palmai.io/solutions/foodservice-wholesale</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://palmai.io/solutions/suppliers</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://palmai.io/solutions/brands</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
   <url>
     <loc>https://palmai.io/about</loc>
-    <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
-
   <url>
     <loc>https://palmai.io/contact</loc>
-    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://palmai.io/solutions</loc>
     <priority>0.7</priority>
   </url>
-
+  <url>
+    <loc>https://palmai.io/solutions/electrical-wholesale</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://palmai.io/solutions/plumbers-merchant</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://palmai.io/solutions/tool-hire</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://palmai.io/solutions/foodservice-wholesale</loc>
+    <priority>0.7</priority>
+  </url>
   <url>
     <loc>https://palmai.io/blog</loc>
-    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
-
   <url>
-    <loc>https://palmai.io/blog/why-your-best-customers-are-buying-from-competitors</loc>
-    <lastmod>2026-08-19</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-  <url>
-    <loc>https://palmai.io/blog/what-is-basket-analysis-trade-merchants</loc>
-    <lastmod>2026-08-14</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-  <url>
-    <loc>https://palmai.io/blog/share-of-wallet-wholesale-distributors</loc>
-    <lastmod>2026-08-07</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-  <url>
-    <loc>https://palmai.io/blog/why-sales-platforms-fail-sme-wholesalers</loc>
-    <lastmod>2026-08-21</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-  <url>
-    <loc>https://palmai.io/blog/tool-hire-single-category-accounts</loc>
-    <lastmod>2026-08-24</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-  <url>
-    <loc>https://palmai.io/blog/foodservice-wholesale-split-ordering</loc>
-    <lastmod>2026-08-24</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-  <url>
-    <loc>https://palmai.io/blog/trade-merchant-glossary-plain-english</loc>
-    <lastmod>2026-09-01</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-  <url>
-    <loc>https://palmai.io/privacy</loc>
-    <changefreq>yearly</changefreq>
+    <loc>https://palmai.io/privacy-policy</loc>
     <priority>0.3</priority>
   </url>
-
+  <url>
+    <loc>https://palmai.io/blog/why-your-best-customers-are-buying-from-competitors</loc>
+    <lastmod>2026-09-05</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://palmai.io/blog/what-is-basket-analysis-trade-merchants</loc>
+    <lastmod>2026-09-05</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://palmai.io/blog/share-of-wallet-wholesale-distributors</loc>
+    <lastmod>2026-09-05</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://palmai.io/blog/why-sales-platforms-fail-sme-wholesalers</loc>
+    <lastmod>2026-09-05</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://palmai.io/blog/tool-hire-single-category-accounts</loc>
+    <lastmod>2026-09-05</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://palmai.io/blog/foodservice-wholesale-split-ordering</loc>
+    <lastmod>2026-09-05</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://palmai.io/blog/trade-merchant-glossary-plain-english</loc>
+    <lastmod>2026-09-05</lastmod>
+    <priority>0.6</priority>
+  </url>
 </urlset>
