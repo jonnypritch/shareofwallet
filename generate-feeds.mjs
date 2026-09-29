@@ -7,28 +7,44 @@
  *
  * Run this as a "prebuild" step so Vercel always ships fresh feeds:
  *   package.json ->  "prebuild": "node generate-feeds.mjs"
+ *   vercel.json  ->  "buildCommand": "npm run build"   (so prebuild actually fires)
  *
- * ASSUMPTIONS ABOUT blogPosts.ts — adjust the field names below (marked ⚠️)
- * if your actual interface differs. It expects each post to export at least:
- *   { slug, title, excerpt, date, author }
- * "date" should be an ISO string (e.g. "2026-09-04") or parseable by `new Date()`.
+ * Matches the real BlogPost interface:
+ *   { slug, title, excerpt, category, readTime, publishedAt,
+ *     author: { name, role }, tags, content?, heroImage?, linkedinBlurb? }
  *
- * OPTIONAL: add a `linkedinBlurb` field to any post to control exactly what
- * text appears in the RSS <description> (and therefore what Zapier posts to
- * LinkedIn), instead of falling back to the excerpt. Write it in your own
- * voice when you write the post — e.g.:
+ * HOW THIS WORKS NOW (fixed):
+ * Earlier versions of this script tried to pull each field out of
+ * blogPosts.ts with regular expressions. That's fragile — if a value ever
+ * failed to match, every post silently fell back to "today" as its
+ * publishedAt, which is why every item in the feed ended up sharing the
+ * exact same pubDate (the build time) instead of each post's own date.
+ *
+ * This version instead strips the handful of TypeScript-only bits out of
+ * blogPosts.ts (the `interface` block and the `: BlogPost[]` / `: Record<...>`
+ * type annotations), writes the result out as a plain, temporary .mjs file,
+ * and actually imports it — so we get the real JavaScript objects exactly as
+ * written, with no guessing. Real dates, real nested author.name, real
+ * heroImage/linkedinBlurb, whatever fields exist.
+ *
+ * heroImage (optional): path to an image in /public, e.g.
+ *   heroImage: '/blog-images/basket-analysis.jpg'
+ * — used as the blog page's hero image AND passed into the RSS <enclosure>,
+ * which is what Zapier's "Media URL" field should map to for a LinkedIn
+ * post thumbnail. Posts without one just get no image — nothing breaks.
+ *
+ * linkedinBlurb (optional): controls exactly what text appears in the RSS
+ * <description> (and therefore what Zapier posts to LinkedIn), instead of
+ * falling back to the excerpt. Write it in your own voice per post, e.g.:
  *
  *   linkedinBlurb: "Here's our latest blog on basket analysis. Sounds
  *     complicated, but really it isn't — and at order level it can add
  *     40% more sales. Read more:",
- *
- * Posts without a linkedinBlurb just fall back to using the excerpt, so this
- * is fully optional per post.
  */
 
 import fs from "node:fs";
 import path from "node:path";
-import { fileURLToPath } from "node:url";
+import { fileURLToPath, pathToFileURL } from "node:url";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -36,6 +52,7 @@ const SITE_URL = "https://palmai.io";
 const BLOG_POSTS_PATH = path.join(__dirname, "src/app/data/blogPosts.ts");
 const RSS_OUTPUT_PATH = path.join(__dirname, "public/rss.xml");
 const SITEMAP_OUTPUT_PATH = path.join(__dirname, "public/sitemap.xml");
+const TMP_MODULE_PATH = path.join(__dirname, ".blogPosts.generated.mjs");
 
 // Static routes that should always be in the sitemap alongside blog posts.
 // ⚠️ Update this list if you add/rename pages.
@@ -54,40 +71,31 @@ const STATIC_ROUTES = [
   { path: "/privacy-policy", priority: "0.3" },
 ];
 
-function extractBlogPosts(tsSource) {
-  // Pulls out each post object's slug/title/excerpt/date/author fields with a
-  // permissive regex-based parse (no TS compiler dependency). ⚠️ If your
-  // field names differ, adjust the capture groups below.
-  const posts = [];
-  const objectBlocks = tsSource.split(/\{\s*\n/).slice(1); // rough split per post object
+// Load the real blogPosts array by stripping TypeScript-only syntax and
+// importing the file as plain JavaScript — no regex field-guessing.
+async function loadBlogPosts() {
+  const tsSource = fs.readFileSync(BLOG_POSTS_PATH, "utf-8");
 
-  const fieldRegex = (field) =>
-    new RegExp(`${field}\\s*:\\s*["'\`]([\\s\\S]*?)["'\`]\\s*,`, "m");
+  const jsSource = tsSource
+    // Drop the `export interface BlogPost { ... }` block entirely.
+    .replace(/export interface BlogPost\s*\{[\s\S]*?\n\}\n/, "")
+    // Drop `: BlogPost[]` and similar array type annotations.
+    .replace(/:\s*BlogPost\[\]/g, "")
+    // Drop `: Record<BlogPost['category'], string>` and similar.
+    .replace(/:\s*Record<[^>]+>/g, "");
 
-  for (const block of objectBlocks) {
-    const slugMatch = block.match(fieldRegex("slug"));
-    const titleMatch = block.match(fieldRegex("title"));
-    const excerptMatch = block.match(fieldRegex("excerpt"));
-    const dateMatch = block.match(fieldRegex("date"));
-    const authorMatch = block.match(fieldRegex("author"));
-    const linkedinBlurbMatch = block.match(fieldRegex("linkedinBlurb"));
-
-    if (slugMatch && titleMatch) {
-      posts.push({
-        slug: slugMatch[1],
-        title: titleMatch[1],
-        excerpt: excerptMatch ? excerptMatch[1] : "",
-        date: dateMatch ? dateMatch[1] : new Date().toISOString(),
-        author: authorMatch ? authorMatch[1] : "Jonathan Pritchard",
-        linkedinBlurb: linkedinBlurbMatch ? linkedinBlurbMatch[1] : "",
-      });
-    }
+  fs.writeFileSync(TMP_MODULE_PATH, jsSource);
+  try {
+    // Cache-bust the import so repeated local runs always pick up edits.
+    const mod = await import(`${pathToFileURL(TMP_MODULE_PATH).href}?t=${Date.now()}`);
+    return mod.blogPosts;
+  } finally {
+    fs.unlinkSync(TMP_MODULE_PATH);
   }
-  return posts;
 }
 
 function escapeXml(str) {
-  return str
+  return String(str)
     .replace(/&/g, "&amp;")
     .replace(/</g, "&lt;")
     .replace(/>/g, "&gt;")
@@ -95,16 +103,38 @@ function escapeXml(str) {
     .replace(/'/g, "&apos;");
 }
 
+// Best-effort guess at an image's mime type from its extension, for the
+// RSS <enclosure type="..."> attribute (some feed readers care about this).
+function guessImageType(imagePath) {
+  const ext = imagePath.split(".").pop().toLowerCase();
+  const types = { jpg: "image/jpeg", jpeg: "image/jpeg", png: "image/png", webp: "image/webp", gif: "image/gif" };
+  return types[ext] || "image/jpeg";
+}
+
+// `publishedAt` is stored as a date-only string, e.g. "2026-08-19". Parsing
+// that directly gives UTC midnight, which is what we want for a stable,
+// per-post pubDate that never drifts to the build time.
+function postDate(publishedAt) {
+  return new Date(`${publishedAt}T00:00:00Z`);
+}
+
 function buildRss(posts) {
   const items = posts
     .slice()
-    .sort((a, b) => new Date(b.date) - new Date(a.date))
+    .sort((a, b) => postDate(b.publishedAt) - postDate(a.publishedAt))
     .map((post) => {
       const url = `${SITE_URL}/blog/${post.slug}`;
-      const pubDate = new Date(post.date).toUTCString();
+      const pubDate = postDate(post.publishedAt).toUTCString();
       // Prefer a hand-written LinkedIn caption over the raw excerpt, so the
       // auto-posted text sounds like Jon rather than boilerplate summary copy.
       const description = post.linkedinBlurb || post.excerpt;
+      const authorName = post.author?.name || "Jonathan Pritchard";
+
+      const imageUrl = post.heroImage ? `${SITE_URL}${post.heroImage}` : "";
+      const enclosure = imageUrl
+        ? `\n      <enclosure url="${imageUrl}" type="${guessImageType(post.heroImage)}" />`
+        : "";
+
       return `
     <item>
       <title>${escapeXml(post.title)}</title>
@@ -112,7 +142,7 @@ function buildRss(posts) {
       <guid isPermaLink="true">${url}</guid>
       <pubDate>${pubDate}</pubDate>
       <description>${escapeXml(description)}</description>
-      <author>${escapeXml(post.author)}</author>
+      <author>${escapeXml(authorName)}</author>${enclosure}
     </item>`;
     })
     .join("");
@@ -144,7 +174,7 @@ function buildSitemap(posts) {
       (post) => `
   <url>
     <loc>${SITE_URL}/blog/${post.slug}</loc>
-    <lastmod>${new Date(post.date).toISOString().split("T")[0]}</lastmod>
+    <lastmod>${post.publishedAt}</lastmod>
     <priority>0.6</priority>
   </url>`
     )
@@ -156,20 +186,28 @@ function buildSitemap(posts) {
 `;
 }
 
-function main() {
-  const tsSource = fs.readFileSync(BLOG_POSTS_PATH, "utf-8");
-  const posts = extractBlogPosts(tsSource);
+async function main() {
+  const posts = await loadBlogPosts();
 
-  if (posts.length === 0) {
+  if (!Array.isArray(posts) || posts.length === 0) {
     console.warn(
-      "⚠️  No posts parsed from blogPosts.ts — check the field names in extractBlogPosts() match your actual interface."
+      "⚠️  No posts loaded from blogPosts.ts — check that the file still exports `blogPosts` as an array."
     );
+  }
+
+  // Sanity-check: flag any post missing a usable publishedAt so it's
+  // obvious in the build log rather than silently collapsing dates again.
+  for (const post of posts || []) {
+    if (!post.publishedAt || Number.isNaN(postDate(post.publishedAt).getTime())) {
+      console.warn(`⚠️  Post "${post.slug}" has a missing or unparseable publishedAt — check the date format (YYYY-MM-DD).`);
+    }
   }
 
   fs.writeFileSync(RSS_OUTPUT_PATH, buildRss(posts));
   fs.writeFileSync(SITEMAP_OUTPUT_PATH, buildSitemap(posts));
 
-  console.log(`✅ Generated rss.xml and sitemap.xml with ${posts.length} blog post(s).`);
+  const withImages = posts.filter((p) => p.heroImage).length;
+  console.log(`✅ Generated rss.xml and sitemap.xml with ${posts.length} blog post(s) (${withImages} with a heroImage), each with its own publishedAt date.`);
 }
 
 main();
