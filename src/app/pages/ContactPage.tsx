@@ -14,12 +14,27 @@ export function ContactPage() {
     email: '',
     company: '',
     phone: '',
-    message: ''
+    message: '',
+    // Honeypot field: real visitors never see or fill this in (hidden via
+    // CSS below), but simple bots that scrape the form and fill every input
+    // they find will populate it. If it arrives non-empty, we treat the
+    // submission as spam and quietly no-op instead of calling the API —
+    // this keeps such bots from getting an error response that might make
+    // them retry with a different pattern.
+    website: ''
   });
   const [submitState, setSubmitState] = useState<SubmitState>('idle');
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    if (formData.website.trim() !== '') {
+      // Honeypot tripped — silently pretend success, send nothing.
+      setSubmitState('success');
+      setFormData({ name: '', email: '', company: '', phone: '', message: '', website: '' });
+      return;
+    }
+
     setSubmitState('submitting');
 
     try {
@@ -34,7 +49,7 @@ export function ContactPage() {
       }
 
       setSubmitState('success');
-      setFormData({ name: '', email: '', company: '', phone: '', message: '' });
+      setFormData({ name: '', email: '', company: '', phone: '', message: '', website: '' });
     } catch (err) {
       console.error(err);
       setSubmitState('error');
@@ -123,7 +138,7 @@ export function ContactPage() {
                       <div style={{ fontSize: '14px', fontWeight: '600', color: '#6b7280', marginBottom: '4px' }}>
                         Phone
                       </div>
-                      <a 
+                      <a
                         href="tel:+442080589295"
                         style={{ fontSize: '16px', color: '#1e293b' }}
                         className="hover:text-[#3b82f6] transition-colors"
@@ -142,7 +157,7 @@ export function ContactPage() {
                       <div style={{ fontSize: '14px', fontWeight: '600', color: '#6b7280', marginBottom: '4px' }}>
                         Email
                       </div>
-                      <a 
+                      <a
                         href="mailto:info@palmai.io"
                         style={{ fontSize: '16px', color: '#1e293b' }}
                         className="hover:text-[#3b82f6] transition-colors"
@@ -161,7 +176,7 @@ export function ContactPage() {
                       <div style={{ fontSize: '14px', fontWeight: '600', color: '#6b7280', marginBottom: '4px' }}>
                         LinkedIn
                       </div>
-                      <a 
+                      <a
                         href="https://www.linkedin.com/company/palm-ai"
                         target="_blank"
                         rel="noopener noreferrer"
@@ -213,7 +228,7 @@ export function ContactPage() {
                     color: '#6b7280'
                   }}
                 >
-                  Fill out the form below and we'll get back to you shortly — or use the booking link in our reply to pick a time yourself.
+                  Fill out the form below and we'll get back to you shortly.
                 </p>
 
                 {submitState === 'success' ? (
@@ -223,11 +238,35 @@ export function ContactPage() {
                       Message sent
                     </h3>
                     <p style={{ fontSize: '15px', color: '#6b7280', maxWidth: '360px' }}>
-                      Check your inbox — we've sent a reply with a link to book a call directly, or we'll be in touch shortly.
+                      Thanks for getting in touch — we'll reply shortly.
                     </p>
                   </div>
                 ) : (
                   <form onSubmit={handleSubmit} className="space-y-6">
+                    {/*
+                      Honeypot field — invisible to real visitors, so it stays
+                      empty for them. Positioned off-screen rather than
+                      display:none, since some bots skip display:none fields
+                      but still fill anything present in the DOM.
+                      tabIndex/aria-hidden/autoComplete keep it out of the way
+                      for keyboard and screen-reader users too.
+                    */}
+                    <div
+                      style={{ position: 'absolute', left: '-9999px', top: '-9999px' }}
+                      aria-hidden="true"
+                    >
+                      <label htmlFor="website">Leave this field blank</label>
+                      <input
+                        type="text"
+                        id="website"
+                        name="website"
+                        value={formData.website}
+                        onChange={handleChange}
+                        tabIndex={-1}
+                        autoComplete="off"
+                      />
+                    </div>
+
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <div className="space-y-2">
                         <Label htmlFor="name">Full Name *</Label>
