@@ -10,6 +10,8 @@ export interface BlogPost {
     role: string;
   };
   tags: string[];
+  heroImage?: string;
+  linkedinBlurb?: string;
   content?: string;
 }
 
@@ -243,6 +245,58 @@ export const blogPosts: BlogPost[] = [
 
 <h2>Want these spotted automatically?</h2>
 <p>Every one of these — downtrading, buying elsewhere, a basket gap, a cross-sell worth suggesting — is exactly what Palm AI's <a href="/features#section-recommendations">recommendations</a> are built to catch, without anyone having to go looking for it. <a href="/contact">See it with your own data</a>.</p>
+    `
+  },
+  {
+    slug: 'sales-promotion-margin-heating-season',
+    title: "Is your heating season promotion actually going to work? The margin case for bundles over discounts",
+    excerpt: "A flat percentage cashback feels generous but rarely earns its keep. Here's why a targeted bundle — high perceived value, low actual cost — protects margin and grows basket size in a way a straight discount can't.",
+    category: 'sales-strategy',
+    readTime: 6,
+    publishedAt: '2026-09-29',
+    author: { name: 'Jonathan Pritchard', role: 'Founder, Palm AI' },
+    tags: ['sales promotion', 'margin', 'cross-sell', 'basket analysis', 'heating and plumbing', 'sales strategy'],
+    linkedinBlurb: "Heating season is upon us. Kind of. Well, it will get cooler soon. Stuck with how to grow some sales? Worried about not making the right margin calls? Think that easier is always better....",
+    content: `
+<p style="font-size:18px;font-weight:500;color:#1e293b;line-height:1.6;margin-bottom:24px;">The evenings are drawing in, which means it's heating season — and time for every merchant in the sector to work out how to grow market share without giving away margin to do it. One large national chain has just launched a flat panel radiator, valve and inhibitor promotion. It's a useful case study, because it quietly avoids the boiler fight altogether and goes after something more profitable instead.</p>
+<p>Boiler sales are left to the generic spend campaigns and the low-margin price wars everyone already knows about. This promotion goes elsewhere — into the higher-margin installation accessories that come with a radiator upgrade. It's worth unpicking why, because the logic applies well beyond radiators.</p>
+<h2>Why radiators shield margin that boilers can't</h2>
+<p>Boilers are low-margin, highly visible, and easy for a customer to price-compare online. Radiators and the mechanical accessories that go with them are the opposite — decent margin, and genuinely hard to compare like for like between merchants.</p>
+<p>Here's a simplified illustration of how the two compare. Say a boiler job — a brand-name combi boiler plus a matching flue — comes in around £1,190 including VAT, with an estimated gross margin of roughly 8%. A radiator bundle — two flat panel radiators, matching TRV and lockshield packs, and a system inhibitor — might retail closer to £216, but with a gross margin closer to 37%, even after giving away the inhibitor for free as part of the deal.</p>
+<p>The boiler job moves more revenue through the till. The radiator bundle protects far more of it. If you're already running a spend-based promotion and feeling nervous about what it's doing to margin, pairing it with an accessory bundle like this — especially one that's partly supplier-funded — is one way to make the numbers feel more comfortable.</p>
+<h2>The three angles behind the marketing</h2>
+<p><strong>Whole solution positioning.</strong> Most consumers don't know what's actually involved in a radiator swap, but they're receptive to being sold the whole job as one bundle — particularly when the headline product carries a recognisable brand, even if the smaller components are own-brand.</p>
+<p><strong>The compliance angle.</strong> Warranty small print often requires an inhibitor, and it's usually only picked up when something's already gone wrong. Offering it as a free value-add ahead of that point builds trust, educates the customer on something they didn't know they needed, and removes the friction of sourcing it separately.</p>
+<p><strong>Capturing demand rather than creating it.</strong> Launching as the weather turns is a pull strategy, not a push one — the demand already exists, the job is simply to be the merchant who's there with the answer when it surfaces. That's a very different conversation from the usual "if you want that, you'll also need this, and that's another £20" — it reads as service, not upsell.</p>
+<h2>Why "buy X and Y, get Z free" beats a straight discount</h2>
+<p>The structure matters. This is a conditional bundle — buy the higher-ticket item (the radiator) with a necessary accessory (the TRV pack), and unlock a free item (the inhibitor). Standard valves could be offered instead, but they carry far less margin, so the conditional structure is doing real work: it protects the value of the core product while lifting overall basket spend.</p>
+<p>Own-brand inhibitors in particular carry a high mark-up on a low actual cost of goods. To the customer, it looks like £15 or £20 saved — a genuinely compelling hook. To the merchant, it's a small giveaway that avoids damaging overall margin while pulling more of the basket through. And because the free item is own-brand, it's also a low-risk way to introduce customers and installers to a proprietary range they might come back to on the next job.</p>
+<h2>Three ways to compete without racing to the bottom</h2>
+<p>If you'd rather leave the boiler fight to others and compete on the accessory side instead, there are a few ways to answer a promotion like this without simply matching it pound for pound.</p>
+<p><strong>A straight discount.</strong> A 15% discount across multiple purchases uses your own margin headroom to undercut the free-item hook — a saving on a £200 radiator purchase quickly dilutes the appeal of a free inhibitor elsewhere, while keeping the valve and chemical sale for yourself.</p>
+<p><strong>Go upstream.</strong> Before the inhibitor comes the system cleaner. A "buy a TRV pack, get a system cleaner half price" offer gets ahead of the job the customer needs to do next, rather than reacting to the deal already on the table — and opens the door to quoting the rest of the work.</p>
+<p><strong>A multi-buy voucher.</strong> A £20 voucher on spend over £150 in heating accessories gives the installer the choice of brand, rather than locking them into a pre-packed own-brand bundle. Trust in own-brand components isn't universal — no installer wants a callback — so removing that friction can widen who the offer actually appeals to.</p>
+<h2>Why a flat percentage cashback usually underperforms</h2>
+<p>Sales promotions work best when they match how people actually make decisions, not how a spreadsheet models them. A flat "spend £1,000, get 3% back" promotion tends to fall down for three reasons.</p>
+<p><strong>The maths is friction.</strong> Working out 3% of £1,000 is easy. Working out 3% of £1,284 is not, and most people won't bother — which means the reward barely registers as real.</p>
+<p><strong>There's no hit.</strong> A calculated percentage rebate, even once worked out, rarely feels like enough to outweigh the effort or the perceived risk of hitting a spend threshold. There's no immediate, tangible payoff.</p>
+<p><strong>There's no guidance.</strong> A spend threshold gives a target but no route to it. Installers aren't usually tracking their cumulative spend with a merchant — they're focused on making the current job pay. Anything that asks them to do extra mental accounting on top of that tends to get ignored.</p>
+<h2>Why a free item beats a bigger discount</h2>
+<p>This comes down to how people evaluate value relative to a reference point rather than in absolute terms — the effect behind why a loss tends to feel roughly twice as painful as an equivalent gain feels good. In the radiator example, flat panel radiators (already perceived as a step up) plus TRVs (also perceived as a step up) plus a genuinely free inhibitor reads as a strong deal, almost regardless of the actual cash value involved. The free item is doing the emotional work that a percentage rebate can't.</p>
+<p>Bundling relevant items together also changes how the brain processes the cost. If an installer knows a job needs six different products across several categories, they tend to evaluate the spend as a whole rather than line by line — which is exactly why a small percentage reward on top of that whole feels trivial by comparison, while a bundled discount or a free item, positioned against the size of the whole job, feels like real, tangible value. It's one easy decision instead of six small ones.</p>
+<p>Put simply: turning up with the right things, at the right time, for the job someone's already doing reads as service — not as a sales tactic. That's the difference between a merchant who's guessing what a customer might want and one who's clearly done the job before.</p>
+<h2>Turning the gap into three actual sales calls</h2>
+<p>None of this matters unless it gets in front of the right customer at the right moment. In practice, that means treating three different customer segments differently rather than blasting one offer at everyone.</p>
+<p><strong>Existing customers who've bought the boiler but not the radiators.</strong> Anyone who's bought a boiler or boiler spares recently but has no radiator purchases on file in the last twelve months is a "complete the upgrade" conversation waiting to happen. On the counter or on a call: <em>"I see you're working on a boiler project — to make sure you're not called back for sludge blocking the new heat exchanger, are you upgrading the radiators too? Grab two flat panels today and I'll throw in the designer TRV valve packs free."</em></p>
+<p><strong>Customers buying everything except heating.</strong> High-frequency buyers of general building materials or copper pipe who've never bought a radiator from you are a different opportunity — not an upgrade conversation, but a first-choice trial. On the counter: <em>"I notice you buy all your core plumbing and building supplies from us, but you've never tried our heating range. Next time you're doing a full job, let me quote the radiators — for your first order, I can give you a flat discount on the whole project kit to show how much cheaper and faster we are than the specialist merchants."</em></p>
+<p><strong>Dormant trade accounts.</strong> Trade card holders with no spend in the last six months are a win-back opportunity, not a lost cause. On the phone or at the counter when an old trade card gets scanned: <em>"We haven't seen you around much lately and want to win your business back this winter. Move your next radiator order over to us and I'll personally add a premium filter of your brand of choice to your order, entirely free."</em></p>
+<h2>Three rules that make counter staff actually do this</h2>
+<p>The offer only works if it gets used, and that's a staff-adoption problem more than a marketing one. Three things tend to make the difference.</p>
+<p><strong>Automate the flag.</strong> Don't rely on staff remembering who hasn't bought radiators in twelve months — that's what the ERP or CRM should be surfacing, unmissably, the moment a relevant code is entered.</p>
+<p><strong>Give staff direct autonomy.</strong> Let counter staff zero out the price of the free item themselves, without a manager override. Every extra step between deciding to offer it and actually offering it is a reason it doesn't happen.</p>
+<p><strong>Incentivise the staff, not just the customer.</strong> A small bonus tied to bundles actually added at the counter — even a couple of pounds per bundle — keeps it front of mind on a busy Monday morning in a way a poster by the till never will.</p>
+<h2>Where this fits with the data you already have</h2>
+<p>Everything above depends on knowing who's in which segment before you pick up the phone — who's bought the boiler but not the radiators, who's a heating no-show, and which trade accounts have gone quiet. That's exactly the kind of gap Palm AI's <a href="/features#section-recommendations">recommendations</a> and <a href="/features#section-analytics">share of wallet</a> tools are built to surface automatically, so the flag and the script are ready before the customer's even on the phone. <a href="/contact">See it with your own data</a>.</p>
     `
   },
 ];
