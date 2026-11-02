@@ -299,6 +299,45 @@ export const blogPosts: BlogPost[] = [
 <p>Everything above depends on knowing who's in which segment before you pick up the phone — who's bought the boiler but not the radiators, who's a heating no-show, and which trade accounts have gone quiet. That's exactly the kind of gap Palm AI's <a href="/features#section-recommendations">recommendations</a> and <a href="/features#section-analytics">share of wallet</a> tools are built to surface automatically, so the flag and the script are ready before the customer's even on the phone. <a href="/contact">See it with your own data</a>.</p>
     `
   },
+  {
+    slug: 'how-to-calculate-share-of-wallet',
+    title: "How to calculate share of wallet in a builders' merchant or any trade business",
+    excerpt: "The formula takes ten seconds. Knowing what each customer could spend in total is the hard part, and it's where most merchants get stuck. Here's how to work it out, down to sub-category level.",
+    category: 'share-of-wallet',
+    readTime: 5,
+    publishedAt: '2026-11-02',
+    author: { name: 'Jonathan Pritchard', role: 'Founder, Palm AI' },
+    tags: ['how to calculate share of wallet', 'share of wallet formula', 'B2B share of wallet', 'builders merchants', 'trade supplies', 'tool hire', 'foodservice wholesale', 'sub-category analysis'],
+    linkedinBlurb: "Everyone's heard of share of wallet. Hardly anyone can tell you their own. Know what your best customers spend with you? Fine. But what do they spend in total? And which bits are going elsewhere....",
+    content: `
+<p style="font-size:18px;font-weight:500;color:#1e293b;line-height:1.6;margin-bottom:24px;">Share of wallet is the percentage of a customer's total spend that you win. The formula takes ten seconds. Working out the bottom half of it is where most merchants, wholesalers, hire businesses and foodservice suppliers get stuck.</p>
+<h2>The formula</h2>
+<p><strong>Share of wallet (%) = your sales to the customer ÷ the customer's total spend on what you sell × 100</strong></p>
+<p>If a plumber spends £2,000 a month with you and £5,000 a month in total on the products you stock, your share of wallet is 40%. The other £3,000 is going to someone else.</p>
+<p>It works the same way in every trade business. A builder buying from a <a href="/solutions/builders-merchants">builders' merchant</a>, a contractor hiring equipment from a <a href="/solutions/tool-hire">tool hire depot</a>, and a restaurant ordering from a <a href="/solutions/foodservice-wholesale">foodservice wholesaler</a> all have a total spend, and you have a slice of it.</p>
+<h2>The problem: you can only see your own sales</h2>
+<p>Your system knows exactly what each customer buys from you. It knows nothing about what they buy elsewhere. That's why most businesses default to the numbers they can see (sales, margin, order frequency) and treat a big account as a good account.</p>
+<p>A £50,000 customer who could be spending £200,000 is a 25% account with a huge gap. A £10,000 customer who spends everything with you is at 100%, with nowhere left to grow. Sales alone can't tell them apart.</p>
+<h2>Three ways to estimate the denominator</h2>
+<p><strong>Ask them.</strong> A conversation or a short survey will give you a rough figure. It works for your top twenty accounts and falls apart across five hundred.</p>
+<p><strong>Apply a rule of thumb.</strong> Many merchants assume a roofer should spend roughly a set amount a year and measure against that. It's quick, but one blunt number ignores the size of the business, the type of work and the region.</p>
+<p><strong>Model it.</strong> Build a picture of what a customer of that type, size and activity should be spending, category by category, and compare it with what they actually buy from you. This is the approach that scales.</p>
+<h2>Why sub-category level changes everything</h2>
+<p>Most share of wallet figures are a single percentage per customer, and a single number hides the story. Take this illustrative example. A plumber shows 40% overall. Look inside and pipe and fittings might be close to 90%, while boilers and cylinders are close to zero. That's one product group going elsewhere, not a loyalty problem across the board.</p>
+<p>The same applies in other sectors. An illustrative restaurant account might be well covered on dairy and dry goods but buying fresh produce entirely from another supplier. A contractor might hire from you but buy small tools from someone else.</p>
+<p>Once you can see the gap at sub-category level, the conversation changes from "we'd like more of your business" to "you don't buy your boilers from us. Can we talk about that?"</p>
+<h2>How Palm AI does it</h2>
+<p>If you integrate your transactional data with Palm AI (we can connect to your current systems via API), we start from what each customer buys from you, down to sub-category. We then compare that with our own dataset of what customers of that type should be spending, which is enriched every month. The result is an estimated share of wallet for every account, with the gap broken down category by category and sub-category by sub-category.</p>
+<p>Because the dataset is refreshed monthly, the estimate moves as customers change. It isn't a one-off analysis that's out of date by the time you read it.</p>
+<h2>Two things to watch for</h2>
+<p><strong>Natural gaps aren't leakage.</strong> A self-builder who orders quarterly isn't buying elsewhere between orders. That's just their pattern. Measure against the customer's normal cadence, not a weekly ideal.</p>
+<p><strong>There's no universal "good" number.</strong> A sensible target for a plumber isn't the same as one for a landscaper or a restaurant. Compare each account with its own type.</p>
+<h2>Share of wallet vs market share</h2>
+<p>Market share is your slice of the whole market. Share of wallet is your slice of each customer. Grow the second first. It's the faster route, because you're selling to people who already know and trust you. Our <a href="/blog/share-of-wallet-wholesale-distributors">guide to share of wallet for wholesalers</a> covers why it matters, our <a href="/blog/what-is-basket-analysis-trade-merchants">basket analysis guide</a> shows how to spot the gaps, and the <a href="/blog/trade-merchant-glossary-plain-english#share-of-wallet">glossary</a> has the short version.</p>
+<h2>Where this fits with the data you already have</h2>
+<p>You don't need a data team to start. You need your transaction history and a sensible estimate of what each type of customer should spend. That's what Palm AI's <a href="/features#section-analytics">analytics</a> does for you, account by account. If you'd like to see your own share of wallet by customer and sub-category, <a href="/contact">get in touch</a>.</p>
+    `
+  },
 ];
 
 export const categoryLabels: Record<BlogPost['category'], string> = {

@@ -15,6 +15,7 @@ import { ContactPage } from './pages/ContactPage';
 import { BlogPage } from './pages/BlogPage';
 import { BlogPostPage } from './pages/BlogPostPage';
 import { PrivacyPolicyPage } from './pages/PrivacyPolicyPage';
+import { blogPosts } from './data/blogPosts';
 
 function SuppliersPage() {
   return (
@@ -128,9 +129,16 @@ function AppShell() {
 
   useEffect(() => {
     const titleKey = location.pathname.startsWith('/blog/') ? 'blog' : currentPage;
-    document.title = PAGE_TITLES[titleKey] ?? PAGE_TITLES.home;
 
-    const description = PAGE_DESCRIPTIONS[titleKey] ?? PAGE_DESCRIPTIONS.home;
+    // Individual blog posts get their own title and description (from blogPosts.ts)
+    const blogSlug = location.pathname.startsWith('/blog/')
+      ? location.pathname.replace('/blog/', '').replace(/\/$/, '')
+      : null;
+    const post = blogSlug ? blogPosts.find(p => p.slug === blogSlug) : undefined;
+
+    document.title = post ? `${post.title} — Palm AI` : (PAGE_TITLES[titleKey] ?? PAGE_TITLES.home);
+
+    const description = post ? post.excerpt : (PAGE_DESCRIPTIONS[titleKey] ?? PAGE_DESCRIPTIONS.home);
     let meta = document.querySelector('meta[name="description"]');
     if (!meta) {
       meta = document.createElement('meta');
