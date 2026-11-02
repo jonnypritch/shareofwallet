@@ -1,5 +1,5 @@
 {
-  "buildCommand": "npm run build",
+  "buildCommand": "node generate-og-pages.mjs && npm run build",
   "outputDirectory": "dist",
   "framework": "vite",
   "redirects": [
@@ -21,6 +21,17 @@
     { "source": "/private/:slug*", "destination": "/blog", "permanent": true }
   ],
   "rewrites": [
+    {
+      "source": "/blog/:slug",
+      "has": [
+        {
+          "type": "header",
+          "key": "user-agent",
+          "value": "(.*)(LinkedInBot|facebookexternalhit|Twitterbot|Slackbot|WhatsApp|Discordbot|TelegramBot)(.*)"
+        }
+      ],
+      "destination": "/og/:slug.html"
+    },
     { "source": "/(.*)", "destination": "/index.html" }
   ],
   "headers": [

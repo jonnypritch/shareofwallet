@@ -139,6 +139,17 @@ function AppShell() {
     document.title = post ? `${post.title} — Palm AI` : (PAGE_TITLES[titleKey] ?? PAGE_TITLES.home);
 
     const description = post ? post.excerpt : (PAGE_DESCRIPTIONS[titleKey] ?? PAGE_DESCRIPTIONS.home);
+
+    // Per-page canonical (the static one was removed from index.html)
+    const canonicalPath = location.pathname.length > 1 ? location.pathname.replace(/\/$/, '') : '';
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonical);
+    }
+    canonical.setAttribute('href', `https://palmai.io${canonicalPath || '/'}`);
+
     let meta = document.querySelector('meta[name="description"]');
     if (!meta) {
       meta = document.createElement('meta');
