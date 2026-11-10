@@ -11,6 +11,8 @@ export interface BlogPost {
   };
   tags: string[];
   heroImage?: string;
+  heroImageAlt?: string;
+  heroImageCredit?: string; // HTML allowed (e.g. a photographer credit with links)
   linkedinBlurb?: string;
   content?: string;
 }
@@ -336,6 +338,44 @@ export const blogPosts: BlogPost[] = [
 <p>Market share is your slice of the whole market. Share of wallet is your slice of each customer. Grow the second first. It's the faster route, because you're selling to people who already know and trust you. Our <a href="/blog/share-of-wallet-wholesale-distributors">guide to share of wallet for wholesalers</a> covers why it matters, our <a href="/blog/what-is-basket-analysis-trade-merchants">basket analysis guide</a> shows how to spot the gaps, and the <a href="/blog/trade-merchant-glossary-plain-english#share-of-wallet">glossary</a> has the short version.</p>
 <h2>Where this fits with the data you already have</h2>
 <p>You don't need a data team to start. You need your transaction history and a sensible estimate of what each type of customer should spend. That's what Palm AI's <a href="/features#section-analytics">analytics</a> does for you, account by account. If you'd like to see your own share of wallet by customer and sub-category, <a href="/contact">get in touch</a>.</p>
+    `
+  },
+  {
+    slug: 'share-of-wallet-analysis-buying-elsewhere',
+    title: "Share of wallet analysis: how to find where your trade customers are buying elsewhere",
+    excerpt: "A share of wallet figure tells you how much is going elsewhere. It doesn't tell you what. Here's how to find the gaps, by trade, by category and by project stage.",
+    category: 'share-of-wallet',
+    readTime: 4,
+    publishedAt: '2026-11-10',
+    author: { name: 'Jonathan Pritchard', role: 'Founder, Palm AI' },
+    tags: ['share of wallet analysis', 'customer wallet share', 'buying elsewhere', 'trade customers', 'builders merchants', 'plumbers merchants', 'tool hire', 'foodservice wholesale', 'sub-category analysis'],
+    heroImage: '/blog-images/share-of-wallet-analysis-buying-elsewhere.jpg',
+    heroImageAlt: 'A stripped-back room mid-renovation, with steel props holding up the ceiling and a pile of rubble on the floor',
+    heroImageCredit: `Photo by <a href="https://unsplash.com/@st_lehner?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText" target="_blank" rel="noopener noreferrer">Stefan Lehner</a> on <a href="https://unsplash.com/photos/room-renovation-with-metal-support-poles-biRt6RXejuk?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText" target="_blank" rel="noopener noreferrer">Unsplash</a>`,
+    linkedinBlurb: "Your customer spends £3,000 a month with you. Lovely. Now, what do they buy from someone else? Which bits of the job are going elsewhere? And would you even know?....",
+    content: `
+<p style="font-size:18px;font-weight:500;color:#1e293b;line-height:1.6;margin-bottom:24px;">Knowing a customer's share of wallet is 40% is a start. Knowing which 60% is going elsewhere is what lets you do something about it. That's the difference between a number on a report and a conversation at the counter.</p>
+<h2>Start with what a customer like this should buy</h2>
+<p>Every trade has a buying footprint. A roofer buys battens, membranes, tiles and fixings. A plumber buys pipe, fittings, valves, sanitaryware and brassware. A restaurant buys dairy, produce, dry goods and meat. A contractor on a hire account needs compaction equipment, access towers and toilets.</p>
+<p>That footprint is your yardstick. Before you can say where a customer is leaking, you need to know what a healthy account of that type looks like, by category and by sub-category. The more specific the profile, the more useful the comparison. "A plumber" is a start. "A heating-focused plumbing &amp; heating engineer with a small team" is better.</p>
+<h2>Compare it with what they actually buy</h2>
+<p>Lay the profile next to the customer's order history and the gaps show up. A plumbing and heating engineer who buys pipe and fittings every month but has never bought a boiler from you isn't a loyal pipe customer. They're a boiler customer for someone else.</p>
+<p>This is where sub-category level matters. At category level, "plumbing" can look healthy while one sub-category, like cylinders or underfloor heating, sits at zero. Our <a href="/blog/what-is-basket-analysis-trade-merchants">basket analysis guide</a> shows how to spot what's missing from a typical order, and <a href="/blog/how-to-calculate-share-of-wallet">how to calculate share of wallet</a> covers putting a number on it.</p>
+<h2>Read the signals in the order history</h2>
+<p>Orders tell a story over time, especially on project work. Builds follow predictable stages: groundworks, foundations, structure, first fix, second fix, finishing. Each stage needs different materials, so the next order is often easy to predict.</p>
+<p>Some examples of what that looks like in the data:</p>
+<p><strong>The next stage never arrives.</strong> A customer buys aggregates and cement but nothing for timber or joists. The project has moved on, and someone else is supplying it.</p>
+<p><strong>An order is skipped.</strong> A first-fix customer who never buys insulation is usually buying it elsewhere, or about to. Often you can see in the data that there are categories in this process where your customers stop buying. They may be using you for bricks, blocks and aggregates, but timber is reduced spend in comparison and then there's little in the way of insulation or plasterboard.</p>
+<p><strong>Orders stop mid-project.</strong> A customer who was ordering every week and goes quiet hasn't finished the job. They've found another supplier for the rest of it.</p>
+<h2>Tell leakage from a natural gap</h2>
+<p>Not every gap is a loss. A self-builder who orders once a quarter isn't buying elsewhere between orders. A hire customer who needs a generator twice a year has no gap in the weeks between.</p>
+<p>The test is cadence. Compare each account with its own normal rhythm, not with an ideal weekly pattern. A gap only counts as leakage when the customer's usual pattern says there should have been an order. You can tag an account as semi-retired, as someone who sub-contracts to a different account, or as a painter and decorator who spends the winter in Magaluf. This is all processable.</p>
+<h2>The same method in four trades</h2>
+<p>The method is the same everywhere. Only the categories change.</p>
+<p><strong>Builders' merchants</strong> look for the missing stage in a project, such as CLS without plasterboard or insulation. <strong>Plumbers' merchants</strong> look for the missing product group, such as heating without controls. <strong>Tool hire depots</strong> look for a contractor who hires one item from them and sources everything else elsewhere. <strong>Foodservice wholesalers</strong> look for the kitchen that orders dairy from them and fresh produce from someone else.</p>
+<h2>What to do with the gaps</h2>
+<p>Rank them. A big gap in a high-potential account is worth a phone call. A small gap in a quiet account may not be worth the time. Then ask, don't assume. The order history shows a gap, but only the customer knows why. Sometimes it's price, sometimes it's availability, and sometimes nobody ever asked, or the customer didn't know you did that category or had the suppliers that they trust.</p>
+<p>Palm AI does the comparison for you. We combine your transaction data (connected to your current systems via API) with our own dataset of what each type of customer should be buying, which is enriched every month, and show the gaps account by account and sub-category by sub-category. See the <a href="/features#section-analytics">analytics features</a>, or <a href="/contact">get in touch</a> and we'll show you what your own accounts look like.</p>
     `
   },
 ];

@@ -93,9 +93,28 @@ export function BlogPostPage({ slug, onNavigate }: BlogPostPageProps) {
         </div>
       </div>
 
+      {/* Hero image + credit (only when the post has one) */}
+      {post.heroImage && (
+        <figure className="max-w-[800px] mx-auto px-8 pb-10" style={{ margin: '0 auto' }}>
+          <img
+            src={post.heroImage}
+            alt={post.heroImageAlt ?? post.title}
+            style={{ width: '100%', height: 'auto', borderRadius: '16px', display: 'block' }}
+          />
+          {post.heroImageCredit && (
+            <figcaption
+              className="hero-credit"
+              style={{ fontSize: '12px', color: '#9ca3af', marginTop: '10px' }}
+              dangerouslySetInnerHTML={{ __html: post.heroImageCredit }}
+            />
+          )}
+        </figure>
+      )}
+
       {/* Article body placeholder */}
       <div className="max-w-[800px] mx-auto px-8 pb-16">
         <style>{`
+          .hero-credit a { color: #6b7280; text-decoration: underline; }
           .article-body h2 {
             font-size: 24px;
             font-weight: 700;

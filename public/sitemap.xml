@@ -21,7 +21,7 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://palmai.io/solutions</loc>
+    <loc>https://palmai.io/solutions/builders-merchants</loc>
     <priority>0.7</priority>
   </url>
   <url>
@@ -29,7 +29,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://palmai.io/solutions/plumbers-merchant</loc>
+    <loc>https://palmai.io/solutions/plumbers-merchants</loc>
     <priority>0.7</priority>
   </url>
   <url>
@@ -45,42 +45,57 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://palmai.io/privacy-policy</loc>
+    <loc>https://palmai.io/privacy</loc>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://palmai.io/blog/why-your-best-customers-are-buying-from-competitors</loc>
-    <lastmod>2026-09-05</lastmod>
+    <lastmod>2026-08-19</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://palmai.io/blog/what-is-basket-analysis-trade-merchants</loc>
-    <lastmod>2026-09-05</lastmod>
+    <lastmod>2026-08-14</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://palmai.io/blog/share-of-wallet-wholesale-distributors</loc>
-    <lastmod>2026-09-05</lastmod>
+    <lastmod>2026-08-07</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://palmai.io/blog/why-sales-platforms-fail-sme-wholesalers</loc>
-    <lastmod>2026-09-05</lastmod>
+    <lastmod>2026-08-21</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://palmai.io/blog/tool-hire-single-category-accounts</loc>
-    <lastmod>2026-09-05</lastmod>
+    <lastmod>2026-08-24</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://palmai.io/blog/foodservice-wholesale-split-ordering</loc>
-    <lastmod>2026-09-05</lastmod>
+    <lastmod>2026-08-24</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://palmai.io/blog/trade-merchant-glossary-plain-english</loc>
-    <lastmod>2026-09-05</lastmod>
+    <lastmod>2026-09-01</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://palmai.io/blog/sales-promotion-margin-heating-season</loc>
+    <lastmod>2026-09-29</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://palmai.io/blog/how-to-calculate-share-of-wallet</loc>
+    <lastmod>2026-11-02</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://palmai.io/blog/share-of-wallet-analysis-buying-elsewhere</loc>
+    <lastmod>2026-11-10</lastmod>
     <priority>0.6</priority>
   </url>
 </urlset>

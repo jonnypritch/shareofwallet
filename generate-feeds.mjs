@@ -62,13 +62,13 @@ const STATIC_ROUTES = [
   { path: "/pricing", priority: "0.8" },
   { path: "/about", priority: "0.6" },
   { path: "/contact", priority: "0.6" },
-  { path: "/solutions", priority: "0.7" },
+  { path: "/solutions/builders-merchants", priority: "0.7" },
   { path: "/solutions/electrical-wholesale", priority: "0.7" },
-  { path: "/solutions/plumbers-merchant", priority: "0.7" },
+  { path: "/solutions/plumbers-merchants", priority: "0.7" },
   { path: "/solutions/tool-hire", priority: "0.7" },
   { path: "/solutions/foodservice-wholesale", priority: "0.7" },
   { path: "/blog", priority: "0.8" },
-  { path: "/privacy-policy", priority: "0.3" },
+  { path: "/privacy", priority: "0.3" },
 ];
 
 // Load the real blogPosts array by stripping TypeScript-only syntax and
