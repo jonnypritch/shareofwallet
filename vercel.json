@@ -69,7 +69,7 @@
       "permanent": true
     },
     {
-      "source": "/insights/:slug*",
+      "source": "/insights/(.*)",
       "destination": "/blog",
       "permanent": true
     },
