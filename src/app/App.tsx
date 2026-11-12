@@ -43,6 +43,28 @@ function BrandsPage() {
   );
 }
 
+function NotFoundPage({ onNavigate }: { onNavigate: (page: string) => void }) {
+  return (
+    <div className="min-h-screen bg-white flex items-center justify-center">
+      <div className="text-center max-w-2xl px-8">
+        <h1 className="mb-6" style={{ fontSize: '48px', fontWeight: '700', color: '#1e293b' }}>Page not found</h1>
+        <p style={{ fontSize: '20px', color: '#6b7280', lineHeight: '1.6' }}>
+          We couldn't find that page. It may have moved.
+        </p>
+        <p className="mt-6">
+          <button onClick={() => onNavigate('home')} style={{ color: '#263a82', fontWeight: 600, textDecoration: 'underline' }}>
+            Back to the homepage
+          </button>
+          {' · '}
+          <button onClick={() => onNavigate('blog')} style={{ color: '#263a82', fontWeight: 600, textDecoration: 'underline' }}>
+            Read the blog
+          </button>
+        </p>
+      </div>
+    </div>
+  );
+}
+
 /**
  * Every existing component (Navigation, Footer, BlogPage, BlogPostPage, and
  * any other page) calls onNavigate('some-id') using these same ids as
@@ -136,9 +158,34 @@ function AppShell() {
       : null;
     const post = blogSlug ? blogPosts.find(p => p.slug === blogSlug) : undefined;
 
-    document.title = post ? `${post.title} — Palm AI` : (PAGE_TITLES[titleKey] ?? PAGE_TITLES.home);
+    // Unknown URLs (including unknown blog slugs) are real "not found" pages
+    const normalisedPath = location.pathname.length > 1 ? location.pathname.replace(/\/$/, '') : location.pathname;
+    const isNotFound = blogSlug ? !post : !(normalisedPath in PATH_TO_PAGE);
 
-    const description = post ? post.excerpt : (PAGE_DESCRIPTIONS[titleKey] ?? PAGE_DESCRIPTIONS.home);
+    // Keep this in step with generate-post-pages.mjs, which writes the same
+    // title/description into the static HTML so crawlers see them without JS.
+    document.title = isNotFound
+      ? 'Page not found — Palm AI'
+      : post
+        ? `${post.metaTitle ?? post.title} | Palm AI`
+        : (PAGE_TITLES[titleKey] ?? PAGE_TITLES.home);
+
+    const description = post
+      ? (post.metaDescription ?? post.excerpt)
+      : (PAGE_DESCRIPTIONS[titleKey] ?? PAGE_DESCRIPTIONS.home);
+
+    // Not-found pages must never be indexed (the server returns 200 for them)
+    let robots = document.querySelector('meta[name="robots"]');
+    if (isNotFound) {
+      if (!robots) {
+        robots = document.createElement('meta');
+        robots.setAttribute('name', 'robots');
+        document.head.appendChild(robots);
+      }
+      robots.setAttribute('content', 'noindex');
+    } else if (robots) {
+      robots.remove();
+    }
 
     // Per-page canonical (the static one was removed from index.html)
     const canonicalPath = location.pathname.length > 1 ? location.pathname.replace(/\/$/, '') : '';
@@ -178,8 +225,8 @@ function AppShell() {
         <Route path="/blog" element={<BlogPage onNavigate={handleNavigate} />} />
         <Route path="/blog/:slug" element={<BlogPostRoute onNavigate={handleNavigate} />} />
         <Route path="/privacy" element={<PrivacyPolicyPage />} />
-        {/* Unknown URLs fall back to the homepage rather than a blank screen */}
-        <Route path="*" element={<HomePage />} />
+        {/* Unknown URLs get a real not-found page (noindex) instead of duplicating the homepage */}
+        <Route path="*" element={<NotFoundPage onNavigate={handleNavigate} />} />
       </Routes>
       <Footer onNavigate={handleNavigate} />
     </div>

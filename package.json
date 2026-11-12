@@ -4,10 +4,11 @@
   "version": "0.0.1",
   "type": "module",
   "scripts": {
-  "prebuild": "node generate-feeds.mjs",
-  "build": "vite build",
-  "dev": "vite"
-},
+    "prebuild": "node generate-feeds.mjs",
+    "build": "vite build",
+    "postbuild": "node generate-post-pages.mjs",
+    "dev": "vite"
+  },
   "dependencies": {
     "@emotion/react": "11.14.0",
     "@emotion/styled": "11.14.1",

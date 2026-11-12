@@ -14,6 +14,8 @@ export interface BlogPost {
   heroImageAlt?: string;
   heroImageCredit?: string; // HTML allowed (e.g. a photographer credit with links)
   linkedinBlurb?: string;
+  metaTitle?: string; // SEO title, shown in Google. " | Palm AI" is added automatically
+  metaDescription?: string; // SEO description, aim for ~155 characters
   content?: string;
 }
 
@@ -27,6 +29,8 @@ export const blogPosts: BlogPost[] = [
     publishedAt: '2026-08-19',
     author: { name: 'Jonathan Pritchard', role: 'Founder, Palm AI' },
     tags: ['customer churn', 'wholesale', 'builders merchants', 'sales gap', 'category analysis'],
+    metaTitle: "How to spot trade customers quietly leaving",
+    metaDescription: "Merchants rarely lose a customer all at once. Three signals show a trade account drifting away, category by category, before it's gone.",
     content: `
 <p style="font-size:18px;font-weight:500;color:#1e293b;line-height:1.6;margin-bottom:24px;">A builders' merchant in the South East had a customer who'd been trading with them for eleven years. Good account. Regular orders. Then, over about eight months, his cement orders quietly dropped. Then his aggregates. Then nothing.</p>
 <p>By the time anyone noticed, he'd moved. Not because of a bad experience. Not because a competitor called him. Because nobody had noticed the drift — and nobody had called him first.</p>
@@ -60,6 +64,8 @@ export const blogPosts: BlogPost[] = [
     publishedAt: '2026-08-14',
     author: { name: 'Jonathan Pritchard', role: 'Founder, Palm AI' },
     tags: ['basket analysis', 'cross-sell', 'wholesale', 'trade merchants', 'product affinity'],
+    metaTitle: "Basket analysis for trade merchants, explained",
+    metaDescription: "A plain-English guide to basket analysis: what customers buy together, what's missing from their order, and how merchants use it to cross-sell.",
     content: `
 <p style="font-size:18px;font-weight:500;color:#1e293b;line-height:1.6;margin-bottom:24px;">Plumbers buy copper pipe. They also buy fittings, valves, and flux. That's not a coincidence — it's a pattern. Basket analysis is simply the process of understanding those patterns across your entire customer base, and using them to spot what's missing.</p>
 <p>It's one of the oldest techniques in retail data. Supermarkets have used it for decades. In trade and wholesale, most merchants are sitting on the same data and not using it at all.</p>
@@ -87,6 +93,8 @@ export const blogPosts: BlogPost[] = [
     publishedAt: '2026-08-07',
     author: { name: 'Jonathan Pritchard', role: 'Founder, Palm AI' },
     tags: ['share of wallet', 'sales gap analysis', 'wholesale distributors', 'revenue growth', 'account penetration'],
+    metaTitle: "Share of wallet for wholesalers: how to grow it",
+    metaDescription: "Share of wallet is the number most wholesalers and distributors aren't tracking. What it means, why it matters and how to start growing it.",
     content: `
 <p style="font-size:18px;font-weight:500;color:#1e293b;line-height:1.6;margin-bottom:24px;">A plumbing wholesaler had a customer spending £40,000 a year with them. Good account, they thought. Loyal. Then they ran the numbers — and realised that based on the customer's trade type, size, and project activity, they should have been spending closer to £140,000.</p>
 <p>The other £100,000 was going somewhere else. The wholesaler just didn't know it.</p>
@@ -116,6 +124,8 @@ export const blogPosts: BlogPost[] = [
     publishedAt: '2026-08-21',
     author: { name: 'Jonathan Pritchard', role: 'Founder, Palm AI' },
     tags: ['sales engagement', 'SME', 'wholesale technology', 'data fragmentation', 'agentic AI', 'share of wallet'],
+    metaTitle: "Why sales platforms fail SME wholesalers",
+    metaDescription: "Integration is the barrier SMEs cite most for sales technology. The real problem is assuming you must replace your systems first. Here's the alternative.",
     content: `
 <p style="font-size:18px;font-weight:500;color:#1e293b;line-height:1.6;margin-bottom:24px;">A sales director at a Midlands electrical wholesaler told me recently that they'd looked at three different sales engagement platforms in the past two years. Evaluated them properly. Built business cases. Got close to signing.</p>
 <p>They didn't buy any of them.</p>
@@ -164,6 +174,8 @@ export const blogPosts: BlogPost[] = [
     publishedAt: '2026-08-24',
     author: { name: 'Jonathan Pritchard', role: 'Founder, Palm AI' },
     tags: ['tool hire', 'plant hire', 'share of wallet', 'prospects', 'inventory'],
+    metaTitle: "Tool hire: closing the single-category gap",
+    metaDescription: "A contractor who hires one thing from you and sources the rest elsewhere is a fraction of an account. How tool hire depots close that gap.",
     content: `
 <p style="font-size:18px;font-weight:500;color:#1e293b;line-height:1.6;margin-bottom:24px;">A groundworks contractor had been hiring compaction equipment from the same depot for four years. Reliable account, paid on time, ordered every month. What the depot didn't know was that the same contractor was hiring generators from a competitor three miles away, and welfare units from a national chain — because nobody had ever asked, and nothing in the depot's systems would have flagged it.</p>
 <p>That's not a failing account. It's a single-category account that looks healthy on paper and is leaking revenue everywhere else.</p>
@@ -190,6 +202,8 @@ export const blogPosts: BlogPost[] = [
     publishedAt: '2026-08-24',
     author: { name: 'Jonathan Pritchard', role: 'Founder, Palm AI' },
     tags: ['foodservice', 'wholesale', 'share of wallet', 'prospects', 'inventory'],
+    metaTitle: "Split ordering in foodservice wholesale",
+    metaDescription: "Kitchens that order dairy and dry goods but buy produce and fish elsewhere are accounts you never fully had. How wholesalers close the gap.",
     content: `
 <p style="font-size:18px;font-weight:500;color:#1e293b;line-height:1.6;margin-bottom:24px;">A restaurant kitchen had ordered dairy and everyday essentials from the same wholesaler for three years. Every week, like clockwork. What the wholesaler didn't know was that the same kitchen was sourcing its fresh produce from a market supplier and its fish from a specialist — because nobody had ever asked what else the kitchen needed, and there was no way to see it from delivery data alone.</p>
 <p>That's not a lost account. It's an account that was never fully won in the first place.</p>
@@ -216,6 +230,8 @@ export const blogPosts: BlogPost[] = [
     publishedAt: '2026-09-01',
     author: { name: 'Jonathan Pritchard', role: 'Founder, Palm AI' },
     tags: ['glossary', 'basket analysis', 'share of wallet', 'margin', 'cross-sell'],
+    metaTitle: "Trade merchant glossary: 8 terms in plain English",
+    metaDescription: "Eight trade merchant terms you'll actually hear, explained simply, the way you'd explain them to someone on their first day.",
     content: `
 <p style="font-size:18px;font-weight:500;color:#1e293b;line-height:1.6;margin-bottom:24px;">Some of these words get thrown around a lot in this industry — on this site included. So here are 8 of them, explained simply, with a real example for each. Bookmark this one — we'll link back to it whenever one of these words comes up.</p>
 
@@ -258,6 +274,8 @@ export const blogPosts: BlogPost[] = [
     publishedAt: '2026-09-29',
     author: { name: 'Jonathan Pritchard', role: 'Founder, Palm AI' },
     tags: ['sales promotion', 'margin', 'cross-sell', 'basket analysis', 'heating and plumbing', 'sales strategy'],
+    metaTitle: "Heating season promotions: bundles beat discounts",
+    metaDescription: "Planning a heating season promotion? A targeted bundle protects margin and grows basket size in a way a flat cashback or straight discount can't.",
     linkedinBlurb: "Heating season is upon us. Kind of. Well, it will get cooler soon. Stuck with how to grow some sales? Worried about not making the right margin calls? Think that easier is always better....",
     content: `
 <p style="font-size:18px;font-weight:500;color:#1e293b;line-height:1.6;margin-bottom:24px;">The evenings are drawing in, which means it's heating season — and time for every merchant in the sector to work out how to grow market share without giving away margin to do it. One large national chain has just launched a flat panel radiator, valve and inhibitor promotion. It's a useful case study, because it quietly avoids the boiler fight altogether and goes after something more profitable instead.</p>
@@ -310,6 +328,8 @@ export const blogPosts: BlogPost[] = [
     publishedAt: '2026-11-02',
     author: { name: 'Jonathan Pritchard', role: 'Founder, Palm AI' },
     tags: ['how to calculate share of wallet', 'share of wallet formula', 'B2B share of wallet', 'builders merchants', 'trade supplies', 'tool hire', 'foodservice wholesale', 'sub-category analysis'],
+    metaTitle: "How to calculate share of wallet for a merchant",
+    metaDescription: "The share of wallet formula takes ten seconds. The hard part is knowing what each customer could spend in total. How to work it out by sub-category.",
     linkedinBlurb: "Everyone's heard of share of wallet. Hardly anyone can tell you their own. Know what your best customers spend with you? Fine. But what do they spend in total? And which bits are going elsewhere....",
     content: `
 <p style="font-size:18px;font-weight:500;color:#1e293b;line-height:1.6;margin-bottom:24px;">Share of wallet is the percentage of a customer's total spend that you win. The formula takes ten seconds. Working out the bottom half of it is where most merchants, wholesalers, hire businesses and foodservice suppliers get stuck.</p>
@@ -349,6 +369,8 @@ export const blogPosts: BlogPost[] = [
     publishedAt: '2026-11-10',
     author: { name: 'Jonathan Pritchard', role: 'Founder, Palm AI' },
     tags: ['share of wallet analysis', 'customer wallet share', 'buying elsewhere', 'trade customers', 'builders merchants', 'plumbers merchants', 'tool hire', 'foodservice wholesale', 'sub-category analysis'],
+    metaTitle: "Share of wallet analysis for trade merchants",
+    metaDescription: "A share of wallet figure shows how much goes elsewhere, not what. How to find the gaps by trade, category and project stage.",
     heroImage: '/blog-images/share-of-wallet-analysis-buying-elsewhere.jpg',
     heroImageAlt: 'A stripped-back room mid-renovation, with steel props holding up the ceiling and a pile of rubble on the floor',
     heroImageCredit: `Photo by <a href="https://unsplash.com/@st_lehner?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText" target="_blank" rel="noopener noreferrer">Stefan Lehner</a> on <a href="https://unsplash.com/photos/room-renovation-with-metal-support-poles-biRt6RXejuk?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText" target="_blank" rel="noopener noreferrer">Unsplash</a>`,
