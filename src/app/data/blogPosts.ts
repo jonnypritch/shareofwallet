@@ -331,6 +331,9 @@ export const blogPosts: BlogPost[] = [
     metaTitle: "How to calculate share of wallet for a merchant",
     metaDescription: "The share of wallet formula takes ten seconds. The hard part is knowing what each customer could spend in total. How to work it out by sub-category.",
     linkedinBlurb: "Everyone's heard of share of wallet. Hardly anyone can tell you their own. Know what your best customers spend with you? Fine. But what do they spend in total? And which bits are going elsewhere....",
+    heroImage: '/blog-images/how-to-calculate-share-of-wallet.jpg',
+    heroImageAlt: 'A building site interior with stacked bags of plaster on a wooden floor, a ladder in the foreground and insulation hanging between the ceiling joists',
+    heroImageCredit: `Photo by <a href="https://unsplash.com/@brett_jordan?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText" target="_blank" rel="noopener noreferrer">Brett Jordan</a> on <a href="https://unsplash.com/photos/a-room-filled-with-lots-of-boxes-and-a-ladder-l0cqKLdCYgk?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText" target="_blank" rel="noopener noreferrer">Unsplash</a>`,
     content: `
 <p style="font-size:18px;font-weight:500;color:#1e293b;line-height:1.6;margin-bottom:24px;">Share of wallet is the percentage of a customer's total spend that you win. The formula takes ten seconds. Working out the bottom half of it is where most merchants, wholesalers, hire businesses and foodservice suppliers get stuck.</p>
 <h2>The formula</h2>
@@ -398,6 +401,40 @@ export const blogPosts: BlogPost[] = [
 <h2>What to do with the gaps</h2>
 <p>Rank them. A big gap in a high-potential account is worth a phone call. A small gap in a quiet account may not be worth the time. Then ask, don't assume. The order history shows a gap, but only the customer knows why. Sometimes it's price, sometimes it's availability, and sometimes nobody ever asked, or the customer didn't know you did that category or had the suppliers that they trust.</p>
 <p>Palm AI does the comparison for you. We combine your transaction data (connected to your current systems via API) with our own dataset of what each type of customer should be buying, which is enriched every month, and show the gaps account by account and sub-category by sub-category. See the <a href="/features#section-analytics">analytics features</a>, or <a href="/contact">get in touch</a> and we'll show you what your own accounts look like.</p>
+    `
+  },
+  {
+    slug: 'how-to-increase-share-of-wallet-trade-customers',
+    title: "How to increase share of wallet with trade customers (without discounting)",
+    excerpt: "Discounting is the slowest way to win more of a customer's spend. Here are five ways to increase share of wallet in a trade business: choose the right accounts, widen the basket, and time every approach to the job.",
+    metaDescription: "Five ways to increase share of wallet with trade customers without discounting: pick the right accounts, widen the basket and time every approach.",
+    category: 'share-of-wallet',
+    readTime: 5,
+    publishedAt: '2026-11-18',
+    author: { name: 'Jonathan Pritchard', role: 'Founder, Palm AI' },
+    tags: ['how to increase share of wallet', 'customer wallet share', 'cross-selling', 'trade account growth', 'builders merchants', 'plumbers merchants', 'tool hire', 'foodservice wholesale', 'sales strategy'],
+    metaTitle: "How to increase share of wallet with trade customers",
+    heroImage: '/blog-images/how-to-increase-share-of-wallet-trade-customers.jpg',
+    heroImageAlt: 'A half-stripped room with exposed ceiling joists, a steel beam resting on a prop, a hi-vis vest hanging from it and a boarded-up opening',
+    heroImageCredit: `Photo by <a href="https://unsplash.com/@brett_jordan?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText" target="_blank" rel="noopener noreferrer">Brett Jordan</a> on <a href="https://unsplash.com/photos/yellow-plastic-bucket-beside-brown-wooden-wall-FQWSWcc4ZEI?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText" target="_blank" rel="noopener noreferrer">Unsplash</a>`,
+    linkedinBlurb: "You can't chase every account. So which ones are worth the phone call? And what do you say when you get there?....",
+    content: `
+<p style="font-size:18px;font-weight:500;color:#1e293b;line-height:1.6;margin-bottom:24px;">Every merchant wants a bigger share of what their customers spend. Most reach for price first. It works, but it gives margin away on money you were already going to earn, and it does nothing for the categories where the customer isn't buying from you at all. Share of wallet grows when you're useful in more places, not when you're cheaper in one.</p>
+<h2>Start with the right lever</h2>
+<p>Merchant growth has three levers: more customers, bigger baskets and more frequent orders. They aren't equal. Winning new accounts is the slowest and hardest. Bigger baskets are usually the fastest win, because the customer already trusts you and you only need to widen what they buy. More frequency comes second. That's why we say grow share of wallet first, then grow market share.</p>
+<p>If you haven't yet, start with <a href="/blog/how-to-calculate-share-of-wallet">how to calculate share of wallet</a> and <a href="/blog/share-of-wallet-analysis-buying-elsewhere">how to find where customers are buying elsewhere</a>. This piece is about what you do once you know.</p>
+<h2>Five ways to increase share of wallet</h2>
+<p><strong>1. Go where the money is.</strong> Put every account on one picture: how much it could spend in total, against how much of it you already win. A small account where you take 90% has little room to grow. A large account where you take 20% has a lot. Move your time from the first kind to the second. The gap between potential and actual spend is where your effort pays back.</p>
+<p><strong>2. Widen the basket at the counter.</strong> Every customer type has a typical basket, so the best prompt is "customers like you also buy this". A joiner who has never bought sundries, or a plumber who buys pipe but never controls, is a conversation worth having. Put the suggestion in front of counter staff when the order is on screen, not in a report nobody reads on Monday.</p>
+<p><strong>3. Time the offer to the stage of the job.</strong> Projects follow a sequence: groundworks, foundations, structure, first fix, second fix, finish. When a customer buys aggregates, cement and timber are probably next. If first fix goes through with no insulation, someone else may be supplying it, or it's about to slip. Approach people when they need the product, not on a general campaign schedule.</p>
+<p><strong>4. Keep them coming back.</strong> More frequent orders raise share of wallet in themselves. Know each customer's usual rhythm, and when they're overdue, call. A builder who normally orders every ten days and hasn't for fourteen hasn't stopped building. Calling that day is cheap. Finding out three weeks later isn't.</p>
+<p><strong>5. Spend effort in proportion to what the account is worth.</strong> Every customer wants the basics: the right price, advice, availability and credit. What separates them is how much more they want. The more an account could be worth, the more proactive you should be. Reserve rep visits and personal calls for the accounts with the biggest gap. Let counter prompts and automated reminders look after the rest.</p>
+<h2>Why this beats discounting</h2>
+<p>A discount lowers the price of everything a customer already buys from you. These five ways work differently. They aim at the categories and stages where the customer buys from someone else. That's new revenue, not a lower price on old revenue. Our <a href="/blog/sales-promotion-margin-heating-season">guide to promotions that protect margin</a> covers what to do when you do want to offer a deal: bundle first, discount last.</p>
+<h2>The same five in four trades</h2>
+<p><strong>Builders' merchants</strong> use the project stage to catch the missing category, such as plasterboard after structure. <strong>Plumbers' merchants</strong> build the heating basket, from boilers to controls and cylinders. <strong>Tool hire depots</strong> turn single-item hires into full accounts, and <a href="/blog/tool-hire-single-category-accounts">we've written about how</a>. <strong>Foodservice wholesalers</strong> win the kitchen that buys dairy from them and produce from someone else.</p>
+<h2>Making it practical</h2>
+<p>None of this needs a bigger team. It needs the right account, the right suggestion and the right moment. Palm AI does the comparison. We connect to your current systems via API, combine your transactions with our dataset of what each type of customer should be buying, which is enriched every month, and show your team where to act, down to sub-category. See the <a href="/features#section-analytics">analytics features</a>, or <a href="/contact">get in touch</a> and we'll show you what your own accounts look like.</p>
     `
   },
 ];
