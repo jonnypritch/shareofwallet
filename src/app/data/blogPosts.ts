@@ -352,7 +352,7 @@ export const blogPosts: BlogPost[] = [
 <p>The same applies in other sectors. An illustrative restaurant account might be well covered on dairy and dry goods but buying fresh produce entirely from another supplier. A contractor might hire from you but buy small tools from someone else.</p>
 <p>Once you can see the gap at sub-category level, the conversation changes from "we'd like more of your business" to "you don't buy your boilers from us. Can we talk about that?"</p>
 <h2>How Palm AI does it</h2>
-<p>If you integrate your transactional data with Palm AI (we can connect to your current systems via API), we start from what each customer buys from you, down to sub-category. We then compare that with our own dataset of what customers of that type should be spending, which is enriched every month. The result is an estimated share of wallet for every account, with the gap broken down category by category and sub-category by sub-category.</p>
+<p>If you integrate your transactional data with Palm AI (we can connect to your current systems via API), we start from what each customer buys from you, down to sub-category. We then compare that with our own dataset of what customers of that type should be spending, which is refreshed daily where the data allows. The result is an estimated share of wallet for every account, with the gap broken down category by category and sub-category by sub-category.</p>
 <p>Because the dataset is refreshed monthly, the estimate moves as customers change. It isn't a one-off analysis that's out of date by the time you read it.</p>
 <h2>Two things to watch for</h2>
 <p><strong>Natural gaps aren't leakage.</strong> A self-builder who orders quarterly isn't buying elsewhere between orders. That's just their pattern. Measure against the customer's normal cadence, not a weekly ideal.</p>
@@ -400,7 +400,7 @@ export const blogPosts: BlogPost[] = [
 <p><strong>Builders' merchants</strong> look for the missing stage in a project, such as CLS without plasterboard or insulation. <strong>Plumbers' merchants</strong> look for the missing product group, such as heating without controls. <strong>Tool hire depots</strong> look for a contractor who hires one item from them and sources everything else elsewhere. <strong>Foodservice wholesalers</strong> look for the kitchen that orders dairy from them and fresh produce from someone else.</p>
 <h2>What to do with the gaps</h2>
 <p>Rank them. A big gap in a high-potential account is worth a phone call. A small gap in a quiet account may not be worth the time. Then ask, don't assume. The order history shows a gap, but only the customer knows why. Sometimes it's price, sometimes it's availability, and sometimes nobody ever asked, or the customer didn't know you did that category or had the suppliers that they trust.</p>
-<p>Palm AI does the comparison for you. We combine your transaction data (connected to your current systems via API) with our own dataset of what each type of customer should be buying, which is enriched every month, and show the gaps account by account and sub-category by sub-category. See the <a href="/features#section-analytics">analytics features</a>, or <a href="/contact">get in touch</a> and we'll show you what your own accounts look like.</p>
+<p>Palm AI does the comparison for you. We combine your transaction data (connected to your current systems via API) with our own dataset of what each type of customer should be buying, which is refreshed daily where the data allows, and show the gaps account by account and sub-category by sub-category. See the <a href="/features#section-analytics">analytics features</a>, or <a href="/contact">get in touch</a> and we'll show you what your own accounts look like.</p>
     `
   },
   {
@@ -434,7 +434,48 @@ export const blogPosts: BlogPost[] = [
 <h2>The same five in four trades</h2>
 <p><strong>Builders' merchants</strong> use the project stage to catch the missing category, such as plasterboard after structure. <strong>Plumbers' merchants</strong> build the heating basket, from boilers to controls and cylinders. <strong>Tool hire depots</strong> turn single-item hires into full accounts, and <a href="/blog/tool-hire-single-category-accounts">we've written about how</a>. <strong>Foodservice wholesalers</strong> win the kitchen that buys dairy from them and produce from someone else.</p>
 <h2>Making it practical</h2>
-<p>None of this needs a bigger team. It needs the right account, the right suggestion and the right moment. Palm AI does the comparison. We connect to your current systems via API, combine your transactions with our dataset of what each type of customer should be buying, which is enriched every month, and show your team where to act, down to sub-category. See the <a href="/features#section-analytics">analytics features</a>, or <a href="/contact">get in touch</a> and we'll show you what your own accounts look like.</p>
+<p>None of this needs a bigger team. It needs the right account, the right suggestion and the right moment. Palm AI does the comparison. We connect to your current systems via API, combine your transactions with our dataset of what each type of customer should be buying, which is refreshed daily where the data allows, and show your team where to act, down to sub-category. See the <a href="/features#section-analytics">analytics features</a>, or <a href="/contact">get in touch</a> and we'll show you what your own accounts look like.</p>
+    `
+  },
+  {
+    slug: 'what-is-share-of-wallet-b2b',
+    title: "What is share of wallet in B2B? Definition, formula and examples for trade businesses",
+    excerpt: "Share of wallet is the percentage of a customer's total spend, on what you sell, that goes to you instead of anyone else. Here's the definition, the formula and what it means in a trade business.",
+    category: 'share-of-wallet',
+    readTime: 5,
+    publishedAt: '2026-11-19',
+    author: { name: 'Jonathan Pritchard', role: 'Founder, Palm AI' },
+    tags: ['what is share of wallet', 'share of wallet definition', 'B2B share of wallet', 'wallet share', 'share of wallet vs market share', 'builders merchants', 'trade supplies', 'tool hire', 'foodservice wholesale'],
+    metaTitle: "What is share of wallet in B2B? Definition and examples",
+    metaDescription: "Share of wallet is the percentage of a customer's spend in a category that goes to you. Definition, formula and worked examples for trade merchants.",
+    linkedinBlurb: "You know what your best customers spend with you. But what do they spend in total? That gap has a name....",
+    heroImage: '/blog-images/what-is-share-of-wallet-b2b.jpg',
+    heroImageAlt: 'An overhead view of hands reaching in to take slices from a large pizza shared at a table, with empty plates around it',
+    heroImageCredit: `Photo by <a href="https://unsplash.com/@kkalerry?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText" target="_blank" rel="noopener noreferrer">Klara Kulikova</a> on <a href="https://unsplash.com/photos/pizza-on-white-ceramic-plate-WcV2YkM3Dls?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText" target="_blank" rel="noopener noreferrer">Unsplash</a>`,
+    content: `
+<p style="font-size:18px;font-weight:500;color:#1e293b;line-height:1.6;margin-bottom:24px;">Share of wallet is the percentage of a customer's total spend, on the products or services you sell, that goes to your business rather than to anyone else. If a customer spends £10,000 a month on what you stock and £3,000 of it comes to you, your share of wallet with that customer is 30%.</p>
+<h2>What is share of wallet?</h2>
+<p>It measures how much of a customer you have, not how many customers you have. It's also called wallet share or customer share. It applies to any business that sells repeatedly to the same accounts, which makes it especially useful for trade merchants, wholesalers, tool hire depots and foodservice suppliers.</p>
+<h2>How is share of wallet calculated?</h2>
+<p><strong>Share of wallet (%) = your sales to the customer ÷ the customer's total spend on what you sell × 100</strong></p>
+<p>The top of that sum is in your system. The bottom is the hard part. Our guide to <a href="/blog/how-to-calculate-share-of-wallet">how to calculate share of wallet</a> goes through it in full.</p>
+<p>An illustrative example: a restaurant spends £6,000 a month on food and drink from suppliers like you, and £1,800 of that comes to you. Your share of wallet is 30%, and £4,200 a month is going elsewhere.</p>
+<h2>How do you estimate a customer's total spend?</h2>
+<p>Customers don't show you their other invoices, and no merchant has another merchant's sales ledger, so the total has to be estimated. Most merchants estimate from experience: a roofer of that size should spend about this much. That works for a handful of accounts and not for five hundred.</p>
+<p>Palm AI builds the estimate from the work itself. It takes publicly available information about local projects, such as kitchen extensions, driveways, rewires and boiler installs, works out what each typically costs, and applies that to your catchment. The result is a database of <strong>estimated</strong> trade spend in your local market, by trade and by category. It covers over 250,000 verifiable UK trade companies and sole traders, and it's refreshed as new information comes in, daily where the data allows, so you can see what trades near you are doing and how the market is trending. Merchants who have tested the estimates have found them reasonable.</p>
+<p>Set a customer's purchases from you against what a trade like theirs spends locally, and the gap shows up, sub-category by sub-category.</p>
+<h2>Share of wallet vs market share</h2>
+<p>Market share is your slice of the whole market. Share of wallet is your slice of one customer. A merchant can have a strong market share and still win only a small part of each account's spend, which is why a customer who looks large on your reports can be a small share of what they actually buy.</p>
+<h2>Why does share of wallet matter for trade merchants?</h2>
+<p><strong>It shows where growth is cheapest.</strong> Winning more from a customer who already trusts you is usually faster than winning a new one. Bigger baskets and more frequent orders are the quickest levers, and new customers the slowest.</p>
+<p><strong>It stops you ranking accounts by revenue alone.</strong> A £50,000 account where you take 90% has little room to grow. A £50,000 account where you take 20% has a lot.</p>
+<p><strong>It gives early warning.</strong> Customers rarely leave all at once. They move one category at a time, so a falling share of wallet shows up before total sales drop. We cover the signs in <a href="/blog/why-your-best-customers-are-buying-from-competitors">why your best customers are buying from competitors</a>.</p>
+<h2>What is a good share of wallet?</h2>
+<p>There isn't a single right number. A sensible figure for a plumber isn't the same as one for a landscaper, a tool hire customer or a restaurant. The useful comparison is each account against its own type, and against its own normal buying rhythm. A self-builder who orders every quarter isn't leaking in the weeks between orders.</p>
+<h2>How does it work in different trades?</h2>
+<p><strong>Builders' merchants</strong> look at which project stages and categories a customer buys from them, such as bricks and blocks but not plasterboard or insulation. <strong>Plumbers' merchants</strong> look at product groups, such as pipe and fittings without boilers. <strong>Tool hire depots</strong> look at contractors who hire one kind of equipment and source the rest elsewhere. <strong>Foodservice wholesalers</strong> look at kitchens that order dairy but buy produce from someone else.</p>
+<h2>How do you improve it?</h2>
+<p>Find the gaps by customer and by sub-category, as in <a href="/blog/share-of-wallet-analysis-buying-elsewhere">how to find where customers are buying elsewhere</a>. Then act on the biggest ones, as in <a href="/blog/how-to-increase-share-of-wallet-trade-customers">how to increase share of wallet with trade customers</a>. See the <a href="/features#section-analytics">analytics features</a>, or <a href="/contact">get in touch</a> to see your own accounts.</p>
     `
   },
 ];

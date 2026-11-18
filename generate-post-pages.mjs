@@ -16,6 +16,10 @@
 //   metaTitle?: string        // SEO title, defaults to `title`
 //   metaDescription?: string  // SEO description, defaults to `excerpt`
 //
+// The article text itself (H1, intro, body, image + credit) is also written into
+// <div id="root"> so crawlers that don't run JavaScript (most AI crawlers) can read
+// the article. React replaces it on load, so visitors see the normal app.
+//
 // This replaces generate-og-pages.mjs (noindex stubs for social bots only).
 import fs from 'node:fs';
 import path from 'node:path';
@@ -54,12 +58,19 @@ if (!fs.existsSync(shellPath)) {
 const shell = fs.readFileSync(shellPath, 'utf8');
 if (!shell.includes('</head>')) throw new Error('generate-post-pages: no </head> in dist/index.html');
 
+// Non-ASCII characters (em dashes, £, curly quotes) are written as numeric HTML
+// entities, so the page reads correctly even if a crawler guesses the wrong
+// character encoding (Bing's report showed an em dash garbled as "â&#128;&#148;").
+const ascii = (s) => String(s).replace(/[^\x00-\x7F]/gu, (ch) => `&#${ch.codePointAt(0)};`);
+
 const esc = (s) =>
-  String(s)
-    .replace(/&/g, '&amp;')
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;')
-    .replace(/"/g, '&quot;');
+  ascii(
+    String(s)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;'),
+  );
 
 // Strip the generic homepage tags so the post's tags are the only ones.
 function stripGenericHead(html) {
@@ -70,6 +81,30 @@ function stripGenericHead(html) {
 }
 
 const base = stripGenericHead(shell);
+
+const ROOT_RE = /<div id="root"><\/div>/;
+if (!ROOT_RE.test(base)) {
+  console.warn('generate-post-pages: could not find <div id="root"></div> in dist/index.html; article text will not be written into the static pages.');
+}
+
+const formatDate = (d) =>
+  new Date(d).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
+
+// Plain, readable article markup for crawlers. React replaces this when the app loads.
+function staticArticle(post, image) {
+  const hero = post.heroImage
+    ? `<img src="${esc(image)}" alt="${esc(post.heroImageAlt || post.title)}" style="width:100%;height:auto;border-radius:16px;display:block" />` +
+      (post.heroImageCredit ? `<p style="font-size:12px;color:#9ca3af">${post.heroImageCredit}</p>` : '')
+    : '';
+  return ascii(`<main><article style="max-width:800px;margin:0 auto;padding:48px 32px;font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;color:#374151;line-height:1.7">
+<p><a href="/">Palm AI</a> · <a href="/blog">All articles</a> · <a href="/features">Features</a> · <a href="/contact">Contact</a></p>
+<h1 style="font-size:36px;line-height:1.2;color:#1e293b">${esc(post.title)}</h1>
+<p style="font-size:20px">${esc(post.excerpt)}</p>
+<p style="font-size:14px;color:#6b7280">By ${esc(post.author?.name ?? SITE_NAME)} · ${esc(formatDate(post.publishedAt))} · ${esc(String(post.readTime))} min read</p>
+${hero}
+${post.content || ''}
+</article></main>`);
+}
 
 fs.rmSync(outDir, { recursive: true, force: true });
 fs.mkdirSync(outDir, { recursive: true });
@@ -122,10 +157,13 @@ for (const post of posts) {
     `<meta name="twitter:title" content="${esc(post.title)}" />`,
     `<meta name="twitter:description" content="${esc(desc)}" />`,
     `<meta name="twitter:image" content="${esc(image)}" />`,
-    `<script type="application/ld+json">${JSON.stringify(ld).replace(/</g, '\\u003c')}</script>`,
+    `<script type="application/ld+json">${JSON.stringify(ld).replace(/</g, '\\u003c').replace(/[^\x00-\x7F]/gu, (c) => '\\u' + c.charCodeAt(0).toString(16).padStart(4, '0'))}</script>`,
   ].map((t) => `    ${t}`).join('\n');
 
-  const html = base.replace('</head>', `${tags}\n  </head>`);
+  const headTags = `${tags}\n  </head>`;
+  let html = base.replace('</head>', () => headTags);
+  const articleHtml = staticArticle(post, image);
+  html = html.replace(ROOT_RE, () => `<div id="root">${articleHtml}</div>`);
   fs.writeFileSync(path.join(outDir, `${post.slug}.html`), html);
 }
 
