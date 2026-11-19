@@ -5,9 +5,9 @@ const CAPABILITIES = [
   'See your prospects — and what they spend on materials, with contact details',
   'Understand your local market share, and how it\u2019s moving over time',
   'Link intelligently to your ERP, where your system supports it',
-  'See cross-sells and upsells right on the order screen',
-  'Go from WhatsApp and SMS straight to orders, automatically',
-  'Get assistance across inventory, branch to branch',
+  'Automated basket updates: see what goes with what, right on the order screen',
+  'Automated quotations: from WhatsApp and SMS straight to your quotes page',
+  'Inventory management that saves money and time, and forecasts what you need more accurately',
   'Get more accurate, forward-looking cashflow forecasts',
 ];
 

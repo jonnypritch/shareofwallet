@@ -82,7 +82,7 @@ const PATH_TO_PAGE: Record<string, string> = Object.fromEntries(
 
 const PAGE_TITLES: Record<string, string> = {
   home: 'Palm AI — Sell more. To the right customers. More profitably.',
-  features: 'Features — Palm AI',
+  features: "Automated quotations, automated basket updates, inventory forecasting, prospecting and cashflow: see every Palm AI feature and how it works.",
   'solutions-builders': "Builders' Merchants — Palm AI",
   'solutions-electrical': 'Electrical Wholesalers — Palm AI',
   'solutions-plumbers': "Plumbers' Merchants — Palm AI",
@@ -99,7 +99,7 @@ const PAGE_TITLES: Record<string, string> = {
 };
 
 const PAGE_DESCRIPTIONS: Record<string, string> = {
-  home: "Palm AI helps builders' merchants, plumbers' merchants, tool hire and wholesalers grow customer wallet share, find new accounts and forecast cashflow.",
+  home: "Palm AI helps trade merchants save time, save money and grow their customers: automated quotes, smarter baskets, better stock forecasts, new accounts.",
   features: 'Analytics, recommendations, prospecting, content generation, inventory and cashflow — see every Palm AI feature and how it works.',
   'solutions-builders': "How Palm AI helps builders' merchants grow wallet share, find new trade accounts, and compete for categories they're missing.",
   'solutions-electrical': 'How Palm AI helps electrical wholesalers grow wallet share across domestic, commercial and industrial electrical categories.',

@@ -20,7 +20,7 @@ export const faqGroups: FaqGroup[] = [
     items: [
       {
         q: 'What is Palm AI?',
-        a: "Palm AI is an AI platform for builders' merchants, plumbers' merchants, tool hire, electrical wholesalers and foodservice wholesalers. It shows you where each customer's spend is going, tells your team what to do about it, and helps you find new accounts.",
+        a: "Palm AI is an AI platform for builders' merchants, plumbers' merchants, tool hire, electrical wholesalers and foodservice wholesalers. It shows you where each customer's spend is going, tells your team what to do about it, and helps you find new accounts. Our aim is simple: save you time, save you money and grow your customers.",
       },
       {
         q: 'Who is Palm AI for?',
@@ -61,12 +61,20 @@ export const faqGroups: FaqGroup[] = [
     items: [
       {
         q: 'What can Palm AI do for my branches?',
-        a: "Palm AI shows you the opportunity to grow share of wallet, category by category. It shows your prospects and what they spend on materials, with contact details, and your local market share and how it's moving. It puts cross-sells and upsells on the order screen, takes WhatsApp and SMS messages straight through to orders, helps with inventory from branch to branch, and gives more accurate, forward-looking cashflow forecasts.",
+        a: "Palm AI shows you the opportunity to grow share of wallet, category by category. It shows your prospects and what they spend on materials, with contact details, and your local market share and how it's moving. It gives automated basket updates on the order screen, turns WhatsApp and SMS requests into quotes on your quotes page, and brings inventory management that saves money and time and forecasts what you need more accurately, alongside forward-looking cashflow forecasts.",
         link: { href: '/features', label: 'See every feature' },
       },
       {
         q: 'Can Palm AI help counter staff and sales reps at the point of sale?',
         a: "Yes. Palm AI puts cross-sell and upsell suggestions at basket and quote level, while the order is still open. Your people decide what to offer, so it's guidance and not instruction, and it leaves counter staff and sales teams more time for customer relationships and less on admin.",
+      },
+      {
+        q: 'What are automated quotations?',
+        a: "When a customer asks for a quote by WhatsApp or SMS, Palm AI puts it straight onto your quotes page, so your team isn't keying it in. It suggests the likely other needs and keeps margin within your guardrails. Nothing is sent without your team's approval. It's available now for MACE Systems, and not yet for other systems.",
+      },
+      {
+        q: 'What are automated basket updates?',
+        a: "In our basket analysis across several merchants, 92% of baskets are individual to the business at SKU level. Making sense of what goes with what, and why, can take years of experience. Our machine learning tools do it in milliseconds, so your team can help customers get everything they need for the job.",
       },
       {
         q: 'Can Palm AI help me hold the right stock?',

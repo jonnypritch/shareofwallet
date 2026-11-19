@@ -188,7 +188,7 @@ export function FeaturesPage() {
                 Give your team the perfect offer at the perfect time
               </h3>
               <p className="mb-6" style={{ fontSize: '16px', color: '#374151', lineHeight: '1.6' }}>
-                Project-aware recommendations suggest the right products based on customer buying patterns, trade type, and project stage — reviewed and sent with one click.
+                Automated basket updates. In our basket analysis across several merchants, 92% of baskets are individual to the business at SKU level. Working out what goes with what, and why, can take years of experience. Our machine learning tools do it in milliseconds, helping you to help your customers.
               </p>
               <FeatureList
                 items={[
@@ -225,20 +225,24 @@ export function FeaturesPage() {
           {/* Row 4 - SMS */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
-              <Eyebrow icon={<MessageCircle className="inline w-4 h-4" />}>Automated, via SMS</Eyebrow>
+              <Eyebrow icon={<MessageCircle className="inline w-4 h-4" />}>Automated quotations</Eyebrow>
               <h3 className="mb-5" style={{ fontSize: '26px', fontWeight: '700', color: '#1e293b', lineHeight: '1.25' }}>
                 When a customer texts in, the offer is already drafted
               </h3>
               <p className="mb-6" style={{ fontSize: '16px', color: '#374151', lineHeight: '1.6' }}>
-                A customer orders by text — Palm AI drafts the reply with the right upsells and opportunities already added. Your team approves or declines before anything sends.
+                When a customer asks for a quote by WhatsApp or SMS, Palm AI puts it straight onto your quotes page, taking the data entry off your team. It suggests the likely other needs and keeps margin within your guardrails. Your team approves or declines before anything is sent.
               </p>
               <FeatureList
                 items={[
+                  'WhatsApp and SMS, straight to your quotes page',
+                  'Likely other needs suggested automatically',
+                  'Margin guardrails built in',
                   'Drafted, never sent without approval',
-                  'Upsells and opportunities suggested automatically',
-                  'Approved orders flow straight to the order screen',
                 ]}
               />
+              <p className="mt-4" style={{ fontSize: '13px', color: '#9ca3af', fontStyle: 'italic' }}>
+                Available now for MACE Systems
+              </p>
             </div>
             <div className="flex justify-center">
               <SMSOfferMockup />
@@ -306,7 +310,7 @@ export function FeaturesPage() {
               The right stock, in the right place. And the cashflow to prove it.
             </h2>
             <p style={{ fontSize: '18px', color: '#374151', lineHeight: '1.6' }}>
-              Intelligent inventory management and cashflow forecasting based on real payment behaviour — not just stock counts. See the reasoning behind every reorder decision.
+              Inventory management that saves money and time, by vastly reducing what it takes to bring the data together, and forecasts what you need more accurately. Cashflow forecasting is based on real payment behaviour, not just stock counts, so you can see the reasoning behind every reorder decision.
             </p>
           </div>
           <div className="flex justify-center">
