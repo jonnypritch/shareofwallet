@@ -13,6 +13,7 @@ import { PricingPage } from './pages/PricingPage';
 import { AboutPage } from './pages/AboutPage';
 import { ContactPage } from './pages/ContactPage';
 import { FaqPage } from './pages/FaqPage';
+import { GlossaryPage } from './pages/GlossaryPage';
 import { BlogPage } from './pages/BlogPage';
 import { BlogPostPage } from './pages/BlogPostPage';
 import { PrivacyPolicyPage } from './pages/PrivacyPolicyPage';
@@ -94,6 +95,7 @@ const PAGE_TITLES: Record<string, string> = {
   about: 'About — Palm AI',
   contact: 'Contact — Palm AI',
   faq: 'Frequently asked questions — Palm AI',
+  glossary: 'Glossary of trade merchant terms — Palm AI',
   blog: 'Blog — Palm AI',
   privacy: 'Privacy & Cookie Policy — Palm AI',
 };
@@ -112,6 +114,7 @@ const PAGE_DESCRIPTIONS: Record<string, string> = {
   about: 'The team and story behind Palm AI.',
   contact: 'Get in touch with Palm AI to book a demo or ask a question.',
   faq: "Answers about Palm AI: what it does, how it works with your ERP, set-up time, data security and pricing for builders' merchants and wholesalers.",
+  glossary: "Plain-English definitions of 26 trade merchant terms: share of wallet, basket analysis, lift, churn, buying cadence, gross margin and more.",
   blog: 'Practical guides on basket analysis, customer data, and growing share of wallet — written for merchants, wholesalers and distributors.',
   privacy: "Palm AI's privacy and cookie policy.",
 };
@@ -213,6 +216,7 @@ function AppShell() {
         <Route path="/about" element={<AboutPage />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/faq" element={<FaqPage />} />
+        <Route path="/glossary" element={<GlossaryPage />} />
         <Route path="/blog" element={<BlogPage onNavigate={handleNavigate} />} />
         <Route path="/blog/:slug" element={<BlogPostRoute onNavigate={handleNavigate} />} />
         <Route path="/privacy" element={<PrivacyPolicyPage />} />

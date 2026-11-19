@@ -10,6 +10,7 @@
   {"path": "/about", "name": "about", "title": "About — Palm AI", "description": "The team and story behind Palm AI."},
   {"path": "/contact", "name": "contact", "title": "Contact — Palm AI", "description": "Get in touch with Palm AI to book a demo or ask a question."},
   {"path": "/faq", "name": "faq", "title": "Frequently asked questions — Palm AI", "description": "Answers about Palm AI: what it does, how it works with your ERP, set-up time, data security and pricing for builders' merchants and wholesalers.", "jsonLd": "faq"},
+  {"path": "/glossary", "name": "glossary", "title": "Glossary of trade merchant terms — Palm AI", "description": "Plain-English definitions of 26 trade merchant terms: share of wallet, basket analysis, lift, churn, buying cadence, gross margin and more.", "jsonLd": "glossary"},
   {"path": "/blog", "name": "blog", "title": "Blog — Palm AI", "description": "Practical guides on basket analysis, customer data, and growing share of wallet — written for merchants, wholesalers and distributors."},
   {"path": "/privacy", "name": "privacy", "title": "Privacy & Cookie Policy — Palm AI", "description": "Palm AI's privacy and cookie policy."}
 ]

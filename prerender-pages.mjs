@@ -95,6 +95,15 @@ async function loadFaqGroups() {
   return m.faqGroups;
 }
 
+async function loadGlossaryGroups() {
+  const src = fs.readFileSync(path.join(root, 'src/app/data/glossary.ts'), 'utf8');
+  const start = src.indexOf('export const glossaryGroups');
+  if (start === -1) throw new Error('could not find glossaryGroups in src/app/data/glossary.ts');
+  const js = src.slice(start).replace('export const glossaryGroups: GlossaryGroup[] =', 'export const glossaryGroups =');
+  const m = await import('data:text/javascript;base64,' + Buffer.from(js).toString('base64'));
+  return m.glossaryGroups;
+}
+
 function jsonLdScript(obj) {
   // ASCII-only, and "<" escaped so the text can never close the script tag
   const json = JSON.stringify(obj)
@@ -144,6 +153,31 @@ for (const r of routes) {
       });
     } catch (err) {
       console.warn(`prerender: could not build FAQ structured data (${firstLine(err)}).`);
+    }
+  }
+
+  if (r.jsonLd === 'glossary') {
+    try {
+      const groups = await loadGlossaryGroups();
+      const setId = `${ORIGIN}/glossary#termset`;
+      ldTag = '\n' + jsonLdScript({
+        '@context': 'https://schema.org',
+        '@type': 'DefinedTermSet',
+        '@id': setId,
+        name: 'Glossary of trade merchant terms',
+        url: `${ORIGIN}/glossary`,
+        hasDefinedTerm: groups.flatMap((g) => g.terms).map((t) => ({
+          '@type': 'DefinedTerm',
+          '@id': `${ORIGIN}/glossary#${t.slug}`,
+          name: t.term,
+          description: t.definition,
+          url: `${ORIGIN}/glossary#${t.slug}`,
+          inDefinedTermSet: { '@id': setId },
+          ...(t.alsoCalled && t.alsoCalled.length ? { alternateName: t.alsoCalled } : {}),
+        })),
+      });
+    } catch (err) {
+      console.warn(`prerender: could not build glossary structured data (${firstLine(err)}).`);
     }
   }
 

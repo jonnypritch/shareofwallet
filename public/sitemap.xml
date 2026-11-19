@@ -25,6 +25,10 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://palmai.io/glossary</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://palmai.io/solutions/builders-merchants</loc>
     <priority>0.7</priority>
   </url>

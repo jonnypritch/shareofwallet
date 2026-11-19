@@ -63,6 +63,7 @@ const STATIC_ROUTES = [
   { path: "/about", priority: "0.6" },
   { path: "/contact", priority: "0.6" },
   { path: "/faq", priority: "0.7" },
+  { path: "/glossary", priority: "0.7" },
   { path: "/solutions/builders-merchants", priority: "0.7" },
   { path: "/solutions/electrical-wholesale", priority: "0.7" },
   { path: "/solutions/plumbers-merchants", priority: "0.7" },

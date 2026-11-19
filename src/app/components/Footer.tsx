@@ -14,6 +14,7 @@ export function Footer({ onNavigate }: FooterProps) {
     { id: 'pricing', label: 'Pricing' },
     { id: 'blog', label: 'Blog' },
     { id: 'faq', label: 'FAQ' },
+    { id: 'glossary', label: 'Glossary' },
   ];
 
   const solutionsLinks = [

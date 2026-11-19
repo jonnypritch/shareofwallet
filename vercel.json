@@ -130,6 +130,10 @@
       "destination": "/prerender/faq.html"
     },
     {
+      "source": "/glossary",
+      "destination": "/prerender/glossary.html"
+    },
+    {
       "source": "/blog",
       "destination": "/prerender/blog.html"
     },

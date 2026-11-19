@@ -261,6 +261,7 @@ export const blogPosts: BlogPost[] = [
 <h2 id="erp">ERP</h2>
 <p>Short for Enterprise Resource Planning — the main system a merchant or wholesaler runs on day to day. Stock, orders, invoicing, accounts, all in one place. When we (or anyone) talks about "integrating with your ERP," this is the system they mean — whatever you're already using to run the business, not something separate you'd have to learn from scratch.</p>
 
+<p>Want more terms? Our <a href="/glossary">full glossary</a> explains 26 trade merchant terms in plain English, each with its own link.</p>
 <h2>Want these spotted automatically?</h2>
 <p>Every one of these — downtrading, buying elsewhere, a basket gap, a cross-sell worth suggesting — is exactly what Palm AI's <a href="/features#section-recommendations">recommendations</a> are built to catch, without anyone having to go looking for it. <a href="/contact">See it with your own data</a>.</p>
     `
