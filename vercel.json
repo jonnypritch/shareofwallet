@@ -126,6 +126,10 @@
       "destination": "/prerender/contact.html"
     },
     {
+      "source": "/faq",
+      "destination": "/prerender/faq.html"
+    },
+    {
       "source": "/blog",
       "destination": "/prerender/blog.html"
     },

@@ -13,6 +13,7 @@ export function Footer({ onNavigate }: FooterProps) {
     { id: 'features', label: 'Features' },
     { id: 'pricing', label: 'Pricing' },
     { id: 'blog', label: 'Blog' },
+    { id: 'faq', label: 'FAQ' },
   ];
 
   const solutionsLinks = [

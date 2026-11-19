@@ -12,6 +12,7 @@ import { FoodserviceWholesalePage } from './pages/FoodserviceWholesalePage';
 import { PricingPage } from './pages/PricingPage';
 import { AboutPage } from './pages/AboutPage';
 import { ContactPage } from './pages/ContactPage';
+import { FaqPage } from './pages/FaqPage';
 import { BlogPage } from './pages/BlogPage';
 import { BlogPostPage } from './pages/BlogPostPage';
 import { PrivacyPolicyPage } from './pages/PrivacyPolicyPage';
@@ -92,6 +93,7 @@ const PAGE_TITLES: Record<string, string> = {
   pricing: 'Pricing — Palm AI',
   about: 'About — Palm AI',
   contact: 'Contact — Palm AI',
+  faq: 'Frequently asked questions — Palm AI',
   blog: 'Blog — Palm AI',
   privacy: 'Privacy & Cookie Policy — Palm AI',
 };
@@ -109,6 +111,7 @@ const PAGE_DESCRIPTIONS: Record<string, string> = {
   pricing: 'Palm AI pricing is agreed around your branches, your data, and what you need live first — no fixed tiers, no published price list.',
   about: 'The team and story behind Palm AI.',
   contact: 'Get in touch with Palm AI to book a demo or ask a question.',
+  faq: "Answers about Palm AI: what it does, how it works with your ERP, set-up time, data security and pricing for builders' merchants and wholesalers.",
   blog: 'Practical guides on basket analysis, customer data, and growing share of wallet — written for merchants, wholesalers and distributors.',
   privacy: "Palm AI's privacy and cookie policy.",
 };
@@ -209,6 +212,7 @@ function AppShell() {
         <Route path="/pricing" element={<PricingPage />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/contact" element={<ContactPage />} />
+        <Route path="/faq" element={<FaqPage />} />
         <Route path="/blog" element={<BlogPage onNavigate={handleNavigate} />} />
         <Route path="/blog/:slug" element={<BlogPostRoute onNavigate={handleNavigate} />} />
         <Route path="/privacy" element={<PrivacyPolicyPage />} />

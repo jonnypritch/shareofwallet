@@ -20,6 +20,7 @@ import { FoodserviceWholesalePage } from './app/pages/FoodserviceWholesalePage';
 import { PricingPage } from './app/pages/PricingPage';
 import { AboutPage } from './app/pages/AboutPage';
 import { ContactPage } from './app/pages/ContactPage';
+import { FaqPage } from './app/pages/FaqPage';
 import { BlogPage } from './app/pages/BlogPage';
 import { PrivacyPolicyPage } from './app/pages/PrivacyPolicyPage';
 
@@ -37,6 +38,7 @@ const ROUTES: Record<string, { page: string; Component: ComponentType }> = {
   '/pricing': { page: 'pricing', Component: PricingPage },
   '/about': { page: 'about', Component: AboutPage },
   '/contact': { page: 'contact', Component: ContactPage },
+  '/faq': { page: 'faq', Component: FaqPage },
   '/blog': { page: 'blog', Component: () => <BlogPage onNavigate={noop} /> },
   '/privacy': { page: 'privacy', Component: PrivacyPolicyPage },
 };

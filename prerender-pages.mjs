@@ -83,6 +83,26 @@ if (fs.existsSync(ssrEntry)) {
   }
 }
 
+// ---- structured data for the FAQ page --------------------------------------
+// Reads the same file the visible FAQ page uses (src/app/data/faqs.ts), so the
+// page and its FAQPage markup can never disagree.
+async function loadFaqGroups() {
+  const src = fs.readFileSync(path.join(root, 'src/app/data/faqs.ts'), 'utf8');
+  const start = src.indexOf('export const faqGroups');
+  if (start === -1) throw new Error('could not find faqGroups in src/app/data/faqs.ts');
+  const js = src.slice(start).replace('export const faqGroups: FaqGroup[] =', 'export const faqGroups =');
+  const m = await import('data:text/javascript;base64,' + Buffer.from(js).toString('base64'));
+  return m.faqGroups;
+}
+
+function jsonLdScript(obj) {
+  // ASCII-only, and "<" escaped so the text can never close the script tag
+  const json = JSON.stringify(obj)
+    .replace(/</g, '\\u003c')
+    .replace(/[^\x00-\x7F]/gu, (c) => '\\u' + c.charCodeAt(0).toString(16).padStart(4, '0'));
+  return `    <script type="application/ld+json">${json}</script>`;
+}
+
 // ---- write the pages -------------------------------------------------------
 fs.mkdirSync(path.join(distDir, 'prerender'), { recursive: true });
 const ok = [];
@@ -108,6 +128,25 @@ for (const r of routes) {
     `<meta name="twitter:image" content="${esc(FALLBACK_IMAGE)}" />`,
   ].map((t) => `    ${t}`).join('\n');
 
+  // optional structured data for this route
+  let ldTag = '';
+  if (r.jsonLd === 'faq') {
+    try {
+      const groups = await loadFaqGroups();
+      ldTag = '\n' + jsonLdScript({
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: groups.flatMap((g) => g.items).map((it) => ({
+          '@type': 'Question',
+          name: it.q,
+          acceptedAnswer: { '@type': 'Answer', text: it.a },
+        })),
+      });
+    } catch (err) {
+      console.warn(`prerender: could not build FAQ structured data (${firstLine(err)}).`);
+    }
+  }
+
   let body = '';
   if (mod) {
     try {
@@ -119,7 +158,7 @@ for (const r of routes) {
     fellBack.push(`${r.path} (no server bundle)`);
   }
 
-  let html = base.replace('</head>', () => `${tags}\n  </head>`);
+  let html = base.replace('</head>', () => `${tags}${ldTag}\n  </head>`);
   if (body) {
     html = html.replace(ROOT_RE, () => `<div id="root">${body}</div>`);
     ok.push(r.path);

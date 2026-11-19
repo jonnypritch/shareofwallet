@@ -15,6 +15,7 @@ export const PAGE_PATHS: Record<string, string> = {
   'solutions-brands': '/solutions/brands',
   pricing: '/pricing',
   about: '/about',
+  faq: '/faq',
   contact: '/contact',
   blog: '/blog',
   privacy: '/privacy',
