@@ -73,10 +73,16 @@ export function BlogPage({ onNavigate }: BlogPageProps) {
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filtered.map((post) => (
-              <article
+              <a
                 key={post.slug}
-                className="bg-white rounded-xl border border-gray-200 hover:border-[#3b82f6] hover:shadow-lg transition-all duration-300 cursor-pointer group overflow-hidden"
-                onClick={() => onNavigate('blog-post', post.slug)}
+                href={`/blog/${post.slug}`}
+                className="block bg-white rounded-xl border border-gray-200 hover:border-[#3b82f6] hover:shadow-lg transition-all duration-300 cursor-pointer group overflow-hidden"
+                onClick={(e) => {
+                  // Keep normal behaviour for new-tab / modified clicks; otherwise use the app's navigation.
+                  if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0) return;
+                  e.preventDefault();
+                  onNavigate('blog-post', post.slug);
+                }}
               >
                 {/* Category bar */}
                 <div
@@ -128,7 +134,7 @@ export function BlogPage({ onNavigate }: BlogPageProps) {
                     </div>
                   </div>
                 </div>
-              </article>
+              </a>
             ))}
           </div>
         )}

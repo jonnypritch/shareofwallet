@@ -16,6 +16,7 @@ import { BlogPage } from './pages/BlogPage';
 import { BlogPostPage } from './pages/BlogPostPage';
 import { PrivacyPolicyPage } from './pages/PrivacyPolicyPage';
 import { blogPosts } from './data/blogPosts';
+import { PAGE_PATHS } from './data/paths';
 
 function SuppliersPage() {
   return (
@@ -71,22 +72,8 @@ function NotFoundPage({ onNavigate }: { onNavigate: (page: string) => void }) {
  * before. Nothing about that interface changes — this map is the only new
  * thing, translating those ids to real, crawlable URLs.
  */
-const PAGE_TO_PATH: Record<string, string> = {
-  home: '/',
-  features: '/features',
-  'solutions-builders': '/solutions/builders-merchants',
-  'solutions-electrical': '/solutions/electrical-wholesale',
-  'solutions-plumbers': '/solutions/plumbers-merchants',
-  'solutions-tool-hire': '/solutions/tool-hire',
-  'solutions-foodservice': '/solutions/foodservice-wholesale',
-  'solutions-suppliers': '/solutions/suppliers',
-  'solutions-brands': '/solutions/brands',
-  pricing: '/pricing',
-  about: '/about',
-  contact: '/contact',
-  blog: '/blog',
-  privacy: '/privacy',
-};
+// The page id -> URL map lives in ./data/paths.ts (shared with the menu and footer links).
+const PAGE_TO_PATH: Record<string, string> = PAGE_PATHS;
 
 const PATH_TO_PAGE: Record<string, string> = Object.fromEntries(
   Object.entries(PAGE_TO_PATH).map(([id, path]) => [path, id])
@@ -110,7 +97,7 @@ const PAGE_TITLES: Record<string, string> = {
 };
 
 const PAGE_DESCRIPTIONS: Record<string, string> = {
-  home: "Palm AI helps Builders' Merchants, Plumbers' Merchants, Tool Hire, Electrical Wholesalers and Foodservice Wholesalers grow customer wallet share, find new accounts, and forecast cashflow — built around your existing systems.",
+  home: "Palm AI helps builders' merchants, plumbers' merchants, tool hire and wholesalers grow customer wallet share, find new accounts and forecast cashflow.",
   features: 'Analytics, recommendations, prospecting, content generation, inventory and cashflow — see every Palm AI feature and how it works.',
   'solutions-builders': "How Palm AI helps builders' merchants grow wallet share, find new trade accounts, and compete for categories they're missing.",
   'solutions-electrical': 'How Palm AI helps electrical wholesalers grow wallet share across domestic, commercial and industrial electrical categories.',

@@ -90,8 +90,52 @@
       "destination": "/blog-pages/:slug.html"
     },
     {
+      "source": "/features",
+      "destination": "/prerender/features.html"
+    },
+    {
+      "source": "/solutions/builders-merchants",
+      "destination": "/prerender/solutions-builders.html"
+    },
+    {
+      "source": "/solutions/electrical-wholesale",
+      "destination": "/prerender/solutions-electrical.html"
+    },
+    {
+      "source": "/solutions/plumbers-merchants",
+      "destination": "/prerender/solutions-plumbers.html"
+    },
+    {
+      "source": "/solutions/tool-hire",
+      "destination": "/prerender/solutions-tool-hire.html"
+    },
+    {
+      "source": "/solutions/foodservice-wholesale",
+      "destination": "/prerender/solutions-foodservice.html"
+    },
+    {
+      "source": "/pricing",
+      "destination": "/prerender/pricing.html"
+    },
+    {
+      "source": "/about",
+      "destination": "/prerender/about.html"
+    },
+    {
+      "source": "/contact",
+      "destination": "/prerender/contact.html"
+    },
+    {
+      "source": "/blog",
+      "destination": "/prerender/blog.html"
+    },
+    {
+      "source": "/privacy",
+      "destination": "/prerender/privacy.html"
+    },
+    {
       "source": "/(.*)",
-      "destination": "/index.html"
+      "destination": "/app-shell.html"
     }
   ],
   "headers": [

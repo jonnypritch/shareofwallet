@@ -6,7 +6,7 @@
   "scripts": {
     "prebuild": "node generate-feeds.mjs",
     "build": "vite build",
-    "postbuild": "node generate-post-pages.mjs",
+    "postbuild": "node generate-post-pages.mjs && node prerender-pages.mjs",
     "dev": "vite"
   },
   "dependencies": {

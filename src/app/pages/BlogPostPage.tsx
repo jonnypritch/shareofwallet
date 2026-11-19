@@ -32,14 +32,19 @@ export function BlogPostPage({ slug, onNavigate }: BlogPostPageProps) {
       {/* Back nav */}
       <div className="border-b border-gray-100">
         <div className="max-w-[800px] mx-auto px-8 py-4">
-          <button
-            onClick={() => onNavigate('blog')}
+          <a
+            href="/blog"
+            onClick={(e) => {
+              if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0) return;
+              e.preventDefault();
+              onNavigate('blog');
+            }}
             className="flex items-center gap-2 hover:text-[#1e3a8a] transition-colors"
             style={{ fontSize: '14px', color: '#6b7280', fontWeight: '500' }}
           >
             <ArrowLeft style={{ width: '16px', height: '16px' }} />
             All articles
-          </button>
+          </a>
         </div>
       </div>
 
@@ -210,10 +215,15 @@ export function BlogPostPage({ slug, onNavigate }: BlogPostPageProps) {
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {related.map(rel => (
-                <div
+                <a
                   key={rel.slug}
-                  className="border border-gray-200 rounded-xl p-5 cursor-pointer hover:border-[#3b82f6] hover:shadow-md transition-all"
-                  onClick={() => onNavigate('blog-post', rel.slug)}
+                  href={`/blog/${rel.slug}`}
+                  className="block border border-gray-200 rounded-xl p-5 cursor-pointer hover:border-[#3b82f6] hover:shadow-md transition-all"
+                  onClick={(e) => {
+                    if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0) return;
+                    e.preventDefault();
+                    onNavigate('blog-post', rel.slug);
+                  }}
                 >
                   <span className="text-xs font-semibold" style={{ color: categoryColors[rel.category] }}>
                     {categoryLabels[rel.category]}
@@ -221,7 +231,7 @@ export function BlogPostPage({ slug, onNavigate }: BlogPostPageProps) {
                   <h4 style={{ fontSize: '15px', fontWeight: '600', color: '#1e293b', marginTop: '6px', lineHeight: '1.4' }}>
                     {rel.title}
                   </h4>
-                </div>
+                </a>
               ))}
             </div>
           </div>
