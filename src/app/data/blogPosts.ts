@@ -2,7 +2,7 @@ export interface BlogPost {
   slug: string;
   title: string;
   excerpt: string;
-  category: 'basket-analysis' | 'customer-analysis' | 'share-of-wallet' | 'sales-strategy';
+  category: 'basket-analysis' | 'customer-analysis' | 'share-of-wallet' | 'inventory-management' | 'sales-strategy';
   readTime: number;
   publishedAt: string;
   author: {
@@ -483,7 +483,7 @@ export const blogPosts: BlogPost[] = [
     slug: 'how-much-stock-should-a-builders-merchant-hold',
     title: "How much stock should a builders' merchant hold? The cash on your shelves",
     excerpt: "Order levels are pushed up by minimum quantities, carriage charges, lead times and availability, and the cash on the shelf is the real cost. Here's how to find the balance.",
-    category: 'sales-strategy',
+    category: 'inventory-management',
     readTime: 6,
     publishedAt: '2026-11-25',
     author: { name: 'Jonathan Pritchard', role: 'Founder, Palm AI' },
@@ -557,6 +557,7 @@ export const categoryLabels: Record<BlogPost['category'], string> = {
   'basket-analysis': 'Basket Analysis',
   'customer-analysis': 'Customer Analysis',
   'share-of-wallet': 'Share of Wallet',
+  'inventory-management': 'Inventory Management',
   'sales-strategy': 'Sales Strategy',
 };
 
@@ -564,5 +565,6 @@ export const categoryColors: Record<BlogPost['category'], string> = {
   'basket-analysis': '#3b82f6',
   'customer-analysis': '#10b981',
   'share-of-wallet': '#1e3a8a',
+  'inventory-management': '#7c3aed',
   'sales-strategy': '#f59e0b',
 };

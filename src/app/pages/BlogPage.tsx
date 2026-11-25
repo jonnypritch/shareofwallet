@@ -9,7 +9,7 @@ interface BlogPageProps {
 export function BlogPage({ onNavigate }: BlogPageProps) {
   const [activeCategory, setActiveCategory] = useState<string>('all');
 
-  const categories = ['all', 'basket-analysis', 'customer-analysis', 'share-of-wallet', 'sales-strategy'];
+  const categories = ['all', 'basket-analysis', 'customer-analysis', 'share-of-wallet', 'inventory-management', 'sales-strategy'];
 
   const filtered = activeCategory === 'all'
     ? blogPosts
