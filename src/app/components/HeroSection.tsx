@@ -36,9 +36,10 @@ export function HeroSection() {
           className="max-w-[680px] mx-auto mb-8"
           style={{ fontSize: '18px', color: '#4b5563', lineHeight: '1.6' }}
         >
-          We also help you keep the right products in the right branch at
-          the right time, and give you clearer, forward-looking cashflow
-          forecasts.
+          We also help you save time and money, with automated basket
+          updates and inventory management that keeps the right products in
+          the right branch at the right time, and give you clearer,
+          forward-looking cashflow forecasts.
         </p>
         <a
           href="/contact"

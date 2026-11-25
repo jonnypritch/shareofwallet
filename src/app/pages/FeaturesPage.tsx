@@ -241,7 +241,7 @@ export function FeaturesPage() {
                 ]}
               />
               <p className="mt-4" style={{ fontSize: '13px', color: '#9ca3af', fontStyle: 'italic' }}>
-                Available now for MACE Systems
+                Integrated with MACE Systems, and deployable on other systems too
               </p>
             </div>
             <div className="flex justify-center">

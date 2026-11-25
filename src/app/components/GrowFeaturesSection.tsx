@@ -15,11 +15,12 @@ const FEATURES: Record<string, FeatureCopy> = {
   shareOfWallet: {
     eyebrow: 'Share of Wallet',
     headline: 'Grow customers one category at a time',
-    body: "Every customer buys categories from competitors they should buy from you. Palm AI shows exactly which ones — and gets AI recommendations onto the order screen, so counter staff get the right suggestion at the right moment.",
+    body: "Every customer buys categories from competitors they should buy from you. Palm AI shows exactly which ones. In our basket analysis across several merchants, 92% of baskets are individual to the business at SKU level, and making sense of what goes with what, and why, can take years of experience. Our machine learning tools do it in milliseconds, helping you to help your customers.",
     bullets: [
       'See share of wallet by customer/category',
-      'Automated upsell and cross-sell at POS',
+      'Automated basket updates: upsell and cross-sell at POS',
       'AI recommendations on order screen',
+      'Automated quotations from WhatsApp and SMS, straight to your quotes page',
       "Compete where you're missing spend",
     ],
   },
@@ -48,7 +49,7 @@ const FEATURES: Record<string, FeatureCopy> = {
   inventory: {
     eyebrow: 'Inventory & Cashflow',
     headline: 'The right stock, in the right place. And the cashflow to prove it.',
-    body: 'Intelligent inventory management and cashflow forecasting based on real payment behaviour — not just stock counts. See the reasoning behind every reorder decision.',
+    body: 'Inventory management that saves money and time, by vastly reducing what it takes to bring the data together, and forecasts what you need more accurately. Cashflow forecasting is based on real payment behaviour, not just stock counts, so you can see the reasoning behind every reorder decision.',
     bullets: [
       'Intelligent inventory management across locations',
       'Reduce dead stock and free up cashflow',

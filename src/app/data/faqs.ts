@@ -70,7 +70,7 @@ export const faqGroups: FaqGroup[] = [
       },
       {
         q: 'What are automated quotations?',
-        a: "When a customer asks for a quote by WhatsApp or SMS, Palm AI puts it straight onto your quotes page, so your team isn't keying it in. It suggests the likely other needs and keeps margin within your guardrails. Nothing is sent without your team's approval. It's available now for MACE Systems, and not yet for other systems.",
+        a: "When a customer asks for a quote by WhatsApp or SMS, Palm AI puts it straight onto your quotes page, so your team isn't keying it in. It suggests the likely other needs and keeps margin within your guardrails. Nothing is sent without your team's approval. It's integrated with MACE Systems, and we can deploy it on other systems too.",
       },
       {
         q: 'What are automated basket updates?',
@@ -97,6 +97,10 @@ export const faqGroups: FaqGroup[] = [
       {
         q: 'Will Palm AI work with my ERP or POS system?',
         a: "Palm AI is integrated with MACE Systems, has worked with an API from GenetiQ (formerly Intact iQ), and can integrate with any system that has an API. We can also work with a few systems that don't have one. Tell us what you use and we'll explain how we'd connect it.",
+      },
+      {
+        q: 'Does Palm AI work with MACE Systems?',
+        a: "Yes. Palm AI is integrated with MACE Systems, so if you run MACE we can show you how Palm AI works alongside the system you already use, with no rip-and-replace.",
       },
       {
         q: 'Do I have to replace my ERP?',
