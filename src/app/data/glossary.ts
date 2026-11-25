@@ -179,8 +179,8 @@ export const glossaryGroups: GlossaryGroup[] = [
         term: 'Stock holding cost',
         slug: 'stock-holding-cost',
         alsoCalled: ['inventory carrying cost'],
-        definition: "What it costs to keep stock on the shelf, beyond what you paid for it: cash tied up, space, handling, insurance and the risk it never sells.",
-        link: { href: '/faq', label: 'Can Palm AI help me hold the right stock?' },
+        definition: "What it costs to keep stock on the shelf beyond what you paid for it: space, handling and management time, insurance, the risk of it being damaged, lost or forgotten, and the cash it ties up until it sells and the customer pays.",
+        link: { href: '/blog/how-much-stock-should-a-builders-merchant-hold', label: "How much stock should a builders' merchant hold?" },
       },
       {
         term: 'Cash-to-cash cycle',

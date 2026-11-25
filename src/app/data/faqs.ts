@@ -79,6 +79,7 @@ export const faqGroups: FaqGroup[] = [
       {
         q: 'Can Palm AI help me hold the right stock?',
         a: "Yes. Palm AI can set stock levels from our forecast instead of a simple 13-week average, balancing two things: making sure you have your fast-moving lines and their associated SKUs in stock, and holding enough of the related but slower-selling items to keep your service promise. In validation testing across two branches, this would have meant around 25% less stock on the shelf while still covering the large majority of lines (92-95%), roughly £30k less cash tied up per branch. Results vary by branch and product range. Do you know what it costs you just to hold your stock, before you count the cost of the stock itself? If 80% of your inventory management time goes on SKUs that give you 10% of sales, you need a better balance.",
+        link: { href: '/blog/how-much-stock-should-a-builders-merchant-hold', label: "How much stock should a builders' merchant hold?" },
       },
       {
         q: 'Can Palm AI help me find new customers?',

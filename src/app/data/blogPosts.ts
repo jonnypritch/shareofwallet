@@ -359,7 +359,7 @@ export const blogPosts: BlogPost[] = [
 <p><strong>Natural gaps aren't leakage.</strong> A self-builder who orders quarterly isn't buying elsewhere between orders. That's just their pattern. Measure against the customer's normal cadence, not a weekly ideal.</p>
 <p><strong>There's no universal "good" number.</strong> A sensible target for a plumber isn't the same as one for a landscaper or a restaurant. Compare each account with its own type.</p>
 <h2>Share of wallet vs market share</h2>
-<p>Market share is your slice of the whole market. Share of wallet is your slice of each customer. Grow the second first. It's the faster route, because you're selling to people who already know and trust you. Our <a href="/blog/share-of-wallet-wholesale-distributors">guide to share of wallet for wholesalers</a> covers why it matters, our <a href="/blog/what-is-basket-analysis-trade-merchants">basket analysis guide</a> shows how to spot the gaps, and the <a href="/blog/trade-merchant-glossary-plain-english#share-of-wallet">glossary</a> has the short version.</p>
+<p>Market share is your slice of the whole market. Share of wallet is your slice of each customer. Grow the second first. It's the faster route, because you're selling to people who already know and trust you. Our <a href="/blog/share-of-wallet-wholesale-distributors">guide to share of wallet for wholesalers</a> covers why it matters, our <a href="/blog/what-is-basket-analysis-trade-merchants">basket analysis guide</a> shows how to spot the gaps, and the <a href="/glossary#share-of-wallet">glossary</a> has the short version.</p>
 <h2>Where this fits with the data you already have</h2>
 <p>You don't need a data team to start. You need your transaction history and a sensible estimate of what each type of customer should spend. That's what Palm AI's <a href="/features#section-analytics">analytics</a> does for you, account by account. If you'd like to see your own share of wallet by customer and sub-category, <a href="/contact">get in touch</a>.</p>
     `
@@ -477,6 +477,78 @@ export const blogPosts: BlogPost[] = [
 <p><strong>Builders' merchants</strong> look at which project stages and categories a customer buys from them, such as bricks and blocks but not plasterboard or insulation. <strong>Plumbers' merchants</strong> look at product groups, such as pipe and fittings without boilers. <strong>Tool hire depots</strong> look at contractors who hire one kind of equipment and source the rest elsewhere. <strong>Foodservice wholesalers</strong> look at kitchens that order dairy but buy produce from someone else.</p>
 <h2>How do you improve it?</h2>
 <p>Find the gaps by customer and by sub-category, as in <a href="/blog/share-of-wallet-analysis-buying-elsewhere">how to find where customers are buying elsewhere</a>. Then act on the biggest ones, as in <a href="/blog/how-to-increase-share-of-wallet-trade-customers">how to increase share of wallet with trade customers</a>. See the <a href="/features#section-analytics">analytics features</a>, or <a href="/contact">get in touch</a> to see your own accounts.</p>
+    `
+  },
+  {
+    slug: 'how-much-stock-should-a-builders-merchant-hold',
+    title: "How much stock should a builders' merchant hold? The cash on your shelves",
+    excerpt: "Order levels are pushed up by minimum quantities, carriage charges, lead times and availability, and the cash on the shelf is the real cost. Here's how to find the balance.",
+    category: 'sales-strategy',
+    readTime: 6,
+    publishedAt: '2026-11-25',
+    author: { name: 'Jonathan Pritchard', role: 'Founder, Palm AI' },
+    tags: ['how much stock to hold', 'stock holding cost', 'inventory management', 'builders merchants', 'stock levels', 'minimum order quantity', 'cash tied up in stock', 'SKU range'],
+    metaTitle: "How much stock should a builders' merchant hold?",
+    metaDescription: "What drives stock levels in a builders' merchant: minimum orders, carriage, lead times and availability. How to find the right balance and free up cash.",
+    heroImage: '/blog-images/how-much-stock-should-a-builders-merchant-hold.jpg',
+    heroImageAlt: 'Stacks of timber boards on pallets in a yard, in front of tall stacks of empty wooden pallets',
+    heroImageCredit: `Photo by <a href="https://unsplash.com/@skstrannik?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText" target="_blank" rel="noopener noreferrer">Sergej</a> on <a href="https://unsplash.com/photos/stacks-of-wooden-pallets-in-an-outdoor-storage-area-2HwIF1l5eLs?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText" target="_blank" rel="noopener noreferrer">Unsplash</a>`,
+    linkedinBlurb: "How much cash is sitting on your shelves right now? And which lines is it in?....",
+    content: `
+<p style="font-size:18px;font-weight:500;color:#1e293b;line-height:1.6;margin-bottom:24px;">A builders' merchant should hold enough of the lines customers need every week to serve them from the shelf, plus enough of the related slower sellers to keep its service promise, and no more. Most hold more, because the safe answer to every doubt is "order more". The cost isn't mainly the running cost. It's the cash sitting on the shelf.</p>
+<h2>What does it cost to hold stock?</h2>
+<p>Stock holding cost is what it costs to keep stock on the shelf, beyond what you paid for it. It has five parts:</p>
+<ul>
+<li><strong>Space.</strong> The yard, racking and shed, and the rent or rates, heating and lighting that come with them.</li>
+<li><strong>Handling and management time.</strong> Stock has to be received, put away, protected, counted, promoted and moved. Every line you stock needs looking after.</li>
+<li><strong>Insurance.</strong></li>
+<li><strong>Risk.</strong> Weather damage in the yard, theft and loss, discontinued lines, and slow sellers that get forgotten on the shelf.</li>
+<li><strong>The cash it ties up.</strong> More on that below.</li>
+</ul>
+<p>To put a number on the first four, add up what each costs in a year and divide by the average value of your stock. In our earlier work, those running costs came to a few hundred pounds per branch per month.</p>
+<h2>How stock ties up your cash</h2>
+<p>You don't need an overdraft for this to bite. You owe the supplier. On end-of-month terms, a merchant who orders at the start of the month can get almost 60 days' credit. The aim is to sell as much as possible in the first few weeks, then collect the money from customers over the following four to six weeks. Only then have you earned back what you paid.</p>
+<p>If the stock doesn't sell in time, the supplier still has to be paid, from cash you could have used elsewhere, while the stock sits on the shelf needing to be managed, protected, promoted and counted, and hopefully sold through and not forgotten. The days between paying for stock and being paid for it are your cash-to-cash cycle (it's in our <a href="/glossary#cash-to-cash-cycle">glossary</a>).</p>
+<h2>The real cost is the stock itself</h2>
+<p>The running costs are the smaller part. Every pound on the shelf has to be paid for before it has been earned back, and the longer it sits, the longer that wait. In our validation testing across two branches, setting stock levels from a forecast would have meant roughly £30k less cash tied up per branch. What would you do with £30k?</p>
+<h2>What drives how much you order?</h2>
+<p>Demand isn't the only thing that sets order levels. They're pushed up by:</p>
+<ul>
+<li><strong>Minimum order quantities,</strong> which can force you to buy more than you need.</li>
+<li><strong>Carriage charges,</strong> which favour fewer, bigger orders.</li>
+<li><strong>Supplier lead times,</strong> which mean holding more cover while you wait.</li>
+<li><strong>Product availability,</strong> which can mean ordering when stock is there, not when you need it.</li>
+</ul>
+<p>Each of these has to be calculated, line by line, and that's the hard part. The data sits in different places, and it changes. Our systematic, analytical approach helps pull that data together, to give you visibility on what's urgent, what's important and what needs monitoring, instead of treating every SKU the same.</p>
+<h2>Which SKUs earn their place?</h2>
+<p>Three questions decide it:</p>
+<ol>
+<li><strong>Which SKUs are bought by enough customers, often enough, to earn a regular order?</strong> These are your fast movers and the core of the range.</li>
+<li><strong>Which SKUs sell alongside the fast movers without being fast movers themselves?</strong> <a href="/blog/what-is-basket-analysis-trade-merchants">Basket analysis</a> finds these, using measures such as support, confidence and lift. Think of the jointing compound that goes with plasterboard. It doesn't sell quickly, but it completes the job, and without it the customer buys the whole basket somewhere else. This long tail supports both the proposition and the fast movers.</li>
+<li><strong>How many of those do you need, and which SKUs probably aren't needed?</strong> A SKU that neither sells on its own nor supports others is tying up cash and time for nothing. If 80% of your inventory management time goes on SKUs that give you 10% of sales, you need a better balance.</li>
+</ol>
+<p>You can't stock everything. The story goes that a famous London department store would supply anything, even an elephant, and would ask only "Indian or African?" Merchants can't go that far, and the aim isn't the leanest possible shelf. It's the right balance, so customers don't go <a href="/blog/share-of-wallet-analysis-buying-elsewhere">buying elsewhere</a>.</p>
+<h2>Why a simple 13-week average falls short</h2>
+<p>A simple 13-week average treats the last quarter as the best guide to the next week. It reacts slowly to seasonal swings and changes in demand, so it protects against the last problem and not the next one, and the cost of that protection is stock.</p>
+<h2>How to set better levels</h2>
+<ol>
+<li><strong>Count the running costs and the cash tied up.</strong></li>
+<li><strong>Work out which SKUs earn a regular order, and which support them.</strong></li>
+<li><strong>Calculate the ordering constraints</strong> for each: minimum quantities, carriage, lead times and availability.</li>
+<li><strong>Set levels from a forecast, not a simple average,</strong> so you're planning for demand ahead and not just the quarter behind.</li>
+<li><strong>Check how many lines you still cover,</strong> and review by branch and product range.</li>
+</ol>
+<h2>What we found when we tested it</h2>
+<p>In validation testing across two branches, setting stock levels from our forecast, rather than a simple 13-week average, would have meant around 25% less stock on the shelf while still covering the large majority of lines (92-95%). That's roughly £30k less cash tied up per branch. Results vary by branch and product range.</p>
+<p>On accuracy, when we compared forecast against actual sales by category, our brick forecast in value was only 1% out over one month. That's one category over one month, and accuracy varies by category and period.</p>
+<p>Palm AI also vastly reduces what it takes to bring the data together, so you spend less time assembling numbers and more on decisions. The terms used here, such as <a href="/glossary#stock-holding-cost">stock holding cost</a>, are in our glossary.</p>
+<h2>Three questions to ask yourself</h2>
+<ol>
+<li>How much cash is sitting in your stock right now, and how much of it does your service promise actually need?</li>
+<li>Which of your minimum orders, carriage charges and lead times are pushing your order levels up?</li>
+<li>Could you cut stock and still serve the lines customers ask for?</li>
+</ol>
+<p>See how Palm AI helps in the <a href="/faq">FAQ</a>, explore the <a href="/features#section-analytics">analytics features</a>, or <a href="/contact">get in touch</a> and we'll show you what your own stock looks like.</p>
     `
   },
 ];
