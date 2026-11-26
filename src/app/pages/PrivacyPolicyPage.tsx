@@ -42,6 +42,9 @@ export function PrivacyPolicyPage() {
           help your experience while you visit. Any concerns, please don't
           hesitate to get in touch.
         </p>
+        <p className="mb-12 -mt-8" style={{ fontSize: '14px', color: '#9ca3af' }}>
+          Last updated: 26 November 2026
+        </p>
 
         <Section title="Background">
           <p className="mb-4">
@@ -133,11 +136,86 @@ export function PrivacyPolicyPage() {
           <SimpleTable
             rows={[
               ['Direct interactions', 'You may provide personal data when you complete online forms, request products/services, subscribe to our services, create a user account, join our mailing list or otherwise correspond with us (by post, phone or email).'],
-              ['Automated technology', 'We automatically collect personal data (technical and usage) when you browse or interact with our website, by using cookies, server logs and other similar technologies. We may also receive technical data about you if you visit other websites which use our cookies.'],
+              ['Automated technology', 'When you browse our website, our hosting and analytics provider records technical and usage data, such as the pages you view and your device and browser type. This is done through server logs and a privacy-friendly analytics tool that does not use cookies.'],
               ['Publicly available sources', 'We may collect personal data from publicly available sources such as Companies House, the Electoral Register and credit reference agencies, based inside the EU.'],
-              ['Third parties', 'We may receive personal data from: (a) analytics providers based outside the EU (such as Google); (b) advertising networks; (c) search information providers; and (d) our suppliers such as payment providers, delivery services, and website support and maintenance providers.'],
+              ['Third parties', 'We receive technical and usage data about visits to our website from our hosting and analytics provider, Vercel Inc.'],
             ]}
           />
+        </Section>
+
+        <Section title="Website analytics">
+          <p className="mb-4">
+            We use Vercel Web Analytics, provided by Vercel Inc., to
+            understand how our website is used. It counts page views and
+            shows us things like which pages are most visited, where visitors
+            come from (the referring website) and general information such as
+            country, device type and browser.
+          </p>
+          <p>
+            Vercel states that Web Analytics only stores anonymised data and
+            does not use cookies. We use it only to understand and improve
+            our website.
+          </p>
+        </Section>
+
+        <Section title="Contact form enquiries">
+          <p className="mb-4">
+            When you send us an enquiry through our contact form, we collect
+            the details you give us (name, email address, company, phone
+            number and message). The form sends these to our team by email so
+            that we can reply to you. We use them only to deal with your
+            enquiry and to keep a record of our dealings with you, and we
+            keep them for as long as needed for those purposes.
+          </p>
+          <p>
+            We check submissions automatically for signs of spam.
+            Submissions identified as spam are discarded and are not sent to
+            our team, although limited technical details may be recorded
+            briefly in our hosting provider's logs.
+          </p>
+        </Section>
+
+        <Section title="Our WhatsApp messaging service">
+          <p className="mb-4">
+            Some businesses that use Palm AI (our customers) use our platform
+            to send and receive WhatsApp messages with their own customers.
+            This section explains how we handle that data.
+          </p>
+          <p className="mb-4">
+            In that case our customer decides why and how the data is used,
+            and we process it on their behalf under a written agreement. We
+            act as their processor, and we use messages and related data
+            (such as names, phone numbers, message content and delivery
+            status) only to provide the service to that customer. We do not
+            use it for our own purposes, including marketing or training AI
+            models.
+          </p>
+          <p className="mb-4">
+            We store messages for the period set out in our agreement with
+            the customer, and we delete or return them when the customer asks
+            or the service ends.
+          </p>
+          <p className="mb-4">
+            Our software reads and interprets incoming messages and sends
+            automated replies. We use AI tools to help read and interpret
+            messages and, in one feature, to suggest replies that the
+            customer's staff must confirm or edit before anything is sent.
+            Any AI providers we use are bound by written terms that stop them
+            using this data for their own purposes.
+          </p>
+          <p className="mb-4">
+            WhatsApp messages are carried by WhatsApp, which is part of Meta,
+            and Meta handles data under its own terms and privacy policy. We
+            use service providers, such as hosting providers, to run the
+            service, and the businesses we work for can ask us for a list.
+          </p>
+          <p>
+            If you have received a message from a business that uses Palm AI
+            and want to see, correct or delete your data, please contact that
+            business first. You can also contact us at{' '}
+            <a href="mailto:info@palmai.io" className="text-[#1e3a8a] underline">info@palmai.io</a>{' '}
+            and we will pass your request on.
+          </p>
         </Section>
 
         <Section title="How we use your personal data">
@@ -217,11 +295,19 @@ export function PrivacyPolicyPage() {
         </Section>
 
         <Section title="International transfers">
-          <p className="mb-4">We do not transfer your personal data outside the European Economic Area (EEA).</p>
+          <p className="mb-4">
+            Some of our service providers, including Vercel Inc. (our
+            hosting and analytics provider), are based in or process data in
+            the United States. Where we transfer personal data outside the
+            United Kingdom, we make sure a lawful transfer mechanism is in
+            place, such as UK adequacy regulations (including the UK–US data
+            bridge, where the provider is certified under it), the UK
+            International Data Transfer Agreement or the UK Addendum to the
+            EU standard contractual clauses.
+          </p>
           <p>
             Please contact us if you want further information on the
-            specific mechanism used by us when transferring your personal
-            data.
+            specific mechanism used when we transfer your personal data.
           </p>
         </Section>
 
@@ -305,6 +391,7 @@ export function PrivacyPolicyPage() {
               ['Marketing and communication data', 'Your preferences in receiving marketing from us and our third parties, and your communication preferences'],
               ['Profile data', 'Your username and password, orders made by you, preferences, and feedback'],
               ['Technical data', 'Internet protocol (IP) address, your login data, browser type and version, time zone setting and location, browser plug-in types and versions, operating system and platform, and other technology on the devices you use to access our website'],
+              ['Usage data', 'Information about how you use our website, such as the pages you view, the website you came from, and your country, device type, browser and operating system. We collect this in anonymised form.'],
             ]}
           />
         </Section>
@@ -326,6 +413,8 @@ export function PrivacyPolicyPage() {
           </p>
           <SimpleTable
             rows={[
+              ['To respond to your enquiry when you contact us (including through the contact form)', 'Identity, contact and any other information you give us — as necessary for our legitimate interests in responding to enquiries and running our business, and to take steps at your request before entering into a contract.'],
+              ['To understand how our website is used and keep it working well (website analytics)', 'Usage & technical data — as necessary for our legitimate interests in understanding how the website is used and improving it. Our analytics tool does not use cookies.'],
               ['To register you as a new customer', 'Identity & contact data — to perform our contract with you.'],
               ['To process and deliver your order, manage payments, fees and charges and debt recovery', 'Identity, contact, financial, transaction and marketing & communications data — (i) to perform our contract with you; (ii) as necessary for our legitimate interest in recovering debts due to us.'],
               ['To manage our relationship with you, notify you about changes to our Terms or Privacy Policy, and ask you to leave a review or take a survey', 'Identity, contact, profile & marketing & communications data — (i) to perform our contract with you; (ii) as necessary to comply with a legal obligation; (iii) as necessary for our legitimate interests in keeping our records updated and analysing how customers use our products/services.'],
@@ -355,9 +444,9 @@ export function PrivacyPolicyPage() {
         <Section title="Part 4: Third Parties">
           <SimpleTable
             rows={[
-              ['Service providers', 'Acting as processors or controllers based in the EEA and around the world who provide services and IT and system administration services.'],
+              ['Service providers', 'Acting as processors, including Vercel Inc. (website hosting and analytics), our email provider and other providers of IT and system administration services, based in the United Kingdom, the EEA and the United States.'],
               ['Professional advisors', 'Acting as processors or joint controllers, including lawyers, bankers, auditors and insurers based in the United Kingdom who provide consultancy, banking, legal, insurance and accounting services.'],
-              ['HM Revenue & Customs, regulators and other authorities', 'Acting as processors or joint controllers based in the EEA who require reporting of processing activities in certain circumstances.'],
+              ['HM Revenue & Customs, regulators and other authorities', 'Acting as processors or joint controllers based in the United Kingdom who require reporting of processing activities in certain circumstances.'],
               ['Third parties', 'Third parties whom we may choose to sell, transfer, or merge parts of our business or our assets with. If a change happens to our business, the new owners may use your personal data in the same way as set out in this Privacy Policy.'],
             ]}
           />
@@ -393,16 +482,14 @@ export function PrivacyPolicyPage() {
 
         <Section title="How we use cookies">
           <p className="mb-4">
-            We do not currently use any analytics, marketing or tracking
-            cookies on this website. The only cookies in use are those
-            strictly necessary for the site to function — for example,
-            remembering your cookie consent choice.
+            We do not use analytics, marketing or tracking cookies on this
+            website. Our website analytics tool, Vercel Web Analytics, does
+            not use cookies.
           </p>
           <p className="mb-4">
-            As we add tools such as analytics or advertising in future, we
-            will update this policy first and, where required, ask for your
-            consent before any new cookies are set. Nothing on this page
-            should be read as describing tools we don't yet use.
+            If we add tools in future that use cookies, such as advertising
+            or other analytics, we will update this policy first and, where
+            required, ask for your consent before any new cookies are set.
           </p>
           <p className="mb-4">
             You can choose to enable or disable cookies at any time in your
@@ -420,9 +507,9 @@ export function PrivacyPolicyPage() {
         <Section title="Third-party cookies">
           <p>
             We do not currently use any third-party analytics or advertising
-            cookies (such as Google Analytics). This section will be
-            updated with full details before any such tool is added to the
-            site.
+            cookies (such as Google Analytics). If you follow a link from
+            our website to another site, that site may set its own cookies,
+            and you should read its policy.
           </p>
         </Section>
 
