@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { BrowserRouter, Routes, Route, useNavigate, useParams, useLocation } from 'react-router';
+import { Analytics } from '@vercel/analytics/react';
 import { Navigation } from './components/Navigation';
 import { Footer } from './components/Footer';
 import { HomePage } from './pages/HomePage';
@@ -224,6 +225,7 @@ function AppShell() {
         <Route path="*" element={<NotFoundPage onNavigate={handleNavigate} />} />
       </Routes>
       <Footer onNavigate={handleNavigate} />
+      <Analytics />
     </div>
   );
 }
