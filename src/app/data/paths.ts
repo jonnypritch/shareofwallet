@@ -20,4 +20,7 @@ export const PAGE_PATHS: Record<string, string> = {
   contact: '/contact',
   blog: '/blog',
   privacy: '/privacy',
+  terms: '/terms',
+  'customer-terms': '/customer-terms',
+  'sub-processors': '/sub-processors',
 };

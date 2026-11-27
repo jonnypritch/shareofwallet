@@ -57,6 +57,18 @@
     <priority>0.3</priority>
   </url>
   <url>
+    <loc>https://palmai.io/terms</loc>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://palmai.io/customer-terms</loc>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://palmai.io/sub-processors</loc>
+    <priority>0.3</priority>
+  </url>
+  <url>
     <loc>https://palmai.io/blog/why-your-best-customers-are-buying-from-competitors</loc>
     <lastmod>2026-08-19</lastmod>
     <priority>0.6</priority>

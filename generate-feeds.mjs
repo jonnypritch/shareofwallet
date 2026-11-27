@@ -71,6 +71,9 @@ const STATIC_ROUTES = [
   { path: "/solutions/foodservice-wholesale", priority: "0.7" },
   { path: "/blog", priority: "0.8" },
   { path: "/privacy", priority: "0.3" },
+  { path: "/terms", priority: "0.3" },
+  { path: "/customer-terms", priority: "0.4" },
+  { path: "/sub-processors", priority: "0.3" },
 ];
 
 // Load the real blogPosts array by stripping TypeScript-only syntax and

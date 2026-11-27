@@ -18,6 +18,9 @@ import { GlossaryPage } from './pages/GlossaryPage';
 import { BlogPage } from './pages/BlogPage';
 import { BlogPostPage } from './pages/BlogPostPage';
 import { PrivacyPolicyPage } from './pages/PrivacyPolicyPage';
+import { TermsPage } from './pages/TermsPage';
+import { CustomerTermsPage } from './pages/CustomerTermsPage';
+import { SubProcessorsPage } from './pages/SubProcessorsPage';
 import { blogPosts } from './data/blogPosts';
 import { PAGE_PATHS } from './data/paths';
 
@@ -99,6 +102,9 @@ const PAGE_TITLES: Record<string, string> = {
   glossary: 'Glossary of trade merchant terms — Palm AI',
   blog: 'Blog — Palm AI',
   privacy: 'Privacy & Cookie Policy — Palm AI',
+  terms: 'Website Terms of Use — Palm AI',
+  'customer-terms': 'Customer Terms: WhatsApp Services and Data Protection — Palm AI',
+  'sub-processors': 'Sub-processors — Palm AI',
 };
 
 const PAGE_DESCRIPTIONS: Record<string, string> = {
@@ -118,6 +124,9 @@ const PAGE_DESCRIPTIONS: Record<string, string> = {
   glossary: "Plain-English definitions of 26 trade merchant terms: share of wallet, basket analysis, lift, churn, buying cadence, gross margin and more.",
   blog: 'Practical guides on basket analysis, customer data, and growing share of wallet — written for merchants, wholesalers and distributors.',
   privacy: "Palm AI's privacy and cookie policy.",
+  terms: 'The terms that apply when you use the Palm AI website.',
+  'customer-terms': 'The terms that apply to Palm AI customers using the WhatsApp messaging service, including data protection.',
+  'sub-processors': 'The providers Palm AI uses to process customer personal data, where they operate and why.',
 };
 
 function BlogPostRoute({ onNavigate }: { onNavigate: (page: string, slug?: string) => void }) {
@@ -221,6 +230,9 @@ function AppShell() {
         <Route path="/blog" element={<BlogPage onNavigate={handleNavigate} />} />
         <Route path="/blog/:slug" element={<BlogPostRoute onNavigate={handleNavigate} />} />
         <Route path="/privacy" element={<PrivacyPolicyPage />} />
+        <Route path="/terms" element={<TermsPage />} />
+        <Route path="/customer-terms" element={<CustomerTermsPage />} />
+        <Route path="/sub-processors" element={<SubProcessorsPage />} />
         {/* Unknown URLs get a real not-found page (noindex) instead of duplicating the homepage */}
         <Route path="*" element={<NotFoundPage onNavigate={handleNavigate} />} />
       </Routes>

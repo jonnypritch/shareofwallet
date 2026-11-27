@@ -24,6 +24,9 @@ import { FaqPage } from './app/pages/FaqPage';
 import { GlossaryPage } from './app/pages/GlossaryPage';
 import { BlogPage } from './app/pages/BlogPage';
 import { PrivacyPolicyPage } from './app/pages/PrivacyPolicyPage';
+import { TermsPage } from './app/pages/TermsPage';
+import { CustomerTermsPage } from './app/pages/CustomerTermsPage';
+import { SubProcessorsPage } from './app/pages/SubProcessorsPage';
 
 const noop = () => {};
 
@@ -43,6 +46,9 @@ const ROUTES: Record<string, { page: string; Component: ComponentType }> = {
   '/glossary': { page: 'glossary', Component: GlossaryPage },
   '/blog': { page: 'blog', Component: () => <BlogPage onNavigate={noop} /> },
   '/privacy': { page: 'privacy', Component: PrivacyPolicyPage },
+  '/terms': { page: 'terms', Component: TermsPage },
+  '/customer-terms': { page: 'customer-terms', Component: CustomerTermsPage },
+  '/sub-processors': { page: 'sub-processors', Component: SubProcessorsPage },
 };
 
 export function render(path: string): string {

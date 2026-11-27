@@ -108,14 +108,25 @@ export function Footer({ onNavigate }: FooterProps) {
           <div style={{ fontSize: '13px', color: 'rgba(255,255,255,0.4)' }}>
             <p>&copy; {year} Palm AI Limited. All rights reserved.</p>
             <p className="mt-1">71–75 Shelton Street, Covent Garden, London, WC2H 9JQ</p>
+            <p className="mt-1">Registered in England and Wales, company number 12300251</p>
           </div>
-          <a
-            {...link('privacy')}
-            className="hover:text-white transition-colors"
-            style={{ fontSize: '13px', color: 'rgba(255,255,255,0.5)' }}
-          >
-            Privacy &amp; Cookie Policy
-          </a>
+          <div className="flex flex-wrap gap-x-6 gap-y-2">
+            {[
+              { id: 'terms', label: 'Terms of Use' },
+              { id: 'customer-terms', label: 'Customer Terms' },
+              { id: 'sub-processors', label: 'Sub-processors' },
+              { id: 'privacy', label: 'Privacy & Cookie Policy' },
+            ].map((l) => (
+              <a
+                key={l.id}
+                {...link(l.id)}
+                className="hover:text-white transition-colors"
+                style={{ fontSize: '13px', color: 'rgba(255,255,255,0.5)' }}
+              >
+                {l.label}
+              </a>
+            ))}
+          </div>
         </div>
       </div>
     </footer>
