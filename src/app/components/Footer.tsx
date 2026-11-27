@@ -114,7 +114,6 @@ export function Footer({ onNavigate }: FooterProps) {
             {[
               { id: 'terms', label: 'Terms of Use' },
               { id: 'customer-terms', label: 'Customer Terms' },
-              { id: 'sub-processors', label: 'Sub-processors' },
               { id: 'privacy', label: 'Privacy & Cookie Policy' },
             ].map((l) => (
               <a
